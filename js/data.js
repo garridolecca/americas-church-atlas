@@ -1,6 +1,7 @@
 import { EVENT_SOURCES } from "./sources.js";
 import { EXTRA_EVENTS, EXTRA_LOCATIONS, EXTRA_FIGURES } from "./evangelical.js";
 import { LATAM_EVENTS, LATAM_LOCATIONS, LATAM_FIGURES } from "./latam.js";
+import { PRD_EVENTS, PRD_LOCATIONS, PRD_FIGURES } from "./peru-rd.js";
 import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
 // ============================================================
@@ -856,6 +857,10 @@ figures.push(...EXTRA_FIGURES);
 locations.push(...LATAM_LOCATIONS);
 locations.forEach((loc) => { if (LATAM_EVENTS[loc.id]) loc.events.push(...LATAM_EVENTS[loc.id]); });
 figures.push(...LATAM_FIGURES);
+// Deeper histories of Peru and the Dominican Republic (peru-rd.js).
+locations.push(...PRD_LOCATIONS);
+locations.forEach((loc) => { if (PRD_EVENTS[loc.id]) loc.events.push(...PRD_EVENTS[loc.id]); });
+figures.push(...PRD_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));

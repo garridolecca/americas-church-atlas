@@ -93,4 +93,12 @@ export const TAGS = {
   "guatemala-city|1982": ["EP", ""], "montevideo|1925": ["E", "mis"], "tetelcingo|1935": ["E", "mis ind edu"],
   "yarinacocha|1946": ["E", "mis ind edu"], "bluefields|1849": ["O", "mis ind rev"], "managua|1972": ["EB", ""],
   "san-juan-pr|1898": ["RBMO", "mis"], "villa-aldama|1914": ["P", "rev"],
+  // Peru and the Dominican Republic (peru-rd.js)
+  "lima|1651": ["C", "ind"], "lima|1896": ["ER", "mis"], "lima|1906": ["M", "edu"], "lima|1922": ["RE", "mis"],
+  "lima|1940": ["E", "lib"], "lima|2010": ["E", "lib"], "lima|2016": ["EC", ""], "pacasmayo|1914": ["M", "mis ind edu"],
+  "lamas|1932": ["E", "mis edu ind"], "huanta|1984": ["R", "per ind"], "curahuasi|2007": ["E", "mis ind"],
+  "santo-domingo|1538": ["C", "edu"], "santo-domingo|1922": ["RM", "mis"], "santo-domingo|1960": ["C", "lib per"],
+  "santo-domingo|1979": ["C", ""], "santo-domingo|1992": ["C", "mis"], "santo-domingo|2019": ["EP", ""],
+  "samana|1824": ["M", "ind lib"], "santiago-caballeros|1889": ["M", "mis"], "san-pedro-macoris|1897": ["OM", "ind"],
+  "san-pedro-macoris|1916": ["P", "mis"], "higuey|1971": ["C", ""],
 };
