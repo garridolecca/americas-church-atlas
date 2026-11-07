@@ -34,6 +34,16 @@ function renderSources(list) {
   return `<details class="event-sources"><summary>${t("sourcesLabel")} (${list.length})</summary><ul>${items}</ul></details>`;
 }
 
+// Event photo with its Wikimedia Commons credit (author · license), linked to the file page.
+function renderImage(img, alt) {
+  if (!img) return "";
+  const credit = [img.a, img.l].filter(Boolean).map(esc).join(" · ");
+  return `<figure class="event-photo">
+      <a href="${esc(img.p)}" target="_blank" rel="noopener"><img src="${esc(img.s)}" alt="${esc(alt)}" loading="lazy" decoding="async" onerror="this.closest('figure').remove()"></a>
+      <figcaption>${t("imageLabel")}: ${credit ? credit + " · " : ""}<a href="${esc(img.p)}" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption>
+    </figure>`;
+}
+
 function openModal(id) { document.getElementById(id).classList.remove("hidden"); }
 function closeModal(id) { document.getElementById(id).classList.add("hidden"); }
 
@@ -821,6 +831,7 @@ async function initMap() {
 
       return `
         <div class="event-card" data-era="${event.era}">
+          ${renderImage(event.image, localized(event, "title"))}
           <div class="event-era-tag">${event.year} &bull; ${eraShort} &bull; ${eraDate}</div>
           <div class="event-action">${localized(event, "title")}</div>
           <div class="event-tags">${event.traditions.map((id) => `<span class="trad-pill" style="--c:${TRADITION_INDEX[id].hex}">${nameOf(TRADITION_INDEX[id])}</span>`).join("")}${event.themes.map((id) => `<span class="theme-pill">${nameOf(THEMES.find((th) => th.id === id))}</span>`).join("")}</div>

@@ -2,6 +2,7 @@ import { EVENT_SOURCES } from "./sources.js";
 import { EXTRA_EVENTS, EXTRA_LOCATIONS, EXTRA_FIGURES } from "./evangelical.js";
 import { LATAM_EVENTS, LATAM_LOCATIONS, LATAM_FIGURES } from "./latam.js";
 import { PRD_EVENTS, PRD_LOCATIONS, PRD_FIGURES } from "./peru-rd.js";
+import { EVENT_IMAGES } from "./images.js";
 import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
 // ============================================================
@@ -864,6 +865,8 @@ figures.push(...PRD_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));
+// Attach a freely licensed Wikimedia Commons photo to each event (see images.js).
+locations.forEach((loc) => loc.events.forEach((e) => { e.image = EVENT_IMAGES[loc.id + "|" + e.year] || null; }));
 
 // Country, region, traditions and themes (see taxonomy.js).
 locations.forEach((loc) => {

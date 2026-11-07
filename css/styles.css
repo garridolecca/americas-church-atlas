@@ -386,6 +386,14 @@ calcite-shell { --calcite-color-brand: var(--gold); --calcite-font-family: var(-
 .info-sources-note { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
 .info-sources { font-size: 12px; }
 
+/* ===== Event photos (Wikimedia Commons) ===== */
+.event-photo { margin: -16px -16px 12px; border-radius: 0 11px 0 0; overflow: hidden; background: #1c1519; }
+.event-photo a { display: block; }
+.event-photo img { display: block; width: 100%; aspect-ratio: 16 / 9; max-height: 220px; object-fit: cover; object-position: center 30%; transition: transform 0.4s ease; }
+.event-photo a:hover img { transform: scale(1.03); }
+.event-photo figcaption { padding: 5px 12px 6px; font-size: 10.5px; line-height: 1.35; color: var(--text-muted); background: rgba(0, 0, 0, 0.25); overflow-wrap: anywhere; }
+.event-photo figcaption a { display: inline; color: var(--text-secondary); text-decoration: underline; text-decoration-color: var(--gold-dim); text-underline-offset: 2px; }
+
 
 /* ===== Filters: traditions, region/country, theme, color mode ===== */
 .journey-chips + .journey-chips, .filter-row { margin-top: 6px; }
