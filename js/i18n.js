@@ -27,7 +27,7 @@ const ui = {
     sourcesLabel: "Sources", infoSourcesTitle: "Sources",
     allTraditions: "All traditions", allRegions: "All regions & countries", allThemes: "All themes",
     regionsGroup: "Regions", countriesGroup: "Countries", colorBy: "Color", colorEra: "Era", colorTrad: "Tradition",
-    clearFilters: "Clear filters", filtersLabel: "Filters", eventsWord: "events", placesWord: "places", noResults: "No events match these filters.",
+    clearFilters: "Clear filters", filtersLabel: "Filters", fEra: "Era", fTrad: "Tradition", fArea: "Region", fTheme: "Theme", allEras: "All eras", allShort: "All", stopOnMap: "Number on the map", eventsWord: "events", placesWord: "places", noResults: "No events match these filters.",
     infoSourcesNote: "Every event lists its sources: books from the Logos Bible Software library (marked Logos; page numbers refer to the printed edition) and reputable references such as Britannica, the Dictionary of Canadian Biography, UNESCO, the National Park Service, university journals, archives and official church records. Main works consulted:",
   },
   es: {
@@ -53,7 +53,7 @@ const ui = {
     sourcesLabel: "Fuentes", infoSourcesTitle: "Fuentes",
     allTraditions: "Todas las tradiciones", allRegions: "Todas las regiones y países", allThemes: "Todos los temas",
     regionsGroup: "Regiones", countriesGroup: "Países", colorBy: "Color", colorEra: "Era", colorTrad: "Tradición",
-    clearFilters: "Quitar filtros", filtersLabel: "Filtros", eventsWord: "eventos", placesWord: "lugares", noResults: "Ningún evento coincide con estos filtros.",
+    clearFilters: "Quitar filtros", filtersLabel: "Filtros", fEra: "Era", fTrad: "Tradición", fArea: "Región", fTheme: "Tema", allEras: "Todas las eras", allShort: "Todas", stopOnMap: "Número en el mapa", eventsWord: "eventos", placesWord: "lugares", noResults: "Ningún evento coincide con estos filtros.",
     infoSourcesNote: "Cada evento indica sus fuentes: libros de la biblioteca de Logos Bible Software (marcados como Logos; las páginas corresponden a la edición impresa) y referencias de prestigio como Britannica, el Dictionary of Canadian Biography, la UNESCO, el Servicio de Parques Nacionales de EE. UU., revistas universitarias, archivos y documentos oficiales de las iglesias. Obras principales consultadas:",
   },
 };

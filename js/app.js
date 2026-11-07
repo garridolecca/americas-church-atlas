@@ -537,120 +537,114 @@ async function initMap() {
     updateFilterUI();
   }
 
-  // Era Chip Selector
-  const chips = document.querySelectorAll(".journey-chip[data-era]");
-  chips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      const val = chip.dataset.era;
-      activeEra = val === "all" ? "all" : parseInt(val);
-      closeBottomSheet();
-      refresh();
-      zoomToVisible();
-    });
-  });
-
-  // ---------- Tradition chips, region/country and theme menus, color mode ----------
-  const tradChipsEl = document.getElementById("tradChips");
-  const areaSelect = document.getElementById("areaSelect");
-  const themeSelect = document.getElementById("themeSelect");
-
+  // ---------- Compact filter bar: Era · Tradition · Region · Theme, each a dropdown with live counts ----------
+  const fbar = document.getElementById("fbar");
+  const nameOf = (obj) => (lang === "es" ? obj.es : obj.en);
   const countEvents = (skip, extra) => {
     let n = 0;
     locations.forEach((loc) => loc.events.forEach((e) => { if (eventMatches(loc, e, skip) && extra(loc, e)) n++; }));
     return n;
   };
-  const nameOf = (obj) => (lang === "es" ? obj.es : obj.en);
+  const countForArea = (v) => { const saved = activeArea; activeArea = v; const n = countEvents(null, () => true); activeArea = saved; return n; };
+  const countryLabel = (c) => (lang === "es" ? (COUNTRY_ES[c] || c) : c);
+  const COUNTRIES = [...new Set(locations.map((l) => l.country))];
+
+  const DIMS = [
+    { key: "era", title: () => t("fEra"), get: () => String(activeEra), set: (v) => { activeEra = v === "all" ? "all" : parseInt(v); },
+      options: () => [{ v: "all", label: t("allEras") }, ...eras.map((e) => ({ v: String(e.id), label: eraText(e.id, "shortName"), sub: eraText(e.id, "dateRange"), color: e.hexColor }))],
+      count: (v) => countEvents("era", (l, e) => v === "all" || e.era === parseInt(v)) },
+    { key: "trad", title: () => t("fTrad"), get: () => activeTrad, set: (v) => { activeTrad = v; },
+      options: () => [{ v: "all", label: t("allTraditions") }, ...TRADITIONS.map((tr) => ({ v: tr.id, label: nameOf(tr), color: tr.hex }))],
+      count: (v) => countEvents("trad", (l, e) => v === "all" || e.traditions.includes(v)) },
+    { key: "area", title: () => t("fArea"), get: () => activeArea, set: (v) => { activeArea = v; },
+      options: () => [{ v: "all", label: t("allRegions") }, { heading: t("regionsGroup") },
+        ...REGIONS.map((r) => ({ v: "r:" + r.id, label: nameOf(r) })), { heading: t("countriesGroup") },
+        ...COUNTRIES.map((c) => ({ v: "c:" + c, label: countryLabel(c) })).sort((x, y) => x.label.localeCompare(y.label, lang))],
+      count: (v) => countForArea(v) },
+    { key: "theme", title: () => t("fTheme"), get: () => activeTheme, set: (v) => { activeTheme = v; },
+      options: () => [{ v: "all", label: t("allThemes") }, ...THEMES.map((th) => ({ v: th.id, label: nameOf(th) }))],
+      count: (v) => countEvents("theme", (l, e) => v === "all" || e.themes.includes(v)) },
+  ];
+
+  const chevron = '<svg class="fbtn-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const pop = document.createElement("div");
+  pop.className = "fpop"; pop.setAttribute("role", "listbox"); pop.hidden = true;
+  document.body.appendChild(pop);
+  let openDim = null;
 
   function buildFilterControls() {
-    tradChipsEl.innerHTML =
-      `<button class="journey-chip trad-chip" data-trad="all"><span class="chip-dot" style="background:conic-gradient(${TRADITIONS.map((tr, i) => `${tr.hex} ${i / TRADITIONS.length * 100}% ${(i + 1) / TRADITIONS.length * 100}%`).join(",")})"></span><span class="chip-label">${t("allTraditions")}</span><span class="chip-count"></span></button>` +
-      TRADITIONS.map((tr) =>
-        `<button class="journey-chip trad-chip" data-trad="${tr.id}" title="${nameOf(tr)}"><span class="chip-dot" style="background:${tr.hex}"></span><span class="chip-label">${nameOf(tr)}</span><span class="chip-count"></span></button>`
-      ).join("");
-    tradChipsEl.querySelectorAll(".trad-chip").forEach((chip) => {
-      chip.addEventListener("click", () => {
-        activeTrad = chip.dataset.trad;
-        closeBottomSheet(); refresh(); zoomToVisible();
-      });
+    fbar.innerHTML = DIMS.map((d) =>
+      `<button class="fbtn" data-dim="${d.key}" aria-haspopup="listbox" aria-expanded="false"><span class="fbtn-k">${d.title()}</span><span class="fbtn-v"></span>${chevron}</button>`
+    ).join("") +
+      `<div class="seg" role="group" aria-label="${t("colorBy")}"><span class="seg-label">${t("colorBy")}</span><button class="seg-btn" data-color="era">${t("colorEra")}</button><button class="seg-btn" data-color="trad">${t("colorTrad")}</button></div>` +
+      `<span class="result-count" aria-live="polite"></span>` +
+      `<button class="clear-btn" title="${t("clearFilters")}" aria-label="${t("clearFilters")}"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>`;
+    fbar.querySelectorAll(".fbtn").forEach((b) => b.addEventListener("click", (ev) => { ev.stopPropagation(); openDim === b.dataset.dim ? closePop() : openPop(b); }));
+    fbar.querySelectorAll(".seg-btn").forEach((b) => b.addEventListener("click", () => { colorMode = b.dataset.color; refresh(); if (!document.getElementById("timelinePanel").classList.contains("hidden")) buildTimelinePanel(); }));
+    fbar.querySelector(".clear-btn").addEventListener("click", () => {
+      activeEra = "all"; activeTrad = "all"; activeTheme = "all"; activeArea = "all";
+      applyFilterChange();
     });
-
-    const countries = [...new Set(locations.map((l) => l.country))];
-    areaSelect.innerHTML =
-      `<option value="all">${t("allRegions")}</option>` +
-      `<optgroup label="${t("regionsGroup")}">` + REGIONS.map((r) => `<option value="r:${r.id}">${nameOf(r)}</option>`).join("") + `</optgroup>` +
-      `<optgroup label="${t("countriesGroup")}">` +
-      countries.map((c) => ({ c, label: lang === "es" ? (COUNTRY_ES[c] || c) : c }))
-        .sort((a, b) => a.label.localeCompare(b.label, lang))
-        .map(({ c, label }) => `<option value="c:${c}">${label}</option>`).join("") + `</optgroup>`;
-    themeSelect.innerHTML = `<option value="all">${t("allThemes")}</option>` +
-      THEMES.map((th) => `<option value="${th.id}">${nameOf(th)}</option>`).join("");
-    areaSelect.value = activeArea;
-    themeSelect.value = activeTheme;
-    document.getElementById("colorByLabel").textContent = t("colorBy");
-    document.querySelector('.seg-btn[data-color="era"]').textContent = t("colorEra");
-    document.querySelector('.seg-btn[data-color="trad"]').textContent = t("colorTrad");
-    document.getElementById("clearFilters").textContent = t("clearFilters");
   }
 
-  // Live counts: each option shows how many events it would leave, given the other filters
+  function openPop(btn) {
+    const d = DIMS.find((x) => x.key === btn.dataset.dim);
+    openDim = d.key;
+    fbar.querySelectorAll(".fbtn").forEach((b) => b.setAttribute("aria-expanded", String(b === btn)));
+    const cur = d.get();
+    pop.innerHTML = `<div class="fpop-title">${d.title()}</div>` + d.options().map((o) => {
+      if (o.heading) return `<div class="fpop-head">${o.heading}</div>`;
+      const n = d.count(o.v);
+      return `<button class="fopt${o.v === cur ? " sel" : ""}${n === 0 ? " empty" : ""}" role="option" aria-selected="${o.v === cur}" data-v="${o.v}">` +
+        `<span class="fopt-dot"${o.color ? ` style="background:${o.color}"` : ""}></span>` +
+        `<span class="fopt-l">${o.label}${o.sub ? `<small>${o.sub}</small>` : ""}</span><span class="fopt-n">${n}</span></button>`;
+    }).join("");
+    pop.querySelectorAll(".fopt").forEach((o) => o.addEventListener("click", () => { d.set(o.dataset.v); closePop(); applyFilterChange(); }));
+    pop.hidden = false;
+    if (window.innerWidth >= 768) {
+      const r = btn.getBoundingClientRect();
+      pop.classList.remove("as-sheet");
+      pop.style.top = `${r.bottom + 6}px`;
+      pop.style.left = `${Math.min(r.left, window.innerWidth - 300)}px`;
+    } else {
+      pop.classList.add("as-sheet");
+      pop.style.top = ""; pop.style.left = "";
+    }
+    (pop.querySelector(".fopt.sel") || pop.querySelector(".fopt"))?.focus({ preventScroll: true });
+  }
+  function closePop() {
+    pop.hidden = true; openDim = null;
+    fbar.querySelectorAll(".fbtn").forEach((b) => b.setAttribute("aria-expanded", "false"));
+  }
+  document.addEventListener("click", (ev) => { if (!pop.hidden && !pop.contains(ev.target)) closePop(); });
+  document.addEventListener("keydown", (ev) => { if (ev.key === "Escape" && !pop.hidden) closePop(); });
+  window.addEventListener("resize", closePop);
+
+  function applyFilterChange() {
+    closeBottomSheet();
+    refresh();
+    zoomToVisible();
+    if (!document.getElementById("timelinePanel").classList.contains("hidden")) buildTimelinePanel();
+  }
+
+  // Button labels show the current choice; active filters turn gold
   function updateFilterUI() {
-    tradChipsEl.querySelectorAll(".trad-chip").forEach((chip) => {
-      const id = chip.dataset.trad;
-      chip.classList.toggle("active", id === activeTrad);
-      const n = countEvents("trad", (loc, e) => id === "all" || e.traditions.includes(id));
-      chip.querySelector(".chip-count").textContent = n;
-      chip.classList.toggle("is-empty", n === 0);
+    DIMS.forEach((d) => {
+      const b = fbar.querySelector(`.fbtn[data-dim="${d.key}"]`);
+      const v = d.get();
+      const opt = d.options().find((o) => o.v === v);
+      const active = v !== "all";
+      b.classList.toggle("active", active);
+      b.querySelector(".fbtn-v").innerHTML = active
+        ? `${opt && opt.color ? `<i class="fbtn-dot" style="background:${opt.color}"></i>` : ""}${opt ? opt.label : v}`
+        : t("allShort");
     });
-    document.querySelectorAll(".journey-chip[data-era]").forEach((chip) => {
-      const v = chip.dataset.era;
-      chip.classList.toggle("active", v === String(activeEra));
-      let badge = chip.querySelector(".chip-count");
-      if (!badge) { badge = document.createElement("span"); badge.className = "chip-count"; chip.appendChild(badge); }
-      const n = countEvents("era", (loc, e) => v === "all" || e.era === parseInt(v));
-      badge.textContent = n;
-      chip.classList.toggle("is-empty", n === 0);
-    });
-    [...areaSelect.options].forEach((o) => {
-      if (!o.dataset.base) o.dataset.base = o.textContent;
-      const v = o.value;
-      const saved = activeArea; activeArea = v;
-      const n = countEvents(null, () => true);
-      activeArea = saved;
-      o.textContent = `${o.dataset.base} (${n})`;
-    });
-    [...themeSelect.options].forEach((o) => {
-      if (!o.dataset.base) o.dataset.base = o.textContent;
-      const v = o.value;
-      const n = countEvents("theme", (loc, e) => v === "all" || e.themes.includes(v));
-      o.textContent = `${o.dataset.base} (${n})`;
-    });
-    areaSelect.parentElement.classList.toggle("active", activeArea !== "all");
-    themeSelect.parentElement.classList.toggle("active", activeTheme !== "all");
-    document.querySelectorAll(".seg-btn").forEach((b) => b.classList.toggle("active", b.dataset.color === colorMode));
+    fbar.querySelectorAll(".seg-btn").forEach((b) => b.classList.toggle("active", b.dataset.color === colorMode));
     const total = countEvents(null, () => true);
-    document.getElementById("resultCount").textContent = `${total} ${t("eventsWord")} · ${orderedStops.length} ${t("placesWord")}`;
-    document.getElementById("clearFilters").classList.toggle("hidden", !filtersActive());
+    fbar.querySelector(".result-count").textContent = `${total} ${t("eventsWord")} · ${orderedStops.length} ${t("placesWord")}`;
+    fbar.querySelector(".clear-btn").hidden = !filtersActive();
     document.body.classList.toggle("color-trad", colorMode === "trad");
-    const nActive = [activeTrad, activeTheme, activeArea].filter((v) => v !== "all").length;
-    document.getElementById("filtersActiveCount").textContent = nActive || "";
-    document.getElementById("filtersBtnText").textContent = t("filtersLabel");
-    btnFilters.classList.toggle("active", nActive > 0);
   }
-
-  areaSelect.addEventListener("change", () => { activeArea = areaSelect.value; closeBottomSheet(); refresh(); zoomToVisible(); });
-  themeSelect.addEventListener("change", () => { activeTheme = themeSelect.value; closeBottomSheet(); refresh(); zoomToVisible(); });
-  document.querySelectorAll(".seg-btn").forEach((b) => b.addEventListener("click", () => { colorMode = b.dataset.color; refresh(); }));
-  document.getElementById("clearFilters").addEventListener("click", () => {
-    activeEra = "all"; activeTrad = "all"; activeTheme = "all"; activeArea = "all";
-    areaSelect.value = "all"; themeSelect.value = "all";
-    closeBottomSheet(); refresh(); zoomToVisible();
-  });
-  // Phones: tradition/region/theme rows fold behind a "Filters" button
-  const btnFilters = document.getElementById("btnFilters");
-  btnFilters.addEventListener("click", () => {
-    const open = document.body.classList.toggle("filters-open");
-    btnFilters.setAttribute("aria-expanded", String(open));
-  });
   buildFilterControls();
 
   function zoomToVisible() {
@@ -687,7 +681,7 @@ async function initMap() {
       return `
         <div class="timeline-item" data-location="${loc.id}">
           <div class="timeline-dot" style="background:${dotColor}"></div>
-          <div class="timeline-year" style="color:${dotColor}">${e.year}</div>
+          <div class="timeline-year" style="color:${dotColor}">${e.year}<span class="tl-num" title="${t("stopOnMap")}">${stopNumbers[loc.id]}</span></div>
           <div class="timeline-title">${localized(e, "title")}</div>
           <div class="timeline-location">${placeName} · ${e.traditions.map((id) => `<span class="mini-dot" style="background:${TRADITION_INDEX[id].hex}" title="${nameOf(TRADITION_INDEX[id])}"></span>`).join("")}</div>
         </div>

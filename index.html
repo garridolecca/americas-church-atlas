@@ -61,24 +61,7 @@
         </div>
       </calcite-navigation>
       <div id="eraBar" class="journey-bar">
-        <div class="journey-chips">
-          <button class="journey-chip filters-toggle" id="btnFilters" aria-expanded="false" aria-controls="tradChips"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 5h18M6 12h12M10 19h4"/></svg><span class="chip-label" id="filtersBtnText">Filters</span><span class="chip-count" id="filtersActiveCount"></span></button>
-          <button class="journey-chip active" data-era="all"><span class="chip-dot" style="background:#888"></span><span class="chip-label" data-i18n="chipAll">All Eras</span></button>
-          <button class="journey-chip" data-era="1"><span class="chip-dot" style="background:#C9A84C"></span><span class="chip-label">Conquest</span></button>
-          <button class="journey-chip" data-era="2"><span class="chip-dot" style="background:#8A4F7D"></span><span class="chip-label">Colonial</span></button>
-          <button class="journey-chip" data-era="3"><span class="chip-dot" style="background:#568259"></span><span class="chip-label">Awakening</span></button>
-          <button class="journey-chip" data-era="4"><span class="chip-dot" style="background:#A34B4B"></span><span class="chip-label">Independence</span></button>
-          <button class="journey-chip" data-era="5"><span class="chip-dot" style="background:#3E6E9E"></span><span class="chip-label">Pentecost</span></button>
-          <button class="journey-chip" data-era="6"><span class="chip-dot" style="background:#D07A2E"></span><span class="chip-label">Today</span></button>
-        </div>
-        <div class="journey-chips trad-chips" id="tradChips" role="group" aria-label="Traditions"></div>
-        <div class="filter-row">
-          <label class="select-chip" title="Region / country"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><select id="areaSelect" aria-label="Region or country"></select></label>
-          <label class="select-chip" title="Theme"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg><select id="themeSelect" aria-label="Theme"></select></label>
-          <div class="seg" role="group" aria-label="Color markers by"><span class="seg-label" id="colorByLabel">Color</span><button class="seg-btn active" data-color="era">Era</button><button class="seg-btn" data-color="trad">Tradition</button></div>
-          <span class="result-count" id="resultCount" aria-live="polite"></span>
-          <button class="clear-btn hidden" id="clearFilters">Clear filters</button>
-        </div>
+        <div class="fbar" id="fbar" role="toolbar" aria-label="Filters"></div>
       </div>
       <div id="viewDiv"></div>
       <div id="infoOverlay" class="modal-overlay hidden">
