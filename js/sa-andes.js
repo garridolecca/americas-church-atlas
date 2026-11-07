@@ -1,0 +1,151 @@
+// ============================================================
+// Chile, Bolivia, Peru and Ecuador: more evangelical milestones.
+// Merged into the main dataset by data.js. Every event carries its sources.
+// ============================================================
+import { w } from "./sources.js";
+
+function ev(era, year, figure, title, description, titleEs, descriptionEs, sources) {
+  return { era, year, figure, title, description, es: { title: titleEs, description: descriptionEs }, sources };
+}
+
+const MEMORIA_EV = w("Memoria Chilena (Biblioteca Nacional de Chile), \"Las iglesias evangélicas en Chile (1819–2002)\"", "https://www.memoriachilena.gob.cl/602/w3-article-712.html");
+
+export const AN_EVENTS = {
+  "valparaiso": [
+    ev(4, 1825, null, "The Dissidents' Cemetery",
+      "Because Catholic cemeteries refused to bury Protestants, the British and other foreign residents of Valparaíso open their own Cementerio de Disidentes on the Cerro Panteón in 1825. For about fifty years it receives only non-Catholics — merchants, sailors, missionaries and immigrant families — until an 1871 decree allows separate sections for dissenters in public cemeteries. Declared a National Monument together with the neighbouring cemeteries, it is a record of the Protestant communities that made Valparaíso Chile's first gateway for the evangelical faith.",
+      "El Cementerio de Disidentes",
+      "Como los cementerios católicos se negaban a sepultar a protestantes, los británicos y otros extranjeros residentes en Valparaíso abren en 1825 su propio Cementerio de Disidentes en el cerro Panteón. Durante unos cincuenta años recibe solo a no católicos — comerciantes, marinos, misioneros y familias inmigrantes —, hasta que un decreto de 1871 permite secciones separadas para disidentes en los cementerios públicos. Declarado Monumento Nacional junto con los cementerios vecinos, es un registro de las comunidades protestantes que hicieron de Valparaíso la primera puerta de entrada de la fe evangélica en Chile.",
+      [w("Memoria Chilena, \"Los cementerios en el siglo XIX\"", "https://www.memoriachilena.gob.cl/602/w3-article-3561.html"),
+       w("Biblioteca del Congreso Nacional de Chile, decree declaring the Valparaíso cemeteries historic monuments", "https://www.bcn.cl/leychile/navegar?idNorma=245474"),
+       w("The Hispanic Anglosphere (AHRC project), \"Key Locations: Valparaíso's Dissidents Cemetery\"", "https://hispanic-anglosphere.com/public-history/online-exhibitions/key-locations-valparaisos-dissidents-cemetery/"),
+       w("Wikipedia, \"Dissidents Cemetery\"", "https://en.wikipedia.org/wiki/Dissidents_Cemetery")]),
+  ],
+  "santiago": [
+    ev(6, 1968, "Christian Lalive d'Epinay", "'Haven of the Masses'",
+      "In 1968 the Swiss sociologist Christian Lalive d'Epinay publishes El refugio de las masas (Haven of the Masses, 1969), the first major study of Chilean Pentecostalism. He argues that Pentecostal congregations offer rural migrants in the cities a 'refuge' that recreates the paternal community of the hacienda, and that they withdraw from politics. The book launched the academic study of Latin American Pentecostalism; later researchers have challenged many of its conclusions as Pentecostals grew and entered public life.",
+      "«El refugio de las masas»",
+      "En 1968 el sociólogo suizo Christian Lalive d'Epinay publica El refugio de las masas, el primer gran estudio del pentecostalismo chileno. Sostiene que las congregaciones pentecostales ofrecen a los migrantes rurales en la ciudad un «refugio» que recrea la comunidad paternal de la hacienda, y que se apartan de la política. El libro inauguró el estudio académico del pentecostalismo latinoamericano; investigadores posteriores han cuestionado muchas de sus conclusiones a medida que los pentecostales crecían y entraban en la vida pública.",
+      [w("Miguel Ángel Mansilla, \"El refugio de las masas 1968–2008\" (PROLADES, PDF)", "https://www.ranchocolibri.net/prolades/cra/regions/sam/chi/mansilla.pdf"),
+       w("Cambridge University Press, Comparative Studies in Society and History, \"Protestantism and Politics in Chile and Brazil\"", "https://www.cambridge.org/core/journals/comparative-studies-in-society-and-history/article/protestantism-and-politics-in-chile-and-brazil/2B9187F042ED381599D76E5B4BB3F97B"),
+       w("Universidad Arturo Prat, \"Propuestas teóricas para la comprensión\" of Chilean Pentecostalism (2021, PDF)", "https://www.unap.cl/prontus_unap/site/docs/20220128/20220128005249/2021_vol1_n1_3_propuestas_teoricas_para_la_comprension.pdf")]),
+    ev(6, 2008, "Michelle Bachelet", "A National Holiday for Evangelicals",
+      "Law 20.299, promulgated in October 2008 under President Michelle Bachelet, makes 31 October — Reformation Day — a public holiday, the 'National Day of the Evangelical and Protestant Churches'. It is a symbolic recognition of a community that the 2002 census counted at about 15% of Chileans, most of them Pentecostal, a century after the revival of 1909. The day is marked with services across the country alongside the evangelical Te Deum, and has been debated ever since as part of Chile's calendar of holidays.",
+      "Un feriado nacional para los evangélicos",
+      "La Ley 20.299, promulgada en octubre de 2008 bajo la presidenta Michelle Bachelet, hace del 31 de octubre — Día de la Reforma — un feriado nacional, el «Día Nacional de las Iglesias Evangélicas y Protestantes». Es un reconocimiento simbólico a una comunidad que el censo de 2002 cifraba en cerca del 15 % de los chilenos, en su mayoría pentecostales, un siglo después del avivamiento de 1909. La fecha se celebra con cultos en todo el país junto al Te Deum evangélico, y se discute desde entonces como parte del calendario de feriados de Chile.",
+      [w("Pauta, \"Este martes se conmemora el Día de las Iglesias Evangélicas y Protestantes\" (2023)", "https://www.pauta.cl/dato-en-pauta/2023/10/31/este-martes-se-conmemora-el-dia-de-las-iglesias-evangelicas-y-protestantes.html"),
+       w("El Desconcierto, \"31 de octubre: Día de las Iglesias Evangélicas y Protestantes de Chile\" (2025)", "https://eldesconcierto.cl/2025/10/31/31-de-octubre-dia-de-las-iglesias-evangelicas-y-protestantes-de-chile"),
+       MEMORIA_EV]),
+  ],
+  "la-paz": [
+    ev(5, 1924, "Juan Ayllón", "The Aymara Quakers",
+      "Friends missionaries from the United States begin work in 1919 around Sorata, in the northern Andes of Bolivia. In 1924 Juan and Tomasa Ayllón, sent by the Central American Friends Church, arrive in La Paz, and between 1924 and 1930 the first official congregations of the National Evangelical Friends Church (INELA) are planted among the Aymara of the Altiplano. Led by Aymara pastors after the missionaries leave in 1975, it grows to some two hundred congregations — making Bolivia home to the third-largest Quaker community in the world.",
+      "Los cuáqueros aymaras",
+      "Misioneros Amigos (cuáqueros) de Estados Unidos comienzan a trabajar en 1919 en torno a Sorata, en los Andes del norte de Bolivia. En 1924 Juan y Tomasa Ayllón, enviados por la Iglesia de los Amigos de Centroamérica, llegan a La Paz, y entre 1924 y 1930 se fundan las primeras congregaciones oficiales de la Iglesia Nacional Evangélica Los Amigos (INELA) entre los aymaras del Altiplano. Dirigida por pastores aymaras tras la salida de los misioneros en 1975, llega a unas doscientas congregaciones, lo que hace de Bolivia la sede de la tercera comunidad cuáquera más grande del mundo.",
+      [w("Friends Journal, \"Quakers in Bolivia: The Early History of Bolivian Friends\"", "https://www.friendsjournal.org/book/quakers-in-bolivia-the-early-history-of-bolivian-friends/"),
+       w("Friends Journal, \"Faith, Legacy, and Missionary Expansion\"", "https://www.friendsjournal.org/faith-legacy-and-missionary-expansion/"),
+       w("Wikipedia, \"Quakers in Latin America\"", "https://en.wikipedia.org/wiki/Quakers_in_Latin_America")]),
+    ev(6, 2009, "Evo Morales", "A State 'Independent of Religion'",
+      "Bolivia's new Constitution, approved by referendum and promulgated by President Evo Morales in February 2009, declares in Article 4 that 'the State respects and guarantees freedom of religion and of spiritual beliefs… The State is independent of religion.' It ends the official status the Catholic Church had held under previous constitutions, which recognized and supported it while tolerating other cults. Evangelical churches, long seeking equal treatment, gained a secular framework — and Morales later courted their support, defending the secular state at evangelical gatherings.",
+      "Un Estado «independiente de la religión»",
+      "La nueva Constitución de Bolivia, aprobada por referéndum y promulgada por el presidente Evo Morales en febrero de 2009, declara en su artículo 4 que «el Estado respeta y garantiza la libertad de religión y de creencias espirituales… El Estado es independiente de la religión». Termina así el estatus oficial que la Iglesia católica tenía en las constituciones anteriores, que la reconocían y sostenían mientras toleraban otros cultos. Las iglesias evangélicas, que buscaban trato igual desde hacía mucho, obtuvieron un marco laico, y Morales cortejó después su apoyo defendiendo el Estado laico en encuentros evangélicos.",
+      [w("Constitute Project, Constitution of Bolivia (2009)", "https://www.constituteproject.org/constitution/Bolivia_2009?lang=es"),
+       w("Procuraduría General del Estado de Bolivia, Constitución Política del Estado (PDF)", "https://procuraduria.gob.bo/ckfinder/userfiles/files/PGE-WEB/_comunicacion/01_Constituci%C3%B3n_Pol%C3%ADtica_del%20Estado.pdf"),
+       w("EJU TV, \"Evo sale en defensa del Estado laico pero muestra preferencia por los evangélicos\" (2014)", "https://eju.tv/2014/04/evo-sale-en-defensa-del-estado-laico-pero-muestra-preferencia-por-los-evanglicos/")]),
+    ev(6, 2019, "Jeanine Áñez", "'The Bible Returns to the Palace'",
+      "In Bolivia's October 2019 election the Korean-born evangelical pastor and physician Chi Hyun Chung, running for the Christian Democratic Party, wins about 8.8% of the vote. Weeks later, after the disputed count and Evo Morales's resignation, the Santa Cruz leader Luis Fernando Camacho carries a Bible into the Palacio Quemado, and on 12 November interim president Jeanine Áñez enters it holding a large Bible, declaring that 'the Bible returns to the Palace'. The Catholic archbishop of Sucre condemned the manipulation of faith; the scenes became a symbol of religion in Latin America's polarized politics.",
+      "«La Biblia vuelve a Palacio»",
+      "En las elecciones bolivianas de octubre de 2019 el pastor evangélico y médico nacido en Corea Chi Hyun Chung, candidato del Partido Demócrata Cristiano, obtiene cerca del 8,8 % de los votos. Semanas después, tras el cómputo disputado y la renuncia de Evo Morales, el dirigente cruceño Luis Fernando Camacho entra con una Biblia al Palacio Quemado, y el 12 de noviembre la presidenta interina Jeanine Áñez ingresa sosteniendo una gran Biblia y declara que «la Biblia vuelve a Palacio». El arzobispo católico de Sucre condenó la manipulación de la fe; las escenas se volvieron símbolo de la religión en la política polarizada de América Latina.",
+      [w("Swissinfo (EFE), \"La Biblia ingresa a Palacio: el poder político cristiano saca cabeza en Bolivia\" (2019)", "https://www.swissinfo.ch/spa/la-biblia-ingresa-a-palacio-el-poder-pol%c3%adtico-cristiano-saca-cabeza-en-bolivia/45366058"),
+       w("Expansión, \"La Biblia vuelve a Palacio: la religión se cuela en la disputa en Bolivia\" (2019)", "https://expansion.mx/mundo/2019/11/15/la-biblia-vuelve-a-palacio-la-religion-se-cuela-en-la-disputa-en-bolivia"),
+       w("Los Tiempos, \"Chi Hyun Chung: ningún partido ha logrado subir como PDC\" (2019)", "https://www.lostiempos.com/actualidad/pais/20191020/chi-hyun-chung-ningun-partido-ha-logrado-subir-como-pdc-ahora-somos-alguien"),
+       w("Universidad del Rosario, thesis \"¿El regreso de la Biblia a Palacio? La crisis política de Bolivia en 2019 desde una perspectiva religiosa\"", "https://research-hub.urosario.edu.co/vivo11/display/n_e80171f0-26e9-4511-88f6-61b50cf0e945")]),
+  ],
+  "lima": [
+    ev(6, 1979, null, "CLADE II: The Gospel in the Latin American Context",
+      "From 30 October to 9 November 1979, on the outskirts of Lima, the Latin American Theological Fraternity convenes the Second Latin American Congress on Evangelization (CLADE II): 266 leaders from 22 countries and some forty denominations. Unlike CLADE I, it is planned and largely financed from within Latin America, with foreign missionaries limited to a tenth of participants. Its final letter calls for an evangelization rooted in the Latin American context and attentive to the 'drama and tragedy' of poverty, violence and political upheaval — a landmark of 'integral mission'.",
+      "CLADE II: el evangelio en el contexto latinoamericano",
+      "Del 30 de octubre al 9 de noviembre de 1979, en las afueras de Lima, la Fraternidad Teológica Latinoamericana convoca el Segundo Congreso Latinoamericano de Evangelización (CLADE II): 266 líderes de 22 países y unas cuarenta denominaciones. A diferencia de CLADE I, se planifica y financia en gran parte desde América Latina, con los misioneros extranjeros limitados a una décima parte de los participantes. Su carta final llama a una evangelización arraigada en el contexto latinoamericano y atenta al «drama y la tragedia» de la pobreza, la violencia y la convulsión política: un hito de la «misión integral».",
+      [w("Christianity Today, \"Latin Evangelicals Chart Their Own Course\" (1979)", "https://www.christianitytoday.com/1979/12/latin-evangelicals-chart-their-own-course"),
+       w("Christianity Today, \"Being God's Church in Latin America\" (1980)", "https://www.christianitytoday.com/1980/03/current-religious-thought-being-gods-church-in-latin")]),
+  ],
+  "quito": [
+    ev(6, 1959, "Clarence Jones", "HCJB-TV, 'The Window of the Andes'",
+      "After an experimental broadcast on 28 July 1959, HCJB — the evangelical radio station founded in Quito in 1931 — begins regular television transmissions on 10 August 1959 from the grounds of La Voz de los Andes. Known as 'La Ventana de los Andes' (The Window of the Andes), it is the first television station on the air in Ecuador, launched before national broadcasting rules existed. Together with its shortwave radio and medical work, it made the Quito mission one of the most influential evangelical media centres in Latin America.",
+      "HCJB-TV, «la Ventana de los Andes»",
+      "Tras una emisión experimental el 28 de julio de 1959, HCJB — la emisora de radio evangélica fundada en Quito en 1931 — comienza transmisiones regulares de televisión el 10 de agosto de 1959 desde los terrenos de La Voz de los Andes. Conocida como «La Ventana de los Andes», es la primera estación de televisión al aire en el Ecuador, lanzada antes de que existieran normas nacionales de radiodifusión. Junto con su radio de onda corta y su obra médica, hizo de la misión de Quito uno de los centros mediáticos evangélicos más influyentes de América Latina.",
+      [w("Reach Beyond (HCJB), \"1959: HCJB-TV, the Window of the Andes\"", "https://reachbeyond.org/our-history/1959-hcjb-tv-the-window-of-the-andes"),
+       w("Razón y Palabra, article on the origins of television in Ecuador (PDF)", "https://revistarazonypalabra.org/index.php/ryp/article/download/8/pdf/93"),
+       w("Wikipedia, \"HCJB-TV\"", "https://en.wikipedia.org/wiki/HCJB-TV")]),
+    ev(6, 1992, null, "CLADE III and IV in Quito",
+      "In 1992, the year of the fifth centenary of 1492, the Latin American Theological Fraternity holds its Third Latin American Congress on Evangelization (CLADE III) in Quito: almost 800 delegates from 26 countries, some 150 of them Indigenous believers, gather under the theme 'All the Gospel for all peoples from Latin America', with reconciliation as a major concern. In September 2000 CLADE IV returns to Quito with about 1,300 participants and the theme 'Word, Spirit and mission', bridging historic evangelicals and Pentecostals.",
+      "CLADE III y IV en Quito",
+      "En 1992, año del quinto centenario de 1492, la Fraternidad Teológica Latinoamericana celebra en Quito su Tercer Congreso Latinoamericano de Evangelización (CLADE III): casi 800 delegados de 26 países, unos 150 de ellos creyentes indígenas, se reúnen bajo el lema «Todo el evangelio para todos los pueblos desde América Latina», con la reconciliación como gran preocupación. En septiembre de 2000 CLADE IV vuelve a Quito con unos 1.300 participantes y el tema «Palabra, Espíritu y misión», tendiendo puentes entre evangélicos históricos y pentecostales.",
+      [w("Christianity Today, \"Latin America: Evangelical Gathering Stresses Reconciliation\" (1992)", "https://www.christianitytoday.com/1992/10/latin-america-evangelical-gathering-stresses-reconciliation"),
+       w("Christianity Today, \"Ecuador: Word and Spirit Together\" (2000)", "https://www.christianitytoday.com/2000/10/ecuador-word-and-spirit-together"),
+       w("Ultimato, on the CLADE congresses (PDF)", "https://www.ultimato.com.br//file/capitulos/Novo-rosto-leia.pdf")]),
+  ],
+};
+
+export const AN_LOCATIONS = [
+  { id: "osorno", name: "Osorno", modernName: "Osorno, Los Lagos, Chile", region: "Southern Chile", lat: -40.5739, lng: -73.1336, significance: "minor", zone: "south",
+    es: { name: "Osorno", modernName: "Osorno, Los Lagos, Chile", region: "Sur de Chile" },
+    events: [
+      ev(4, 1863, null, "German Lutherans in Southern Chile",
+        "Under the colonization law of 1845, German immigrants settle around Valdivia from the late 1840s and, from 1852, on the shores of Lake Llanquihue under the agent Vicente Pérez Rosales. Many are Lutherans, and in 1863 the first Lutheran congregations in Chile are organized in Osorno and Puerto Montt, despite opposition in Valdivia. Their German-language churches and schools shaped the south for generations and are the roots of Chile's Lutheran churches, which divided in 1975 over Bishop Helmut Frenz's defence of human rights.",
+        "Luteranos alemanes en el sur de Chile",
+        "Al amparo de la ley de colonización de 1845, inmigrantes alemanes se establecen en torno a Valdivia desde fines de la década de 1840 y, desde 1852, en las riberas del lago Llanquihue bajo el agente Vicente Pérez Rosales. Muchos son luteranos, y en 1863 se organizan en Osorno y Puerto Montt las primeras congregaciones luteranas de Chile, pese a la oposición en Valdivia. Sus iglesias y escuelas de habla alemana marcaron el sur durante generaciones y son la raíz de las iglesias luteranas chilenas, que se dividieron en 1975 por la defensa de los derechos humanos del obispo Helmut Frenz.",
+        [w("Memoria Chilena, \"Colonización alemana en Valdivia, Osorno y Llanquihue (1823–1910)\"", "https://www.memoriachilena.gob.cl/602/w3-article-676.html"),
+         w("Revista de Historia (Universidad de Concepción), article on German colonization in southern Chile (PDF)", "https://revistas.udec.cl/index.php/historia/article/download/7131/6598/15574"),
+         w("Dialnet, study of German immigrant communities in southern Chile (PDF)", "https://dialnet.unirioja.es/descarga/articulo/9595142.pdf")]),
+    ] },
+  { id: "temuco", name: "Temuco", modernName: "Temuco, Araucanía, Chile", region: "Araucanía", lat: -38.7359, lng: -72.5904, significance: "minor", zone: "south",
+    es: { name: "Temuco", modernName: "Temuco, Araucanía, Chile", region: "Araucanía" },
+    events: [
+      ev(5, 1895, "Charles Sadleir", "The Anglican Araucanian Mission",
+        "In 1895, as the Chilean state completes its occupation of Mapuche lands, the first four missionaries of the South American Missionary Society arrive in the Araucanía, among them the Canadian Charles A. Sadleir. By 1896 they have mission centres at Quino, Quepe and Cholchol, with schools that become the heart of the 'Araucanian Mission'. Sadleir works among the Mapuche for some twenty years; historians link the mission's schools to the rise of a new generation of Mapuche leaders after the reductions.",
+        "La Misión Araucana anglicana",
+        "En 1895, mientras el Estado chileno completa la ocupación de las tierras mapuches, llegan a la Araucanía los primeros cuatro misioneros de la Sociedad Misionera Sudamericana, entre ellos el canadiense Charles A. Sadleir. Hacia 1896 tienen centros misionales en Quino, Quepe y Cholchol, con escuelas que se vuelven el corazón de la «Misión Araucana». Sadleir trabaja unos veinte años entre los mapuches; los historiadores vinculan las escuelas de la misión con el surgimiento de una nueva generación de líderes mapuches tras las reducciones.",
+        [w("Estudos Ibero-Americanos (PUCRS), \"The Anglican influence on the Mapuche (1895–1960): Charles Sadleir at the dawn of Mapuche post-reductional leadership\" (PDF)", "https://revistaseletronicas.pucrs.br/iberoamericana/article/download/22806/14715/101368"),
+         w("Memoria Chilena, \"Iglesia anglicana\"", "https://www.memoriachilena.gob.cl/602/w3-article-95447.html"),
+         w("Memoria Chilena, \"Iglesia de la Ascensión: misión Anglicana, Chol Chol, 1965\"", "https://www.memoriachilena.gob.cl/602/w3-article-81780.html")]),
+      ev(5, 1908, "William MacDonald", "The Baptist Convention of Chile",
+        "The Scottish missionary William MacDonald, who came to Chile in the late 1880s to work among settlers in the south and became a Baptist, gathers congregations in the Araucanía. In 1908 six churches meet at Cajón, near Temuco, to found the Evangelical Baptist Convention of Chile — the birth of the Chilean Baptist church. Southern Baptist missionaries join from 1917, and Temuco becomes a Baptist centre; the convention, renamed in 2001 the Union of Evangelical Baptist Churches of Chile, remains one of the country's main historic Protestant bodies.",
+        "La Convención Bautista de Chile",
+        "El misionero escocés William MacDonald, llegado a Chile a fines de la década de 1880 para trabajar entre colonos del sur y convertido al bautismo, reúne congregaciones en la Araucanía. En 1908 seis iglesias se reúnen en Cajón, cerca de Temuco, para fundar la Convención Evangélica Bautista de Chile: el nacimiento de la iglesia bautista chilena. Desde 1917 se suman misioneros bautistas del Sur de Estados Unidos, y Temuco se vuelve un centro bautista; la convención, renombrada en 2001 Unión de Iglesias Evangélicas Bautistas de Chile, sigue siendo uno de los principales cuerpos protestantes históricos del país.",
+        [w("International Mission Board, \"William MacDonald\" missionary profile", "https://www.imb.org/175/missionary-profiles/william-macdonald/"),
+         w("Wikipedia, \"Union of Evangelical Baptist Churches of Chile\"", "https://en.wikipedia.org/wiki/Union_of_Evangelical_Baptist_Churches_of_Chile"),
+         MEMORIA_EV]),
+    ] },
+  { id: "santa-cruz", name: "Santa Cruz de la Sierra", modernName: "Santa Cruz de la Sierra, Bolivia", region: "Bolivian lowlands", lat: -17.7833, lng: -63.1821, significance: "minor", zone: "south",
+    es: { name: "Santa Cruz de la Sierra", modernName: "Santa Cruz de la Sierra, Bolivia", region: "Tierras bajas de Bolivia" },
+    events: [
+      ev(6, 1954, null, "The Mennonite Colonies of Bolivia",
+        "In 1954 families from the Fernheim colony in Paraguay found Tres Palmas near Santa Cruz, the first Mennonite colony in Bolivia. From 1967 thousands of conservative Old Colony Mennonites arrive from northern Mexico — founding Riva Palacio, named after the town they left — and from 1968 from Canada. Living in horse-and-buggy communities that speak Low German, they turn the eastern lowlands into farmland; today they number in the tens of thousands across some seventy colonies, central to Bolivia's agriculture and to debates over deforestation and Indigenous land.",
+        "Las colonias menonitas de Bolivia",
+        "En 1954 familias de la colonia Fernheim de Paraguay fundan Tres Palmas, cerca de Santa Cruz, la primera colonia menonita de Bolivia. Desde 1967 llegan miles de menonitas conservadores de la «Vieja Colonia» desde el norte de México — que fundan Riva Palacio, con el nombre del municipio que dejaban — y desde 1968 desde Canadá. Viviendo en comunidades de carros de caballos que hablan bajo alemán, convierten las tierras bajas del oriente en campos de cultivo; hoy suman decenas de miles en unas setenta colonias, centrales para la agricultura boliviana y para los debates sobre la deforestación y las tierras indígenas.",
+        [w("Wikipedia, \"Mennonites in Bolivia\"", "https://en.wikipedia.org/wiki/Mennonites_in_Bolivia"),
+         w("Journal of Mennonite Studies (University of Winnipeg), article on Mennonite colonies in Bolivia (PDF)", "https://jms.uwinnipeg.ca/index.php/jms/article/download/1738/1685/3253"),
+         w("EJU TV, \"Menonitas, la cada vez más poderosa tercera minoría étnica boliviana\"", "https://eju.tv/?p=4940547")]),
+    ] },
+  { id: "tiwaeno", name: "Tiwaeno", modernName: "Tiwaeno, Pastaza, Ecuador", region: "Ecuadorian Amazon", lat: -1.17, lng: -77.05, significance: "minor", zone: "south",
+    es: { name: "Tiwaeno", modernName: "Tiwaeno, Pastaza, Ecuador", region: "Amazonía ecuatoriana" },
+    events: [
+      ev(6, 1958, "Rachel Saint", "Rachel Saint and Dayuma among the Waorani",
+        "Dayuma, a Waorani woman who had fled her people, began teaching her language in 1955 to Rachel Saint, sister of the pilot Nate Saint killed on the Curaray in 1956. In September 1958 Dayuma returns home, and in October Rachel Saint and Elisabeth Elliot, with her small daughter, go to live at Tiwaeno among the very group that had killed their family members. Elliot leaves in 1961; Saint stays for the rest of her life. Dayuma becomes the first Waorani evangelist and helps translate the New Testament — a story both celebrated and criticized for the mission's role in the Waorani's resettlement.",
+        "Rachel Saint y Dayuma entre los waorani",
+        "Dayuma, una mujer waorani que había huido de su pueblo, comenzó en 1955 a enseñar su lengua a Rachel Saint, hermana del piloto Nate Saint, muerto en el Curaray en 1956. En septiembre de 1958 Dayuma vuelve a su pueblo, y en octubre Rachel Saint y Elisabeth Elliot, con su pequeña hija, van a vivir a Tiwaeno entre el mismo grupo que había matado a sus familiares. Elliot se va en 1961; Saint se queda el resto de su vida. Dayuma se convierte en la primera evangelista waorani y ayuda a traducir el Nuevo Testamento: una historia celebrada y también criticada por el papel de la misión en el reasentamiento de los waorani.",
+        [w("Wheaton College, Billy Graham Center Archives, \"Dayuma, 1931–2014\"", "https://exhibits.archives.wheaton.edu/to-carry-the-light-further/biographies/dayuma.html"),
+         w("Wheaton College, Billy Graham Center Archives, \"Rachel Saint, 1914–1994\"", "https://exhibits.archives.wheaton.edu/to-carry-the-light-further/biographies/rachel-saint.html"),
+         w("Christian Today, \"First Christian convert in tribe that killed Jim Elliot and four other missionaries dies\" (2014)", "https://www.christiantoday.com/news/first-christian-believer-of-the-tribe-that-killed-jim-elliot-and-four-other-missionaries-dies")]),
+    ] },
+];
+
+export const AN_FIGURES = [
+  { id: "rsaint", name: "Rachel Saint", years: "1914–1994", role: "Missionary and Bible translator among the Waorani",
+    bio: "Sister of the pilot Nate Saint; lived among the Waorani of Ecuador from 1958 until her death and worked on the Wao New Testament.",
+    es: { role: "Misionera y traductora bíblica entre los waorani", bio: "Hermana del piloto Nate Saint; vivió entre los waorani del Ecuador desde 1958 hasta su muerte y trabajó en el Nuevo Testamento en wao." } },
+  { id: "dayuma", name: "Dayuma", years: "1931–2014", role: "First Waorani Christian and evangelist",
+    bio: "Waorani woman who taught Rachel Saint her language, brought the missionaries to her people in 1958 and helped translate the Scriptures.",
+    es: { role: "Primera cristiana y evangelista waorani", bio: "Mujer waorani que enseñó su lengua a Rachel Saint, llevó a las misioneras a su pueblo en 1958 y ayudó a traducir las Escrituras." } },
+];

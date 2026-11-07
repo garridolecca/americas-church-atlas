@@ -122,4 +122,9 @@ export const TAGS = {
   "buenos-aires|1982": ["E", ""], "buenos-aires|2010": ["EC", ""], "buenos-aires|2024": ["E", "lib"], "montevideo|1845": ["O", ""],
   "chaco|1935": ["O", "mis ind"], "esperanza|1856": ["RO", ""], "rosario|1875": ["M", "edu"], "embarcacion|1914": ["O", "mis ind"],
   "asuncion|1920": ["O", "edu"],
+  // Chile, Bolivia, Peru, Ecuador (sa-andes.js)
+  "valparaiso|1825": ["O", "lib"], "santiago|1968": ["P", "edu"], "santiago|2008": ["EP", "lib"], "la-paz|1924": ["O", "mis ind"],
+  "la-paz|2009": ["EC", "lib"], "la-paz|2019": ["EC", ""], "lima|1979": ["E", "mis"], "quito|1959": ["E", "mis"],
+  "quito|1992": ["EP", "mis ind"], "osorno|1863": ["O", ""], "temuco|1895": ["O", "mis ind edu"], "temuco|1908": ["B", ""],
+  "santa-cruz|1954": ["O", ""], "tiwaeno|1958": ["E", "mis ind"],
 };
