@@ -4,6 +4,7 @@ import { LATAM_EVENTS, LATAM_LOCATIONS, LATAM_FIGURES } from "./latam.js";
 import { PRD_EVENTS, PRD_LOCATIONS, PRD_FIGURES } from "./peru-rd.js";
 import { SA_EVENTS, SA_LOCATIONS, SA_FIGURES } from "./southamerica.js";
 import { BR_EVENTS, BR_LOCATIONS, BR_FIGURES } from "./sa-brazil.js";
+import { PL_EVENTS, PL_LOCATIONS, PL_FIGURES } from "./sa-plata.js";
 import { EVENT_IMAGES } from "./images.js";
 import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
@@ -872,6 +873,10 @@ figures.push(...SA_FIGURES);
 locations.push(...BR_LOCATIONS);
 locations.forEach((loc) => { if (BR_EVENTS[loc.id]) loc.events.push(...BR_EVENTS[loc.id]); });
 figures.push(...BR_FIGURES);
+// The River Plate: Argentina, Uruguay, Paraguay (sa-plata.js).
+locations.push(...PL_LOCATIONS);
+locations.forEach((loc) => { if (PL_EVENTS[loc.id]) loc.events.push(...PL_EVENTS[loc.id]); });
+figures.push(...PL_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));

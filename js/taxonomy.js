@@ -116,4 +116,10 @@ export const TAGS = {
   "rio|1980": ["P", ""], "sao-paulo|1987": ["EP", "mis"], "sao-paulo|1989": ["P", ""], "aparecida|1995": ["PC", ""],
   "belo-horizonte|1998": ["BP", "rev"], "aparecida|2007": ["C", "mis"], "brasilia|2010": ["P", ""], "belem|2011": ["P", ""],
   "rio|2016": ["P", ""], "brasilia|2018": ["EP", ""], "brasilia|2021": ["R", ""],
+  // River Plate (sa-plata.js)
+  "buenos-aires|1831": ["O", ""], "buenos-aires|1890": ["M", "mis"], "buenos-aires|1899": ["O", ""], "buenos-aires|1909": ["P", "rev"],
+  "buenos-aires|1913": ["M", "edu"], "buenos-aires|1967": ["PE", "rev"], "buenos-aires|1975": ["M", ""], "buenos-aires|1978": ["E", "lib"],
+  "buenos-aires|1982": ["E", ""], "buenos-aires|2010": ["EC", ""], "buenos-aires|2024": ["E", "lib"], "montevideo|1845": ["O", ""],
+  "chaco|1935": ["O", "mis ind"], "esperanza|1856": ["RO", ""], "rosario|1875": ["M", "edu"], "embarcacion|1914": ["O", "mis ind"],
+  "asuncion|1920": ["O", "edu"],
 };
