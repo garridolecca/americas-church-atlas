@@ -27,7 +27,7 @@ export const THEMES = [
 export const REGIONS = [
   { id: "north", en: "US & Canada", es: "EE. UU. y Canadá", countries: ["USA", "Canada"] },
   { id: "meso", en: "Mexico & Central America", es: "México y Centroamérica", countries: ["Mexico", "Guatemala", "El Salvador", "Nicaragua", "Costa Rica", "Panama"] },
-  { id: "carib", en: "Caribbean", es: "Caribe", countries: ["Bahamas", "Dominican Republic", "Puerto Rico", "Cuba", "Jamaica"] },
+  { id: "carib", en: "Caribbean", es: "Caribe", countries: ["Bahamas", "Dominican Republic", "Puerto Rico", "Cuba", "Jamaica", "Haiti", "Trinidad and Tobago", "Caribbean Netherlands"] },
   { id: "andes", en: "Andes & Northern South America", es: "Andes y norte de Sudamérica", countries: ["Colombia", "Venezuela", "Guyana", "Suriname", "Ecuador", "Peru", "Bolivia"] },
   { id: "brazil", en: "Brazil", es: "Brasil", countries: ["Brazil"] },
   { id: "cone", en: "Southern Cone", es: "Cono Sur", countries: ["Chile", "Argentina", "Uruguay", "Paraguay"] },
@@ -36,7 +36,7 @@ export const REGIONS = [
 export const COUNTRY_ES = {
   USA: "Estados Unidos", Canada: "Canadá", Mexico: "México", Guatemala: "Guatemala", "El Salvador": "El Salvador",
   "Costa Rica": "Costa Rica", Panama: "Panamá", Nicaragua: "Nicaragua", "Puerto Rico": "Puerto Rico", Bahamas: "Bahamas", "Dominican Republic": "República Dominicana",
-  Cuba: "Cuba", Jamaica: "Jamaica", Colombia: "Colombia", Venezuela: "Venezuela", Guyana: "Guyana", Suriname: "Surinam",
+  Cuba: "Cuba", Jamaica: "Jamaica", Haiti: "Haití", "Trinidad and Tobago": "Trinidad y Tobago", "Caribbean Netherlands": "Caribe neerlandés", Colombia: "Colombia", Venezuela: "Venezuela", Guyana: "Guyana", Suriname: "Surinam",
   Ecuador: "Ecuador", Peru: "Perú", Bolivia: "Bolivia", Brazil: "Brasil", Chile: "Chile", Argentina: "Argentina",
   Uruguay: "Uruguay", Paraguay: "Paraguay",
 };
@@ -46,6 +46,16 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // Mexico, Central America, the Caribbean, South America (mx-ca.js, caribbean.js, sa-more.js)
+  "mexico-city|1914": ["RM", "mis"], "mexico-city|1930": ["M", ""], "mexico-city|2018": ["E", ""], "guadalajara|1926": ["P", ""],
+  "chiapas|2000": ["EP", "ind"], "guatemala-city|1976": ["EP", "rev"], "guatemala-city|1991": ["EP", ""], "guatemala-city|2011": ["P", ""],
+  "guatemala-city|2015": ["E", ""], "san-jose-cr|1923": ["E", "edu"], "san-jose-cr|2018": ["EP", ""], "bluefields|1981": ["O", "per ind"],
+  "managua|2024": ["EP", "per"], "san-salvador-sv|1930": ["P", "mis"], "san-juan-pr|1963": ["P", "mis"], "havana|2018": ["EMBP", ""],
+  "ponce|1916": ["P", "mis rev"], "camaguey|1965": ["CBMP", "per"], "santiago-de-cuba|1957": ["B", ""], "matanzas|1946": ["RMO", "edu"],
+  "st-elizabeth|1860": ["OB", "rev ind"], "morant-bay|1865": ["B", "per ind"], "san-fernando-tt|1868": ["R", "mis edu ind"], "port-au-prince|2010": ["BE", ""],
+  "cap-haitien|1950": ["E", "mis"], "bonaire|1964": ["E", "mis"], "sao-leopoldo|1968": ["O", ""], "buenos-aires|1992": ["P", "rev"],
+  "buenos-aires|2018": ["EC", ""], "caracas|2024": ["EP", ""], "sao-paulo|2014": ["P", ""], "lima|2006": ["E", ""],
+  "rio|2025": ["CEP", ""], "vitoria|1978": ["R", "per"], "campinas|1969": ["R", "edu"],
   "atlanta|1895": ["B", "ind"], "augusta|1845": ["B", ""], "bahia|1549": ["C", "mis"], "bahia|1882": ["B", "mis"],
   "baltimore|1784": ["M", "mis"], "baltimore|1789": ["C", ""], "belem|1911": ["P", "rev"], "bethlehem|1741": ["O", "mis"],
   "bogota|1856": ["R", "mis"], "bogota|1948": ["EP", "per"], "bogota|1969": ["E", "mis"], "bogota|1983": ["P", "rev"],

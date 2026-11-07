@@ -7,6 +7,9 @@ import { BR_EVENTS, BR_LOCATIONS, BR_FIGURES } from "./sa-brazil.js";
 import { PL_EVENTS, PL_LOCATIONS, PL_FIGURES } from "./sa-plata.js";
 import { AN_EVENTS, AN_LOCATIONS, AN_FIGURES } from "./sa-andes.js";
 import { NO_EVENTS, NO_LOCATIONS, NO_FIGURES } from "./sa-north.js";
+import { MX_EVENTS, MX_LOCATIONS, MX_FIGURES } from "./mx-ca.js";
+import { CB_EVENTS, CB_LOCATIONS, CB_FIGURES } from "./caribbean.js";
+import { SM_EVENTS, SM_LOCATIONS, SM_FIGURES } from "./sa-more.js";
 import { EVENT_IMAGES } from "./images.js";
 import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
@@ -887,6 +890,18 @@ figures.push(...AN_FIGURES);
 locations.push(...NO_LOCATIONS);
 locations.forEach((loc) => { if (NO_EVENTS[loc.id]) loc.events.push(...NO_EVENTS[loc.id]); });
 figures.push(...NO_FIGURES);
+// Mexico and Central America (mx-ca.js).
+locations.push(...MX_LOCATIONS);
+locations.forEach((loc) => { if (MX_EVENTS[loc.id]) loc.events.push(...MX_EVENTS[loc.id]); });
+figures.push(...MX_FIGURES);
+// The Caribbean (caribbean.js).
+locations.push(...CB_LOCATIONS);
+locations.forEach((loc) => { if (CB_EVENTS[loc.id]) loc.events.push(...CB_EVENTS[loc.id]); });
+figures.push(...CB_FIGURES);
+// South America, recent decades (sa-more.js).
+locations.push(...SM_LOCATIONS);
+locations.forEach((loc) => { if (SM_EVENTS[loc.id]) loc.events.push(...SM_EVENTS[loc.id]); });
+figures.push(...SM_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));

@@ -1,0 +1,156 @@
+// ============================================================
+// The Caribbean: revival and rebellion in Jamaica, Puerto Rican Pentecostals,
+// Cuba under revolution, Trinidad's Canadian Mission, Haiti and gospel radio.
+// Merged into the main dataset by data.js. Every event carries its sources.
+// ============================================================
+import { w } from "./sources.js";
+
+function ev(era, year, figure, title, description, titleEs, descriptionEs, sources) {
+  return { era, year, figure, title, description, es: { title: titleEs, description: descriptionEs }, sources };
+}
+
+export const CB_EVENTS = {
+  "san-juan-pr": [
+    ev(6, 1963, "Luis M. Ortiz", "The Movimiento Misionero Mundial",
+      "The Puerto Rican evangelist Luis M. Ortiz had spent sixteen years as a Pentecostal missionary in Cuba, from 1944 until the revolutionary government forced him out in 1960. Back in Puerto Rico, he founds the Movimiento Misionero Mundial (World Missionary Movement), registered in San Juan on 4 February 1963, to send Latin American missionaries to other countries. Strict in dress and discipline and aggressively missionary, the MMM spread across Latin America — it became especially strong in Peru — and into North America, Europe and Africa, a Pentecostal mission born in the Caribbean rather than sent to it.",
+      "El Movimiento Misionero Mundial",
+      "El evangelista puertorriqueño Luis M. Ortiz había pasado dieciséis años como misionero pentecostal en Cuba, desde 1944 hasta que el gobierno revolucionario lo obligó a salir en 1960. De regreso en Puerto Rico funda el Movimiento Misionero Mundial, registrado en San Juan el 4 de febrero de 1963, para enviar misioneros latinoamericanos a otros países. Estricto en la vestimenta y la disciplina y con un fuerte impulso misionero, el MMM se extendió por América Latina — fue especialmente fuerte en el Perú — y llegó a Norteamérica, Europa y África: una misión pentecostal nacida en el Caribe, en lugar de enviada a él.",
+      [w("Christian History, \"¡Llegaron los pentecostales!\" (Latin American Pentecostalism)", "https://christianhistoryinstitute.org/magazine/article/latin-american-pentecostalism"),
+       w("Historia del Movimiento Misionero Mundial, Inc. (Studylib)", "https://studylib.es/doc/6905124/historia-del-movimiento-misionero-mundial--inc."),
+       w("PROLADES, chronology of Protestant history in Puerto Rico (PDF)", "https://www.ranchocolibri.net/prolades/historical/pri-chron.pdf")]),
+  ],
+  "havana": [
+    ev(6, 2018, null, "Evangelicals and Cuba's New Constitution",
+      "Cuba's 2018 draft constitution defines marriage, in Article 68, as a union between 'two persons'. For the first time since the revolution, evangelical churches mount a public national campaign: Methodists, Baptists, Pentecostals and others publish statements, collect signatures and display signs supporting the 'original design' of marriage, and the article becomes one of the most debated in the popular consultations. In December 2018 the drafting commission drops the wording and leaves the question to a future Family Code. The episode revealed the size and confidence of Cuba's evangelical churches; the Family Code that legalized same-sex marriage was approved by referendum in 2022.",
+      "Los evangélicos y la nueva Constitución cubana",
+      "El proyecto de Constitución cubana de 2018 define el matrimonio, en su artículo 68, como la unión entre «dos personas». Por primera vez desde la revolución, las iglesias evangélicas organizan una campaña pública nacional: metodistas, bautistas, pentecostales y otros publican declaraciones, recogen firmas y colocan carteles a favor del «diseño original» del matrimonio, y el artículo se convierte en uno de los más debatidos de la consulta popular. En diciembre de 2018 la comisión redactora retira esa redacción y remite el tema a un futuro Código de las Familias. El episodio mostró el tamaño y la confianza de las iglesias evangélicas cubanas; el Código de las Familias que legalizó el matrimonio igualitario fue aprobado en referendo en 2022.",
+      [w("NPR, \"Cuba Scraps Words Establishing Same-Sex Marriage From Drafted Constitution\" (2018)", "https://www.npr.org/2018/12/19/678155969/cuba-scraps-words-establishing-same-sex-marriage-from-drafted-constitution"),
+       w("NBC News, \"Cuba takes out gay marriage language from new constitution draft after church, citizen protests\" (2018)", "https://www.nbcnews.com/news/latino/cuba-takes-out-gay-marriage-language-new-constitution-draft-after-n949786"),
+       w("ConstitutionNet (International IDEA), \"Cuba removes support for gay marriage from draft of new constitution\" (2018)", "https://constitutionnet.org/news/cuba-removes-support-gay-marriage-draft-new-constitution")]),
+  ],
+};
+
+export const CB_LOCATIONS = [
+  { id: "ponce", name: "Ponce", modernName: "Ponce, Puerto Rico", region: "Southern Puerto Rico", lat: 18.0111, lng: -66.6141, significance: "minor", zone: "south",
+    es: { name: "Ponce", modernName: "Ponce, Puerto Rico", region: "Sur de Puerto Rico" },
+    events: [
+      ev(5, 1916, "Juan L. Lugo", "Juan Lugo Brings Pentecost Home",
+        "Born in Yauco in 1890, Juan León Lugo had emigrated with his mother to Hawaii, where he was converted among Puerto Rican sugar workers and joined the Pentecostal movement. Commissioned by the young Assemblies of God, he returns to Puerto Rico in August 1916 and begins preaching in Ponce on 30 August. Despite opposition, small congregations multiply across the island and become the Iglesia de Dios Pentecostal, affiliated with the Assemblies of God from 1921 until 1956. Lugo's work made Puerto Rico a seedbed of Hispanic Pentecostalism, from New York to the rest of Latin America.",
+        "Juan Lugo lleva Pentecostés a su tierra",
+        "Nacido en Yauco en 1890, Juan León Lugo había emigrado con su madre a Hawái, donde se convirtió entre los trabajadores azucareros puertorriqueños y se unió al movimiento pentecostal. Comisionado por las jóvenes Asambleas de Dios, regresa a Puerto Rico en agosto de 1916 y comienza a predicar en Ponce el 30 de agosto. Pese a la oposición, pequeñas congregaciones se multiplican por la isla y forman la Iglesia de Dios Pentecostal, afiliada a las Asambleas de Dios desde 1921 hasta 1956. La obra de Lugo hizo de Puerto Rico un semillero del pentecostalismo hispano, desde Nueva York hasta el resto de América Latina.",
+        [w("Christian History Institute, \"Juan Lugo led Puerto Rico's Pentecostal surge\"", "https://christianhistoryinstitute.org/dailystory/permalink/juan-lugo-led-peurto-ricos-pentecostal-surge"),
+         w("Assemblies of God, \"This Week in AG History — December 16, 1916\"", "https://chaplaincy.ag.org/articles/agnews/article%20repository/news/2016/12/this%20week%20in%20ag%20history%20dec%2016%201916"),
+         w("PROLADES, chronology of Protestant history in Puerto Rico (PDF)", "https://www.ranchocolibri.net/prolades/historical/pri-chron.pdf")]),
+    ] },
+  { id: "camaguey", name: "Camagüey", modernName: "Camagüey, Cuba", region: "Central Cuba", lat: 21.3808, lng: -77.9169, significance: "minor", zone: "south",
+    es: { name: "Camagüey", modernName: "Camagüey, Cuba", region: "Centro de Cuba" },
+    events: [
+      ev(6, 1965, null, "The UMAP Camps",
+        "In November 1965 Cuba's revolutionary government begins sending thousands of young men to the Military Units to Aid Production (UMAP), forced-labour camps in the cane fields of Camagüey province. Among those interned as 'unfit' for military service are homosexuals, dissidents, Jehovah's Witnesses, Catholic seminarians and priests — including the future cardinal Jaime Ortega — and Baptist, Methodist, Pentecostal and other Protestant pastors and believers. After international and internal criticism the camps were closed in July 1968; for Cuban Christians they remain a symbol of the harshest years of religious repression.",
+        "Las UMAP",
+        "En noviembre de 1965 el gobierno revolucionario cubano comienza a enviar a miles de jóvenes a las Unidades Militares de Ayuda a la Producción (UMAP), campos de trabajo forzado en los cañaverales de la provincia de Camagüey. Entre los internados como «no aptos» para el servicio militar hay homosexuales, disidentes, testigos de Jehová, seminaristas y sacerdotes católicos — entre ellos el futuro cardenal Jaime Ortega — y pastores y creyentes bautistas, metodistas, pentecostales y de otras iglesias protestantes. Tras críticas internacionales e internas, los campos se cerraron en julio de 1968; para los cristianos cubanos siguen siendo símbolo de los años más duros de la represión religiosa.",
+        [w("Wikipedia, \"Military Units to Aid Production\"", "https://en.wikipedia.org/wiki/Military_Units_to_Aid_Production"),
+         w("University of Delaware, Latin American Studies, Tahbaz, article on the UMAP camps", "https://www1.udel.edu/LAS/Vol14-2Tahbaz.html"),
+         w("CubaNet, \"Contra Dios: la represión de los religiosos en Cuba\"", "https://www.cubanet.org/opiniones/contra-dios-la-represion-de-los-religiosos-en-cuba/")]),
+    ] },
+  { id: "santiago-de-cuba", name: "Santiago de Cuba", modernName: "Santiago de Cuba, Cuba", region: "Eastern Cuba", lat: 20.0247, lng: -75.8219, significance: "minor", zone: "south",
+    es: { name: "Santiago de Cuba", modernName: "Santiago de Cuba, Cuba", region: "Oriente de Cuba" },
+    events: [
+      ev(6, 1957, "Frank País", "Frank País, the Baptist Revolutionary",
+        "Frank País was the son of Francisco País, a pastor and one of the founders of the First Baptist Church of Santiago de Cuba. A teacher trained at the city's normal school and a Sunday-school teacher in his church, he became the leader of the 26th of July Movement's urban underground in eastern Cuba and organized the Santiago uprising of 30 November 1956. On 30 July 1957 he was shot dead by police in a Santiago street; his funeral became a mass protest and a general strike. His story is a reminder of the part played by Protestants in the opposition to Batista.",
+        "Frank País, el revolucionario bautista",
+        "Frank País era hijo de Francisco País, pastor y uno de los fundadores de la Primera Iglesia Bautista de Santiago de Cuba. Maestro formado en la Escuela Normal de la ciudad y maestro de escuela dominical en su iglesia, llegó a dirigir la clandestinidad urbana del Movimiento 26 de Julio en el oriente de Cuba y organizó el levantamiento de Santiago del 30 de noviembre de 1956. El 30 de julio de 1957 fue asesinado a tiros por la policía en una calle de Santiago; su entierro se convirtió en una protesta masiva y una huelga general. Su historia recuerda el papel de los protestantes en la oposición a Batista.",
+        [w("Wikipedia, \"Frank País\"", "https://en.wikipedia.org/wiki/Frank_Pa%C3%ADs"),
+         w("EcuRed, \"Frank País\"", "https://www.ecured.cu/Frank_País"),
+         w("Santiago (Universidad de Oriente), article on Frank País and his family (PDF)", "https://santiago.uo.edu.cu/index.php/stgo/article/download/46/42/162")]),
+    ] },
+  { id: "matanzas", name: "Matanzas", modernName: "Matanzas, Cuba", region: "Western Cuba", lat: 23.0411, lng: -81.5775, significance: "minor", zone: "south",
+    es: { name: "Matanzas", modernName: "Matanzas, Cuba", region: "Occidente de Cuba" },
+    events: [
+      ev(6, 1946, null, "The Evangelical Theological Seminary of Matanzas",
+        "On 1 October 1946 the Methodist, Presbyterian and Episcopal churches of Cuba open the Seminario Evangélico de Teología in Matanzas, building on the cooperation of the Cuban Council of Evangelical Churches formed in 1941. When most missionaries left after the 1959 revolution, the seminary became the main school for Cuban pastors, and it stayed open through the hardest decades. Still the country's only seminary run jointly by several denominations, it trains students from more than a dozen churches and has been a centre of Cuban ecumenical theology.",
+        "El Seminario Evangélico de Teología de Matanzas",
+        "El 1 de octubre de 1946 las iglesias metodista, presbiteriana y episcopal de Cuba abren el Seminario Evangélico de Teología en Matanzas, a partir de la cooperación del Concilio Cubano de Iglesias Evangélicas formado en 1941. Cuando la mayoría de los misioneros salió tras la revolución de 1959, el seminario se convirtió en la principal escuela de los pastores cubanos y permaneció abierto durante las décadas más difíciles. Todavía el único seminario del país dirigido conjuntamente por varias denominaciones, forma a estudiantes de más de una docena de iglesias y ha sido un centro de la teología ecuménica cubana.",
+        [w("Global Ministries, \"Evangelical Seminary of Theology (SET), Cuba\"", "https://globalministries.org/?p=20494"),
+         w("Presbyterian Church (U.S.A.), \"Evangelical Seminary in Matanzas trains students for integration of theology and life\" (2016)", "https://pcusa.org/news-storytelling/news/2016/11/17/evangelical-seminary-matanzas-trains-students-integration-theology-and-life"),
+         w("Wikipedia, \"Methodist Church in Cuba\"", "https://en.wikipedia.org/wiki/Methodist_Church_in_Cuba")]),
+    ] },
+  { id: "st-elizabeth", name: "St. Elizabeth", modernName: "Santa Cruz, St. Elizabeth, Jamaica", region: "Southwestern Jamaica", lat: 18.0539, lng: -77.6983, significance: "minor", zone: "south",
+    es: { name: "Santa Isabel (St. Elizabeth)", modernName: "Santa Cruz, St. Elizabeth, Jamaica", region: "Suroeste de Jamaica" },
+    events: [
+      ev(4, 1860, null, "The Great Revival in Jamaica",
+        "News of the prayer revivals of 1857–59 in New York and Ulster had set Jamaican Christians praying for the same. In late September 1860 an awakening breaks out among the Moravian congregations of St. Elizabeth, whose mission headquarters lay at Fairfield in neighbouring Manchester. Within weeks it sweeps across the island and every denomination: chapels overflow, prayer meetings run through the night and thousands profess conversion. As it ebbed after about two years, much of its fervour merged with older Afro-Jamaican Myal traditions, giving rise to the Revival Zion and Pukumina churches known together as Revivalism.",
+        "El Gran Avivamiento de Jamaica",
+        "Las noticias de los avivamientos de oración de 1857–59 en Nueva York y en el Ulster habían llevado a los cristianos jamaicanos a orar por lo mismo. A fines de septiembre de 1860 estalla un avivamiento entre las congregaciones moravas de St. Elizabeth, cuya sede misionera estaba en Fairfield, en la vecina Manchester. En pocas semanas recorre toda la isla y todas las denominaciones: las capillas se desbordan, las reuniones de oración duran toda la noche y miles profesan su conversión. Cuando decayó, unos dos años después, buena parte de su fervor se fundió con antiguas tradiciones afrojamaicanas del Myal, dando origen a las iglesias Revival Zion y Pukumina, conocidas en conjunto como Revivalism.",
+        [w("Revival Library, \"Revival in Jamaica — 1860\"", "https://revival-library.org/histories/1860-revival-in-jamaica/"),
+         w("The Jamaica Gleaner, \"Formerly enslaved people created Revivalism\" (2025)", "https://jamaica-gleaner.com/article/news/20251026/formerly-enslaved-people-created-revivalism"),
+         w("PROLADES, chronology of Protestant history in Jamaica (PDF)", "https://www.ranchocolibri.net/prolades/encyclopedia/historical/jam-chron.pdf")]),
+    ] },
+  { id: "morant-bay", name: "Morant Bay", modernName: "Morant Bay, St. Thomas, Jamaica", region: "Eastern Jamaica", lat: 17.8815, lng: -76.4093, significance: "minor", zone: "south",
+    es: { name: "Morant Bay", modernName: "Morant Bay, St. Thomas, Jamaica", region: "Este de Jamaica" },
+    events: [
+      ev(4, 1865, "Paul Bogle", "Paul Bogle and the Morant Bay Rebellion",
+        "A generation after emancipation, poverty, land hunger and unequal justice weigh on Jamaica's freed people. Paul Bogle, a Native Baptist deacon who preached at Stony Gut in St. Thomas, organizes his followers and petitions the governor, with the support of the Baptist legislator George William Gordon. On 11 October 1865 Bogle leads several hundred men to the Morant Bay courthouse; the confrontation turns violent. Governor Edward Eyre's reprisals under martial law kill hundreds and burn homes; Gordon is hanged on 23 October and Bogle on 24 October. Both were named National Heroes of Jamaica in 1969.",
+        "Paul Bogle y la rebelión de Morant Bay",
+        "Una generación después de la emancipación, la pobreza, el hambre de tierras y la justicia desigual pesan sobre los libertos de Jamaica. Paul Bogle, diácono bautista nativo que predicaba en Stony Gut, en St. Thomas, organiza a sus seguidores y presenta peticiones al gobernador, con el apoyo del legislador bautista George William Gordon. El 11 de octubre de 1865 Bogle encabeza a varios cientos de hombres hacia el juzgado de Morant Bay; el enfrentamiento se vuelve violento. Las represalias del gobernador Edward Eyre bajo la ley marcial matan a cientos de personas y queman viviendas; Gordon es ahorcado el 23 de octubre y Bogle el 24. Ambos fueron proclamados Héroes Nacionales de Jamaica en 1969.",
+        [w("Jamaica Information Service, \"Paul Bogle\" (National Heroes)", "https://jis.gov.jm/information/heroes/paul-bogle/"),
+         w("The Jamaica Gleaner, \"Paul Bogle and the Morant Bay Uprising\" (2023)", "https://web5.jamaica-gleaner.com/article/news/20231011/paul-bogle-and-morant-bay-uprising"),
+         w("BlackPast, \"Paul Bogle (1822–1865)\"", "https://www.blackpast.org/global-african-history/bogle-paul-1822-1865/")]),
+    ] },
+  { id: "san-fernando-tt", name: "San Fernando", modernName: "San Fernando, Trinidad and Tobago", region: "Southern Trinidad", lat: 10.2797, lng: -61.4589, significance: "minor", zone: "south",
+    es: { name: "San Fernando", modernName: "San Fernando, Trinidad y Tobago", region: "Sur de Trinidad" },
+    events: [
+      ev(5, 1868, "John Morton", "The Canadian Mission to the Indians of Trinidad",
+        "After slavery ended, Trinidad's planters brought tens of thousands of indentured labourers from India. Moved by their plight, the Nova Scotian Presbyterian minister John Morton begins a mission among them in 1868 at Iere Village, near San Fernando. The Canadian Mission preaches in Hindi but builds above all schools, at a time when few schools served Indian children, and in 1872 opens Susamachar ('Good News') church in San Fernando. Its schools trained much of the Indo-Trinidadian professional class, and the Presbyterian Church of Trinidad and Tobago still runs some seventy primary schools.",
+        "La Misión Canadiense entre los indios de Trinidad",
+        "Tras el fin de la esclavitud, los hacendados de Trinidad trajeron de la India a decenas de miles de trabajadores contratados. Conmovido por su situación, el pastor presbiteriano John Morton, de Nueva Escocia, inicia en 1868 una misión entre ellos en Iere Village, cerca de San Fernando. La Misión Canadiense predica en hindi, pero sobre todo funda escuelas, en una época en que pocas escuelas atendían a los niños indios, y en 1872 abre la iglesia Susamachar («Buenas Nuevas») en San Fernando. Sus escuelas formaron a buena parte de la clase profesional indotrinitense, y la Iglesia Presbiteriana de Trinidad y Tobago todavía dirige unas setenta escuelas primarias.",
+        [w("Presbyterian Church in Trinidad and Tobago, history", "https://pctt.org.tt/?p=622"),
+         w("Wikipedia, \"Presbyterian Church of Trinidad and Tobago\"", "https://en.wikipedia.org/wiki/Presbyterian_Church_of_Trinidad_and_Tobago"),
+         w("CBC News, report on the Canadian Presbyterian mission to Indo-Trinidadians", "https://www.cbc.ca/1.5849954")]),
+    ] },
+  { id: "port-au-prince", name: "Port-au-Prince", modernName: "Port-au-Prince, Haiti", region: "Haiti", lat: 18.5944, lng: -72.3074, significance: "minor", zone: "south",
+    es: { name: "Puerto Príncipe", modernName: "Puerto Príncipe, Haití", region: "Haití" },
+    events: [
+      ev(6, 2010, null, "Churches Rise from the Rubble",
+        "The earthquake of 12 January 2010 destroys much of Port-au-Prince, killing well over a hundred thousand people and flattening the cathedral and countless churches. Haitian congregations become centres of shelter, food distribution and grief, and many Haitians turn to them. Baptist churches linked with Florida Baptists, numbering about 890 before the quake, reported more than 200 new congregations within months and some 1,700 by 2014; the Church of the Nazarene and other Protestant bodies reported similar growth. Pastors described the disaster as having 'opened doors' in a country where Protestants were already a large and growing minority.",
+        "Iglesias que se levantan de los escombros",
+        "El terremoto del 12 de enero de 2010 destruye gran parte de Puerto Príncipe, mata a mucho más de cien mil personas y derrumba la catedral e innumerables iglesias. Las congregaciones haitianas se convierten en centros de refugio, reparto de alimentos y duelo, y muchos haitianos acuden a ellas. Las iglesias bautistas vinculadas a los bautistas de Florida, unas 890 antes del sismo, informaron de más de 200 nuevas congregaciones en pocos meses y de unas 1.700 en 2014; la Iglesia del Nazareno y otras iglesias protestantes informaron de un crecimiento similar. Los pastores dijeron que el desastre había «abierto puertas» en un país donde los protestantes ya eran una minoría grande y creciente.",
+        [w("Christianity Today, \"215 Baptist churches planted in Haiti\" (2010)", "https://www.christianitytoday.com/2010/10/215-baptist-churches-planted-in-haiti/"),
+         w("Baptist Press, \"5 years later, Haitian pastors say quake opened doors\" (2015)", "https://www.baptistpress.com/resource-library/news/5-years-later-haitian-pastors-say-quake-opened-doors/"),
+         w("Church of the Nazarene, \"Explosive growth follows 2010 Haiti earthquake\"", "https://nazarene.org/news/explosive-growth-follows-2010-haiti-earthquake/")]),
+    ] },
+  { id: "cap-haitien", name: "Cap-Haïtien", modernName: "Cap-Haïtien, Haiti", region: "Northern Haiti", lat: 19.7578, lng: -72.2047, significance: "minor", zone: "south",
+    es: { name: "Cabo Haitiano", modernName: "Cabo Haitiano, Haití", region: "Norte de Haití" },
+    events: [
+      ev(6, 1950, null, "Radio 4VEH, the Evangelical Voice of Haiti",
+        "On 2 June 1950 Radio 4VEH — 'La Voix Évangélique d'Haïti' — goes on the air near Cap-Haïtien, founded by the missionary Green Tolbert Bustin of the East and West Indies Bible Mission; OMS (the former Oriental Missionary Society) takes it over in 1958. Broadcasting in French and Haitian Creole, on shortwave until 1992 and on medium wave, it carried preaching, music and news into homes across a country where few could read. Still on the air, now also online and on television, it is one of the oldest Christian broadcasters in the Caribbean.",
+        "Radio 4VEH, la Voz Evangélica de Haití",
+        "El 2 de junio de 1950 sale al aire cerca de Cabo Haitiano Radio 4VEH — «La Voix Évangélique d'Haïti» —, fundada por el misionero Green Tolbert Bustin de la East and West Indies Bible Mission; la OMS (antigua Sociedad Misionera Oriental) se hace cargo de ella en 1958. Con emisiones en francés y criollo haitiano, en onda corta hasta 1992 y en onda media, llevó predicación, música y noticias a hogares de todo un país donde pocos sabían leer. Todavía en el aire, ahora también por internet y televisión, es una de las emisoras cristianas más antiguas del Caribe.",
+        [w("\"Let the Rocks Cry Out\": history of Radio 4VEH, 1950–2000 (World Radio History, PDF)", "https://www.worldradiohistory.com/BOOKSHELF-ARH/Station-Books/Let-the-Rocks-Cry-Out-4VEH-2001.pdf"),
+         w("One Mission Society UK, \"4VEH\"", "https://www.onemissionsociety.org.uk/project/4veh"),
+         w("Mission Network News, report on Radio 4VEH", "https://www.mnnonline.org/?p=72859")]),
+    ] },
+  { id: "bonaire", name: "Bonaire", modernName: "Kralendijk, Bonaire, Caribbean Netherlands", region: "Leeward Antilles", lat: 12.1443, lng: -68.2655, significance: "minor", zone: "south",
+    es: { name: "Bonaire", modernName: "Kralendijk, Bonaire, Caribe neerlandés", region: "Antillas de Sotavento" },
+    events: [
+      ev(6, 1964, "Paul Freed", "Trans World Radio on Bonaire",
+        "Trans World Radio, founded by Paul Freed in 1952 and broadcasting since 1954 from Tangier to Spain and Europe, opens a station on the Dutch island of Bonaire, inaugurated on 13 August 1964 with a 500-kilowatt medium-wave transmitter — then the most powerful in the Western Hemisphere. As 'Radio Trans Mundial' it beams evangelical programmes in Spanish, English, Portuguese and other languages across the Caribbean and Latin America, reaching areas where Protestant churches were few. The transmitter was reduced to 100 kW in 1998 and rebuilt in 2018 as 'Shine 800'.",
+        "Trans World Radio en Bonaire",
+        "Trans World Radio, fundada por Paul Freed en 1952 y que emitía desde 1954 desde Tánger hacia España y Europa, abre una estación en la isla neerlandesa de Bonaire, inaugurada el 13 de agosto de 1964 con un transmisor de onda media de 500 kilovatios, entonces el más potente del hemisferio occidental. Como «Radio Trans Mundial» difunde programas evangélicos en español, inglés, portugués y otros idiomas por el Caribe y América Latina, y llega a zonas donde había pocas iglesias protestantes. El transmisor se redujo a 100 kW en 1998 y se reconstruyó en 2018 como «Shine 800».",
+        [w("Wikipedia, \"Trans World Radio\"", "https://en.wikipedia.org/wiki/Trans_World_Radio"),
+         w("Radio World, \"A visit to Shine 800 AM\"", "https://www.radioworld.com/global/a-visit-to-shine-800-am"),
+         w("TWR, \"Our story\"", "https://twr.org/our-story")]),
+    ] },
+];
+
+export const CB_FIGURES = [
+  { id: "juan-lugo", name: "Juan L. Lugo", years: "1890–1984", role: "Pioneer of Puerto Rican Pentecostalism",
+    bio: "Born in Yauco and converted in Hawaii, he began Pentecostal preaching in Ponce in 1916 and founded what became the Iglesia de Dios Pentecostal.",
+    es: { role: "Pionero del pentecostalismo puertorriqueño", bio: "Nacido en Yauco y convertido en Hawái, comenzó la predicación pentecostal en Ponce en 1916 y fundó la que llegó a ser la Iglesia de Dios Pentecostal." } },
+  { id: "paul-bogle", name: "Paul Bogle", years: "c. 1822–1865", role: "Native Baptist deacon and Jamaican National Hero",
+    bio: "Deacon and preacher at Stony Gut, St. Thomas, who led the 1865 Morant Bay protest and was hanged under martial law.",
+    es: { role: "Diácono bautista nativo y Héroe Nacional de Jamaica", bio: "Diácono y predicador en Stony Gut, St. Thomas, que encabezó la protesta de Morant Bay de 1865 y fue ahorcado bajo la ley marcial." } },
+  { id: "john-morton", name: "John Morton", years: "1839–1912", role: "Canadian Presbyterian missionary in Trinidad",
+    bio: "Nova Scotian minister who began the Canadian Mission among Indian indentured labourers in Trinidad in 1868, founding churches and many schools.",
+    es: { role: "Misionero presbiteriano canadiense en Trinidad", bio: "Pastor de Nueva Escocia que inició en 1868 la Misión Canadiense entre los trabajadores contratados indios de Trinidad, fundando iglesias y muchas escuelas." } },
+];
