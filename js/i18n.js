@@ -16,7 +16,7 @@ const ui = {
     infoFeature2: "Filter by era, or by region: US & Canada / Latin America & Caribbean",
     infoFeature3: "Walk through each era in order with Previous / Next",
     infoFeature4: "Timeline and key figures panels",
-    infoFeature5: "Full English and Spanish text",
+    infoFeature5: "Full English and Spanish text, with sources for every event",
     infoVerse: '"After this I beheld, and, lo, a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues…" — Revelation 7:9',
     donateTitle: "Support This Project",
     donateText: "This interactive map was built to tell the story of the gospel in the Americas, north and south.",
@@ -24,6 +24,8 @@ const ui = {
     sheetModernLabel: "Today:", sheetRegionLabel: "Region:",
     showingHistorical: "Showing: Historical Names", showingModern: "Showing: Modern Names",
     timelineTitle: "Historical Timeline", figuresTitle: "Key Figures",
+    sourcesLabel: "Sources", infoSourcesTitle: "Sources",
+    infoSourcesNote: "Every event lists its sources: books from the Logos Bible Software library (marked Logos; page numbers refer to the printed edition) and reputable references such as Britannica, the Dictionary of Canadian Biography, UNESCO, the National Park Service, university journals, archives and official church records. Main works consulted:",
   },
   es: {
     appTitle: "La Iglesia en las Américas", shortTitle: "Atlas Cristiano", appSubtitle: "De las misiones católicas a la explosión evangélica",
@@ -37,7 +39,7 @@ const ui = {
     infoFeature2: "Filtre por era o por región: EE. UU. y Canadá / América Latina y el Caribe",
     infoFeature3: "Recorra cada era en orden con Anterior / Siguiente",
     infoFeature4: "Paneles de cronología y figuras clave",
-    infoFeature5: "Textos completos en español e inglés",
+    infoFeature5: "Textos completos en español e inglés, con fuentes para cada evento",
     infoVerse: '"Después de esto miré, y he aquí una gran multitud, la cual nadie podía contar, de todas naciones y tribus y pueblos y lenguas…" — Apocalipsis 7:9',
     donateTitle: "Apoya este proyecto",
     donateText: "Este mapa interactivo fue creado para contar la historia del evangelio en las Américas, del norte y del sur.",
@@ -45,6 +47,8 @@ const ui = {
     sheetModernLabel: "Hoy:", sheetRegionLabel: "Región:",
     showingHistorical: "Mostrando: nombres históricos", showingModern: "Mostrando: nombres modernos",
     timelineTitle: "Cronología histórica", figuresTitle: "Figuras clave",
+    sourcesLabel: "Fuentes", infoSourcesTitle: "Fuentes",
+    infoSourcesNote: "Cada evento indica sus fuentes: libros de la biblioteca de Logos Bible Software (marcados como Logos; las páginas corresponden a la edición impresa) y referencias de prestigio como Britannica, el Dictionary of Canadian Biography, la UNESCO, el Servicio de Parques Nacionales de EE. UU., revistas universitarias, archivos y documentos oficiales de las iglesias. Obras principales consultadas:",
   },
 };
 

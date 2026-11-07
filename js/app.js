@@ -9,6 +9,7 @@
 const ARCGIS_API_KEY = "";
 
 import { eras, locations, routes, figures, timeline, eraIndex } from "./data.js";
+import { GENERAL_SOURCES } from "./sources.js";
 import { lang, setLang, t, eraText, locationText, localized } from "./i18n.js";
 
 // ============================================================
@@ -21,6 +22,17 @@ const loaderBar = document.querySelector(".splash-loader-bar");
 // ============================================================
 // Custom Modal Helpers
 // ============================================================
+// Escape text placed into HTML attributes/content
+const esc = (str) => String(str).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function renderSources(list) {
+  if (!list || !list.length) return "";
+  const items = list.map((src) =>
+    `<li><a href="${esc(src.u)}" target="_blank" rel="noopener">${esc(src.t)}</a>${src.k === "logos" ? ' <span class="src-tag">Logos</span>' : ""}</li>`
+  ).join("");
+  return `<details class="event-sources"><summary>${t("sourcesLabel")} (${list.length})</summary><ul>${items}</ul></details>`;
+}
+
 function openModal(id) { document.getElementById(id).classList.remove("hidden"); }
 function closeModal(id) { document.getElementById(id).classList.add("hidden"); }
 
@@ -65,6 +77,11 @@ function fillInfoModal() {
         <li>${t("infoFeature4")}</li>
         <li>${t("infoFeature5")}</li>
       </ul>
+    </div>
+    <div class="info-features">
+      <h4>${t("infoSourcesTitle")}</h4>
+      <p class="info-sources-note">${t("infoSourcesNote")}</p>
+      <ul class="info-sources">${GENERAL_SOURCES.map((src) => `<li><a href="${esc(src.u)}" target="_blank" rel="noopener">${esc(src.t)}</a>${src.k === "logos" ? ' <span class="src-tag">Logos</span>' : ""}</li>`).join("")}</ul>
     </div>
     <div class="info-verse">${t("infoVerse")}</div>
   `;
@@ -724,6 +741,7 @@ async function initMap() {
           <div class="event-action">${localized(event, "title")}</div>
           <p class="event-description">${localized(event, "description")}</p>
           ${event.figure ? `<span class="event-figure-tag">${event.figure}</span>` : ""}
+          ${renderSources(event.sources)}
         </div>
       `;
     }).join("");

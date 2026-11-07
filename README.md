@@ -19,7 +19,9 @@ An interactive, bilingual (English / Spanish) atlas of five centuries of Christi
 
 ## Features
 
-- 58 locations from Quebec to Tierra del Fuego, with 79 events and 34 key figures
+- 65 locations from Quebec to Tierra del Fuego, with 94 events and 40 key figures
+- **Every event cites its sources** — 212 citations, including 50 page-referenced citations of books in the Logos Bible Software library and reputable references (Britannica, Dictionary of Canadian Biography, UNESCO, National Park Service, university journals, archives, official church records)
+- **Expanded Peru:** 20 events from Cajamarca (1532) and the first bishop of Cusco to Taki Onqoy, the Third Council of Lima, Santa Rosa and San Martín de Porres, the Juli Aymara press, the extirpation of idolatries, Túpac Amaru II, Penzotti's imprisonment, freedom of worship (1915), the Adventist schools of Lake Titicaca, the evangelical churches of Ayacucho during the internal conflict, and the 2017 census
 - Filter by **era** and by **region** (US & Canada / Latin America & Caribbean)
 - Walk each era in chronological order with Previous / Next
 - Timeline and key-figures panels
@@ -47,7 +49,21 @@ js/i18n.js   # UI strings and language helpers
 js/app.js    # map, filters, panels
 ```
 
-## Further reading
+## Sources
+
+Each event in the app lists its own sources (expand **Sources** under any event). The main works consulted are:
+
+- Mark A. Noll, *A History of Christianity in the United States and Canada* (Eerdmans, 1992) — Logos
+- Mark A. Noll, *The Old Religion in a New World* (Eerdmans, 2002) — Logos
+- Leonard Woolsey Bacon, *A History of American Christianity* (1897) — Logos
+- Tim Dowley, *Atlas of Christian History* (Fortress, 2016) — Logos
+- Michael A. G. Haykin, ed., *The Essential Lexham Dictionary of Church History* (2022) — Logos
+- Leroy Fitts, *A History of Black Baptists* (1985) — Logos
+- H. Leon McBeth, *The Baptist Heritage* (1987) — Logos
+- Haykin & Robinson, *To the Ends of the Earth: Calvin's Missional Vision and Legacy* (2014) — Logos
+- Pew Research Center, *Religion in Latin America* (2014)
+
+### Further reading
 
 For more on this history, see Justo L. González & Ondina González, *Christianity in Latin America*; Mark Noll, *A History of Christianity in the United States and Canada*; Tim Dowley, *Atlas of Christian History*.
 
@@ -82,7 +98,9 @@ Un atlas interactivo y bilingüe (español / inglés) de cinco siglos de cristia
 
 ### Características
 
-- 58 lugares desde Quebec hasta Tierra del Fuego, con 79 eventos y 34 figuras clave
+- 65 lugares desde Quebec hasta Tierra del Fuego, con 94 eventos y 40 figuras clave
+- **Cada evento cita sus fuentes**: 212 citas, entre ellas 50 de libros de la biblioteca de Logos Bible Software con número de página, y referencias de prestigio (Britannica, UNESCO, revistas universitarias, archivos y documentos oficiales)
+- **Perú ampliado:** 20 eventos, de Cajamarca (1532) al censo de 2017
 - Filtros por **era** y por **región** (EE. UU. y Canadá / América Latina y el Caribe)
 - Recorrido cronológico de cada era con Anterior / Siguiente
 - Paneles de cronología y figuras clave

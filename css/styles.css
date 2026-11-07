@@ -374,3 +374,14 @@ calcite-shell { --calcite-color-brand: var(--gold); --calcite-font-family: var(-
 @media (max-width: 767px) {
   .header-btn-donate { padding: 0 !important; min-width: 32px !important; border-width: 0 !important; background: transparent !important; }
 }
+
+/* Sources under each event and in the About panel */
+.event-sources { margin-top: 10px; font-size: 12px; color: var(--text-secondary); }
+.event-sources summary { cursor: pointer; color: var(--gold); font-weight: 600; letter-spacing: 0.02em; }
+.event-sources ul, .info-sources { margin: 6px 0 0; padding-left: 18px; }
+.event-sources li, .info-sources li { margin: 4px 0; line-height: 1.45; }
+.event-sources a, .info-sources a { color: var(--text-primary); text-decoration: underline; text-decoration-color: var(--gold-dim); text-underline-offset: 2px; overflow-wrap: anywhere; }
+.event-sources a:hover, .info-sources a:hover { color: var(--gold); }
+.src-tag { display: inline-block; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 1px 5px; border-radius: 4px; background: rgba(201, 168, 76, 0.15); color: var(--gold); vertical-align: 1px; }
+.info-sources-note { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+.info-sources { font-size: 12px; }
