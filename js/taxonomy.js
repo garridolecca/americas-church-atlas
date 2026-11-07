@@ -109,4 +109,11 @@ export const TAGS = {
   "bogota|1953": ["EC", "per lib"], "bogota|2016": ["EP", ""], "piracicaba|1881": ["M", "edu"],
   "sao-paulo|1985": ["RC", "per"], "dourados|1928": ["RM", "mis ind edu"], "buenos-aires|1983": ["MC", "per"],
   "saenz-pena|1960": ["PO", "ind rev"], "santiago|1973": ["OC", "per"],
+  // Brazil (sa-brazil.js)
+  "rio|1819": ["O", "lib"], "rio|1837": ["M", "mis"], "sao-paulo|1865": ["R", "mis"], "santa-barbara|1871": ["B", ""],
+  "rio|1888": ["R", ""], "rio|1890": ["EC", "lib"], "porto-alegre|1890": ["O", "mis"], "bahia|1907": ["B", ""],
+  "aquidauana|1912": ["E", "mis ind"], "natal|1930": ["P", ""], "rio|1960": ["B", "rev"], "sao-paulo|1962": ["P", "rev"],
+  "rio|1980": ["P", ""], "sao-paulo|1987": ["EP", "mis"], "sao-paulo|1989": ["P", ""], "aparecida|1995": ["PC", ""],
+  "belo-horizonte|1998": ["BP", "rev"], "aparecida|2007": ["C", "mis"], "brasilia|2010": ["P", ""], "belem|2011": ["P", ""],
+  "rio|2016": ["P", ""], "brasilia|2018": ["EP", ""], "brasilia|2021": ["R", ""],
 };
