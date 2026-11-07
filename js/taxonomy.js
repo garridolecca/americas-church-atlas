@@ -101,4 +101,12 @@ export const TAGS = {
   "santo-domingo|1979": ["C", ""], "santo-domingo|1992": ["C", "mis"], "santo-domingo|2019": ["EP", ""],
   "samana|1824": ["M", "ind lib"], "santiago-caballeros|1889": ["M", "mis"], "san-pedro-macoris|1897": ["OM", "ind"],
   "san-pedro-macoris|1916": ["P", "mis"], "higuey|1971": ["C", ""],
+  // South America, deeper (southamerica.js)
+  "guayaquil|1896": ["E", "mis lib"], "quito|1980": ["E", "ind"], "la-paz|1907": ["M", "edu lib"],
+  "cochabamba|1908": ["E", "mis ind edu"], "barquisimeto|1919": ["P", "rev"], "puerto-ayacucho|2005": ["E", "mis ind"],
+  "pomeroon|1840": ["O", "mis ind"], "paramaribo|1857": ["O", "mis ind"], "montevideo|1879": ["M", "edu"],
+  "montevideo|1917": ["EC", "lib"], "montevideo|1985": ["M", ""], "chaco|1889": ["O", "mis ind"],
+  "bogota|1953": ["EC", "per lib"], "bogota|2016": ["EP", ""], "piracicaba|1881": ["M", "edu"],
+  "sao-paulo|1985": ["RC", "per"], "dourados|1928": ["RM", "mis ind edu"], "buenos-aires|1983": ["MC", "per"],
+  "saenz-pena|1960": ["PO", "ind rev"], "santiago|1973": ["OC", "per"],
 };

@@ -2,6 +2,7 @@ import { EVENT_SOURCES } from "./sources.js";
 import { EXTRA_EVENTS, EXTRA_LOCATIONS, EXTRA_FIGURES } from "./evangelical.js";
 import { LATAM_EVENTS, LATAM_LOCATIONS, LATAM_FIGURES } from "./latam.js";
 import { PRD_EVENTS, PRD_LOCATIONS, PRD_FIGURES } from "./peru-rd.js";
+import { SA_EVENTS, SA_LOCATIONS, SA_FIGURES } from "./southamerica.js";
 import { EVENT_IMAGES } from "./images.js";
 import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
@@ -862,6 +863,10 @@ figures.push(...LATAM_FIGURES);
 locations.push(...PRD_LOCATIONS);
 locations.forEach((loc) => { if (PRD_EVENTS[loc.id]) loc.events.push(...PRD_EVENTS[loc.id]); });
 figures.push(...PRD_FIGURES);
+// South America, deeper (southamerica.js).
+locations.push(...SA_LOCATIONS);
+locations.forEach((loc) => { if (SA_EVENTS[loc.id]) loc.events.push(...SA_EVENTS[loc.id]); });
+figures.push(...SA_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));
