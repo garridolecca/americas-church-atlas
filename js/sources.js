@@ -22,9 +22,10 @@ const BOOKS = {
   alexander: { t: "Archibald Alexander, Biographical Sketches of the Founder and Principal Alumni of the Log College (1845)", u: L("LLS:BIOSKETCHLOG") },
   tyerman: { t: "Luke Tyerman, The Life of the Rev. George Whitefield (1877)", u: L("LLS:LFRVGRGWHTFLD") },
   wfjournals: { t: "George Whitefield, Journals (Banner of Truth ed.)", u: L("LLS:JRNLWFIELD") },
+  henry: { t: "Carl F. H. Henry, Architect of Evangelicalism: Essential Essays (Lexham Press / Christianity Today, 2019)", u: L("LLS:RCHTCTVNGLCHNRY") },
 };
-const lg = (key, page) => ({ k: "logos", t: BOOKS[key].t + (page ? ", " + page : ""), u: BOOKS[key].u });
-const w = (t, u) => ({ k: "web", t, u });
+export const lg = (key, page) => ({ k: "logos", t: BOOKS[key].t + (page ? ", " + page : ""), u: BOOKS[key].u });
+export const w = (t, u) => ({ k: "web", t, u });
 
 // Key: "<locationId>|<year>"
 export const EVENT_SOURCES = {

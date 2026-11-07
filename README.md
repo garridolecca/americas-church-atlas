@@ -19,8 +19,9 @@ An interactive, bilingual (English / Spanish) atlas of five centuries of Christi
 
 ## Features
 
-- 65 locations from Quebec to Tierra del Fuego, with 94 events and 40 key figures
-- **Every event cites its sources** — 212 citations, including 50 page-referenced citations of books in the Logos Bible Software library and reputable references (Britannica, Dictionary of Canadian Biography, UNESCO, National Park Service, university journals, archives, official church records)
+- 91 locations from Quebec to Tierra del Fuego, with 135 events and 58 key figures
+- **Every event cites its sources** — 330 citations, including 65 page-referenced citations of books in the Logos Bible Software library and reputable references (Britannica, Dictionary of Canadian Biography, UNESCO, National Park Service, university journals, archives, official church records)
+- **Evangelical history in depth:** 41 additional evangelical milestones — the Triennial Convention, American Bible Society, Fulton Street Prayer Revival, Student Volunteer Movement, National Baptist Convention, Church of God in Christ, Assemblies of God, NAE, Fuller Seminary, Christianity Today, the Jesus Movement, Latino Pentecostalism; and across Latin America the Moravians in Suriname, the Demerara Martyr, Trumbull in Chile, the Waldensians of Uruguay, the Welsh chapels of Patagonia, Mexico's first evangelical church, Bagby in Bahia, Pablo Besson, Barrios and the Guatemala mission, Canadian Baptists in Bolivia, Venezuela's El Redentor, the Christian Congregation and Brazil for Christ, Mennonites in the Chaco, HCJB radio, the Latin America Mission, Colombia's La Violencia, CLADE I, the Quichua churches, the Chamula expulsions, Chile's Evangelical Cathedral, Luis Palau, Cuba's house churches and the 2024 Pew data
 - **Expanded Peru:** 20 events from Cajamarca (1532) and the first bishop of Cusco to Taki Onqoy, the Third Council of Lima, Santa Rosa and San Martín de Porres, the Juli Aymara press, the extirpation of idolatries, Túpac Amaru II, Penzotti's imprisonment, freedom of worship (1915), the Adventist schools of Lake Titicaca, the evangelical churches of Ayacucho during the internal conflict, and the 2017 census
 - Filter by **era** and by **region** (US & Canada / Latin America & Caribbean)
 - Walk each era in chronological order with Previous / Next
@@ -61,6 +62,7 @@ Each event in the app lists its own sources (expand **Sources** under any event)
 - Leroy Fitts, *A History of Black Baptists* (1985) — Logos
 - H. Leon McBeth, *The Baptist Heritage* (1987) — Logos
 - Haykin & Robinson, *To the Ends of the Earth: Calvin's Missional Vision and Legacy* (2014) — Logos
+- Carl F. H. Henry, *Architect of Evangelicalism: Essential Essays* (2019) — Logos
 - Pew Research Center, *Religion in Latin America* (2014)
 
 ### Further reading
@@ -98,8 +100,9 @@ Un atlas interactivo y bilingüe (español / inglés) de cinco siglos de cristia
 
 ### Características
 
-- 65 lugares desde Quebec hasta Tierra del Fuego, con 94 eventos y 40 figuras clave
-- **Cada evento cita sus fuentes**: 212 citas, entre ellas 50 de libros de la biblioteca de Logos Bible Software con número de página, y referencias de prestigio (Britannica, UNESCO, revistas universitarias, archivos y documentos oficiales)
+- 91 lugares desde Quebec hasta Tierra del Fuego, con 135 eventos y 58 figuras clave
+- **Cada evento cita sus fuentes**: 330 citas, entre ellas 65 de libros de la biblioteca de Logos Bible Software con número de página, y referencias de prestigio (Britannica, UNESCO, revistas universitarias, archivos y documentos oficiales)
+- **Historia evangélica en profundidad:** 41 hitos evangélicos más en Norteamérica, Centroamérica, el Caribe y Sudamérica (Surinam, Guyana, Uruguay, Patagonia, Bolivia, Venezuela, Colombia, Ecuador, Paraguay, Chile, Argentina, Brasil)
 - **Perú ampliado:** 20 eventos, de Cajamarca (1532) al censo de 2017
 - Filtros por **era** y por **región** (EE. UU. y Canadá / América Latina y el Caribe)
 - Recorrido cronológico de cada era con Anterior / Siguiente

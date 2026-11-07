@@ -1,4 +1,5 @@
 import { EVENT_SOURCES } from "./sources.js";
+import { EXTRA_EVENTS, EXTRA_LOCATIONS, EXTRA_FIGURES } from "./evangelical.js";
 
 // ============================================================
 // The Church in the Americas — data
@@ -845,8 +846,13 @@ export const figures = [
     es: { role: "Primer papa de las Américas", bio: "Jorge Mario Bergoglio, de Buenos Aires, elegido en 2013." } },
 ];
 
-// Attach sources to every event (see sources.js).
-locations.forEach((loc) => loc.events.forEach((e) => { e.sources = EVENT_SOURCES[loc.id + "|" + e.year] || []; }));
+// Merge the evangelical-history expansion (evangelical.js).
+locations.push(...EXTRA_LOCATIONS);
+locations.forEach((loc) => { if (EXTRA_EVENTS[loc.id]) loc.events.push(...EXTRA_EVENTS[loc.id]); });
+figures.push(...EXTRA_FIGURES);
+
+// Attach sources to every event (see sources.js; expansion events carry their own).
+locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));
 
 // Number events within each era by year, and build the timeline from them.
 eras.forEach((era) => {
