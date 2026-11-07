@@ -1,5 +1,6 @@
 import { EVENT_SOURCES } from "./sources.js";
 import { EXTRA_EVENTS, EXTRA_LOCATIONS, EXTRA_FIGURES } from "./evangelical.js";
+import { LATAM_EVENTS, LATAM_LOCATIONS, LATAM_FIGURES } from "./latam.js";
 import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
 // ============================================================
@@ -851,6 +852,10 @@ export const figures = [
 locations.push(...EXTRA_LOCATIONS);
 locations.forEach((loc) => { if (EXTRA_EVENTS[loc.id]) loc.events.push(...EXTRA_EVENTS[loc.id]); });
 figures.push(...EXTRA_FIGURES);
+// Latin American evangelical milestones (latam.js).
+locations.push(...LATAM_LOCATIONS);
+locations.forEach((loc) => { if (LATAM_EVENTS[loc.id]) loc.events.push(...LATAM_EVENTS[loc.id]); });
+figures.push(...LATAM_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));

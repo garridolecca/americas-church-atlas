@@ -26,8 +26,8 @@ export const THEMES = [
 
 export const REGIONS = [
   { id: "north", en: "US & Canada", es: "EE. UU. y Canadá", countries: ["USA", "Canada"] },
-  { id: "meso", en: "Mexico & Central America", es: "México y Centroamérica", countries: ["Mexico", "Guatemala", "El Salvador", "Costa Rica", "Panama"] },
-  { id: "carib", en: "Caribbean", es: "Caribe", countries: ["Bahamas", "Dominican Republic", "Cuba", "Jamaica"] },
+  { id: "meso", en: "Mexico & Central America", es: "México y Centroamérica", countries: ["Mexico", "Guatemala", "El Salvador", "Nicaragua", "Costa Rica", "Panama"] },
+  { id: "carib", en: "Caribbean", es: "Caribe", countries: ["Bahamas", "Dominican Republic", "Puerto Rico", "Cuba", "Jamaica"] },
   { id: "andes", en: "Andes & Northern South America", es: "Andes y norte de Sudamérica", countries: ["Colombia", "Venezuela", "Guyana", "Suriname", "Ecuador", "Peru", "Bolivia"] },
   { id: "brazil", en: "Brazil", es: "Brasil", countries: ["Brazil"] },
   { id: "cone", en: "Southern Cone", es: "Cono Sur", countries: ["Chile", "Argentina", "Uruguay", "Paraguay"] },
@@ -35,7 +35,7 @@ export const REGIONS = [
 
 export const COUNTRY_ES = {
   USA: "Estados Unidos", Canada: "Canadá", Mexico: "México", Guatemala: "Guatemala", "El Salvador": "El Salvador",
-  "Costa Rica": "Costa Rica", Panama: "Panamá", Bahamas: "Bahamas", "Dominican Republic": "República Dominicana",
+  "Costa Rica": "Costa Rica", Panama: "Panamá", Nicaragua: "Nicaragua", "Puerto Rico": "Puerto Rico", Bahamas: "Bahamas", "Dominican Republic": "República Dominicana",
   Cuba: "Cuba", Jamaica: "Jamaica", Colombia: "Colombia", Venezuela: "Venezuela", Guyana: "Guyana", Suriname: "Surinam",
   Ecuador: "Ecuador", Peru: "Perú", Bolivia: "Bolivia", Brazil: "Brasil", Chile: "Chile", Argentina: "Argentina",
   Uruguay: "Uruguay", Paraguay: "Paraguay",
@@ -86,4 +86,11 @@ export const TAGS = {
   "three-hills|1922": ["E", "edu mis"], "tierra-del-fuego|1851": ["O", "mis per ind"], "toronto|1925": ["MR", ""],
   "valparaiso|1847": ["R", "lib"], "valparaiso|1878": ["M", "edu mis"], "valparaiso|1909": ["PM", "rev"], "washington|1956": ["E", ""],
   "williamstown|1806": ["RE", "mis rev"],
+  // Latin American milestones (latam.js)
+  "mexico-city|1872": ["RM", "mis lib"], "mexico-city|1992": ["EC", "lib"], "buenos-aires|1949": ["E", ""],
+  "lima|1961": ["E", ""], "lima|1982": ["MOEP", ""], "lima|1990": ["EB", "lib"], "huamanga|1992": ["E", "per ind mis"],
+  "rio|1974": ["EB", "rev"], "panama|1982": ["EP", ""], "san-salvador-sv|1977": ["P", "rev"], "havana|1929": ["E", "mis"],
+  "guatemala-city|1982": ["EP", ""], "montevideo|1925": ["E", "mis"], "tetelcingo|1935": ["E", "mis ind edu"],
+  "yarinacocha|1946": ["E", "mis ind edu"], "bluefields|1849": ["O", "mis ind rev"], "managua|1972": ["EB", ""],
+  "san-juan-pr|1898": ["RBMO", "mis"], "villa-aldama|1914": ["P", "rev"],
 };
