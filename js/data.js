@@ -6,6 +6,7 @@ import { SA_EVENTS, SA_LOCATIONS, SA_FIGURES } from "./southamerica.js";
 import { BR_EVENTS, BR_LOCATIONS, BR_FIGURES } from "./sa-brazil.js";
 import { PL_EVENTS, PL_LOCATIONS, PL_FIGURES } from "./sa-plata.js";
 import { AN_EVENTS, AN_LOCATIONS, AN_FIGURES } from "./sa-andes.js";
+import { NO_EVENTS, NO_LOCATIONS, NO_FIGURES } from "./sa-north.js";
 import { EVENT_IMAGES } from "./images.js";
 import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
@@ -882,6 +883,10 @@ figures.push(...PL_FIGURES);
 locations.push(...AN_LOCATIONS);
 locations.forEach((loc) => { if (AN_EVENTS[loc.id]) loc.events.push(...AN_EVENTS[loc.id]); });
 figures.push(...AN_FIGURES);
+// Colombia, Venezuela, the Guianas (sa-north.js).
+locations.push(...NO_LOCATIONS);
+locations.forEach((loc) => { if (NO_EVENTS[loc.id]) loc.events.push(...NO_EVENTS[loc.id]); });
+figures.push(...NO_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));

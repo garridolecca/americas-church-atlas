@@ -127,4 +127,9 @@ export const TAGS = {
   "la-paz|2009": ["EC", "lib"], "la-paz|2019": ["EC", ""], "lima|1979": ["E", "mis"], "quito|1959": ["E", "mis"],
   "quito|1992": ["EP", "mis ind"], "osorno|1863": ["O", ""], "temuco|1895": ["O", "mis ind edu"], "temuco|1908": ["B", ""],
   "santa-cruz|1954": ["O", ""], "tiwaeno|1958": ["E", "mis ind"],
+  // Colombia, Venezuela, Guianas (sa-north.js)
+  "bogota|1825": ["E", "mis"], "bogota|1869": ["R", "edu"], "bogota|1950": ["E", "per"], "bogota|1981": ["E", "per"],
+  "bogota|1994": ["E", "lib"], "bogota|2000": ["P", ""], "demerara|1808": ["R", "ind mis"], "demerara|1885": ["R", "ind edu"],
+  "paramaribo|1863": ["O", "lib ind"], "san-jose-cr|1960": ["E", "rev mis"], "san-andres|1844": ["B", "ind lib"],
+  "lomalinda|1962": ["E", "mis ind"], "maracaibo|1906": ["E", "mis"],
 };

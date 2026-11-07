@@ -1,0 +1,133 @@
+// ============================================================
+// Colombia, Venezuela, the Guianas and the Evangelism-in-Depth movement.
+// Merged into the main dataset by data.js. Every event carries its sources.
+// ============================================================
+import { w } from "./sources.js";
+
+function ev(era, year, figure, title, description, titleEs, descriptionEs, sources) {
+  return { era, year, figure, title, description, es: { title: titleEs, description: descriptionEs }, sources };
+}
+
+export const NO_EVENTS = {
+  "bogota": [
+    ev(4, 1825, "James (Diego) Thomson", "A Bible Society for the New Republic",
+      "In 1825, after his work in Buenos Aires, Chile and Peru, the Scottish Bible Society agent and Lancasterian educator James 'Diego' Thomson reaches Bogotá, capital of Gran Colombia. A public meeting at the university launches the Bible Society of Colombia, backed by leading patriots, to distribute the Scriptures and promote schooling in the new republic. Some clergy fiercely opposed it — a parish priest of Facatativá accused it of making war on the Church — and the society soon faded, but it was the first organized Protestant initiative in Colombia.",
+      "Una Sociedad Bíblica para la nueva república",
+      "En 1825, tras su labor en Buenos Aires, Chile y Perú, el agente bíblico y educador lancasteriano escocés James «Diego» Thomson llega a Bogotá, capital de la Gran Colombia. Una reunión pública en la universidad pone en marcha la Sociedad Bíblica de Colombia, respaldada por destacados patriotas, para distribuir las Escrituras y promover la escuela en la nueva república. Parte del clero se opuso con dureza — un párroco de Facatativá la acusó de hacer la guerra a la Iglesia — y la sociedad pronto decayó, pero fue la primera iniciativa protestante organizada en Colombia.",
+      [w("Universidad Distrital Francisco José de Caldas, digital repository: \"Reglamento de la Sociedad Bíblica de Colombia\" (1825)", "https://repository.udistrital.edu.co/items/9064119e-c584-4fa3-994c-6b9e43bc3cae"),
+       w("Dialnet, article on the Bible Society of Colombia and Protestant presence at the birth of the republic (PDF)", "https://dialnet.unirioja.es/descarga/articulo/6424860.pdf"),
+       w("\"Los colportores: los evangelistas olvidados de las sociedades bíblicas\" (PDF)", "https://www.literaturabautista.com/wp-content/files/Los-Colportores-Los-evangelistas-olvidados-de-las-sociedades-biblicas.pdf")]),
+    ev(5, 1869, "Kate McFarren", "The Colegio Americano of Bogotá",
+      "In 1869 the Presbyterian missionary Kate McFarren begins teaching English to eighteen girls in Bogotá — the start of the Colegio Americano. In a country where education was dominated by the Catholic Church, the Presbyterian schools offered a modern, liberal education that attracted reformist families; their alumni include the sociologist Orlando Fals Borda. The Bogotá school celebrated its 150th anniversary in 2019 and is one of eleven Colegios Americanos run by the Presbyterian Church of Colombia.",
+      "El Colegio Americano de Bogotá",
+      "En 1869 la misionera presbiteriana Kate McFarren comienza a enseñar inglés a dieciocho niñas en Bogotá: el inicio del Colegio Americano. En un país donde la educación estaba dominada por la Iglesia católica, los colegios presbiterianos ofrecían una educación moderna y liberal que atrajo a familias reformistas; entre sus exalumnos está el sociólogo Orlando Fals Borda. El colegio de Bogotá celebró sus 150 años en 2019 y es uno de los once Colegios Americanos de la Iglesia Presbiteriana de Colombia.",
+      [w("Presbyterian Church (U.S.A.), \"Colombian school celebrates 150 years of academic excellence\" (2019)", "https://pcusa.org/news-storytelling/news/2019/6/24/colombian-school-celebrates-150-years-academic-excellence"),
+       w("Presbyterian Mission Agency, \"Colegio Americano is an education ministry of the Presbyterian Church of Colombia\"", "https://www.presbyterianmission.org/?p=165028"),
+       w("Concejo de Bogotá, proposition honouring the Colegio Americano (PDF)", "https://www.concejodebogota.gov.co/concejo/site/artic/20180413/asocfile/20180413150619/proposicion_col_americano_1_.pdf")]),
+    ev(6, 1950, null, "The Evangelical Confederation of Colombia",
+      "As La Violencia engulfs Colombia, harassed Protestants form the Evangelical Confederation of Colombia (CEDEC) in 1950, uniting sixteen denominations and missions. When petitions to the government go unanswered, it documents the persecution in its News Bulletin — chapels burned or confiscated, schools closed, believers beaten and killed — and makes it known abroad. Its reports also showed that Protestant membership grew by half between 1948 and 1953 despite the violence. CEDEC is the forerunner of today's Evangelical Council of Colombia.",
+      "La Confederación Evangélica de Colombia",
+      "Mientras la Violencia envuelve a Colombia, los protestantes acosados forman en 1950 la Confederación Evangélica de Colombia (CEDEC), que une a dieciséis denominaciones y misiones. Cuando sus peticiones al gobierno quedan sin respuesta, documenta la persecución en su Boletín de Noticias — capillas quemadas o confiscadas, escuelas cerradas, creyentes golpeados y asesinados — y la da a conocer en el exterior. Sus informes también mostraron que la membresía protestante creció a la mitad más entre 1948 y 1953 pese a la violencia. CEDEC es la precursora del actual Consejo Evangélico de Colombia.",
+      [w("Christianity Today, \"World Vision in Colombia: Protestant Mission in a Catholic Stronghold\" (1960)", "https://www.christianitytoday.com/1960/06/world-vision-in-colombia-protestant-mission-in-catholic"),
+       w("Time magazine, report on the Evangelical Confederation's summary of persecution (1953)", "https://content.time.com/time/magazine/article/0,9171,858355,00.html"),
+       w("Foreign Relations of the United States, 1950, vol. II (University of Wisconsin digital collection)", "https://search.library.wisc.edu/digital/ADRX4HT2ATPAMT8D/text/AYX3ASGQTP46AM9E")]),
+    ev(6, 1981, "Chet Bitterman", "The Killing of Chet Bitterman",
+      "On 19 January 1981 gunmen posing as police enter the Summer Institute of Linguistics guest house in Bogotá and kidnap Chet Bitterman, a 28-year-old linguist preparing to translate the Bible for an Indigenous people. His captors, claiming to be the M-19 guerrilla movement, accuse SIL of working for the CIA and demand that all its personnel leave Colombia. When SIL refuses, Bitterman is shot; his body is found in a bus on 7 March 1981. His death became a symbol of the risks of missionary work in Colombia's conflict.",
+      "El asesinato de Chet Bitterman",
+      "El 19 de enero de 1981 hombres armados que se hacen pasar por policías entran en la casa de huéspedes del Instituto Lingüístico de Verano en Bogotá y secuestran a Chet Bitterman, un lingüista de 28 años que se preparaba para traducir la Biblia para un pueblo indígena. Sus captores, que dicen ser del M-19, acusan al ILV de trabajar para la CIA y exigen que todo su personal salga de Colombia. Cuando el ILV se niega, Bitterman es asesinado; su cuerpo aparece en un bus el 7 de marzo de 1981. Su muerte se volvió símbolo de los riesgos de la labor misionera en el conflicto colombiano.",
+      [w("Christian Science Monitor, \"Slain missionary buried after simple ceremonies\" (1981)", "https://www.csmonitor.com/1981/0309/030924.html"),
+       w("Christianity Today, \"Wycliffe: A Mission in Search of a Future\" (1982)", "https://www.christianitytoday.com/1982/02/wycliffe-mission-in-search-of-future"),
+       w("Wikipedia, \"Chet Bitterman\"", "https://en.wikipedia.org/wiki/Chet_Bitterman")]),
+    ev(6, 1994, null, "Religious Freedom Law and the 1997 Agreement",
+      "Developing Article 19 of the 1991 Constitution, Law 133 of 1994 guarantees freedom of religion and worship, grants churches legal personality and allows the state to sign agreements with them. On 2 December 1997 the Colombian state and a group of non-Catholic Christian churches sign Public Law Agreement No. 1, approved by Decree 354 of 1998: for the first time evangelical marriages have civil effect and evangelical churches gain recognized rights in religious education and chaplaincy — ending, in law, the privileges of the 1887 Concordat era.",
+      "La ley de libertad religiosa y el convenio de 1997",
+      "Desarrollando el artículo 19 de la Constitución de 1991, la Ley 133 de 1994 garantiza la libertad religiosa y de cultos, otorga personería jurídica a las iglesias y permite al Estado firmar convenios con ellas. El 2 de diciembre de 1997 el Estado colombiano y un grupo de iglesias cristianas no católicas firman el Convenio de Derecho Público Interno n.º 1, aprobado por el Decreto 354 de 1998: por primera vez los matrimonios evangélicos tienen efectos civiles y las iglesias evangélicas obtienen derechos reconocidos en educación religiosa y capellanías, poniendo fin, en la ley, a los privilegios de la era del Concordato de 1887.",
+      [w("Función Pública (Gestor Normativo), Decreto 354 de 1998", "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=3278"),
+       w("Rama Judicial, SIDN, Escudero, \"Régimen jurídico de las iglesias\" (PDF)", "https://sidn.ramajudicial.gov.co/SIDN/DOCTRINA/TABLAS%20DE%20CONTENIDO%20Y%20TEXTOS%20COMPLETOS/342%20-%20DERECHO%20CONSTITUCIONAL%20Y%20PROCESAL%20CONSTITUCIONAL/22668_Regimen_juridico_de_las_Escudero.pdf"),
+       w("Ámbito Jurídico, Decreto 1749 de 2020 (Ministerio del Interior, PDF)", "https://www.ambitojuridico.com/sites/default/files/BancoMedios/Archivos/d-1749-20%28mininterior%29.pdf")]),
+    ev(6, 2000, "María Luisa Piraquive", "MIRA: A Church-Born Party",
+      "In 2000 members of the Iglesia de Dios Ministerial de Jesucristo Internacional — a Pentecostal church founded in Bogotá in the early 1970s by María Luisa Piraquive and María Jesús Moreno — found the Independent Movement of Absolute Renovation (MIRA), led by Piraquive's daughter Alexandra Moreno Piraquive. Disciplined and church-based, it wins seats in the Senate and among Colombians abroad and becomes the most durable evangelical party in the country, though controversies in 2014 over Piraquive's remarks about people with disabilities hurt its standing.",
+      "MIRA: un partido nacido de una iglesia",
+      "En 2000 miembros de la Iglesia de Dios Ministerial de Jesucristo Internacional — una iglesia pentecostal fundada en Bogotá a comienzos de los años setenta por María Luisa Piraquive y María Jesús Moreno — fundan el Movimiento Independiente de Renovación Absoluta (MIRA), dirigido por la hija de Piraquive, Alexandra Moreno Piraquive. Disciplinado y basado en la iglesia, obtiene escaños en el Senado y entre los colombianos en el exterior y se convierte en el partido evangélico más duradero del país, aunque las polémicas de 2014 por declaraciones de Piraquive sobre las personas con discapacidad dañaron su imagen.",
+      [w("La Silla Vacía, profile of the MIRA movement and its founders", "https://www.lasillavacia.com/?p=30930"),
+       w("El Universal (Cartagena), \"MIRA asegura que polémica obedece a una persecución\" (2014)", "https://www.eluniversal.com.co/politica/2014/01/17/mira-asegura-que-polemica-obedece-a-una-persecucion/"),
+       w("Revista Grafías (Universidad Católica de Pereira), study of the Iglesia de Dios Ministerial de Jesucristo Internacional (PDF)", "https://revistas.ucp.edu.co/index.php/grafias/article/download/1172/1193")]),
+  ],
+  "demerara": [
+    ev(4, 1808, "John Wray", "A Missionary to the Enslaved",
+      "Invited by the Dutch planter Hermanus Post, who paid his expenses, the London Missionary Society's John Wray lands in Demerara in February 1808 and settles on the Le Resouvenir plantation to preach to enslaved Africans. The governor allows him to preach, and his letters and journals record the life, funerals and faith of the enslaved. After Post's death conditions worsen and planters grow hostile; Wray's successor at Le Resouvenir was John Smith, who died in prison after the 1823 rebellion. The Congregational churches of Guyana trace their origins to this mission.",
+      "Un misionero para los esclavizados",
+      "Invitado por el plantador neerlandés Hermanus Post, que pagó sus gastos, John Wray, de la Sociedad Misionera de Londres, desembarca en Demerara en febrero de 1808 y se instala en la plantación Le Resouvenir para predicar a los africanos esclavizados. El gobernador le permite predicar, y sus cartas y diarios registran la vida, los funerales y la fe de los esclavizados. Tras la muerte de Post las condiciones empeoran y los plantadores se vuelven hostiles; el sucesor de Wray en Le Resouvenir fue John Smith, muerto en prisión tras la rebelión de 1823. Las iglesias congregacionales de Guyana remontan su origen a esta misión.",
+      [w("SOAS Library, Council for World Mission/LMS archive: Journal of John Wray, Le Resouvenir, Demerara, 1808", "https://digital.soas.ac.uk/CW00000085/00002/citation"),
+       w("SOAS Library, Letter from John Wray, 11 December 1808, Le Resouvenir", "https://library.soas.ac.uk/Record/CWM.LMS.12.02.04.003.001"),
+       w("Guyana Chronicle, \"The Congregational Church\"", "https://guyanachronicle.com/?p=582952"),
+       w("DBNL, \"Slave master between slave rebellions: H. H. Post and the mission in Guyana\"", "https://dbnl.org/tekst/paas001rein02_01/paas001rein02_01_0035.php")]),
+    ev(5, 1885, "John Gibson", "The Canadian Mission to the East Indians",
+      "After abolition, British Guiana imports indentured labourers from India for the sugar estates. Following John Morton's pioneering mission among East Indians in Trinidad, the Canadian Presbyterian Church sends the Rev. John Gibson to Demerara in 1885; from 1895 J. B. Cropper, fluent in Hindi, extends the work across the plantations. The 'Canadian Mission' schools became a main path to education for Indo-Guyanese children. The mission became a presbytery in 1945 and in 1961 the Guyana Presbyterian Church.",
+      "La Misión Canadiense entre los indios orientales",
+      "Tras la abolición, la Guayana Británica trae trabajadores contratados de la India para las plantaciones de azúcar. Siguiendo la misión pionera de John Morton entre los indios orientales de Trinidad, la Iglesia Presbiteriana de Canadá envía al reverendo John Gibson a Demerara en 1885; desde 1895 J. B. Cropper, que hablaba hindi con fluidez, extiende la obra por las plantaciones. Las escuelas de la «Misión Canadiense» fueron un camino principal hacia la educación para los niños indoguyaneses. La misión se volvió presbiterio en 1945 y en 1961 Iglesia Presbiteriana de Guyana.",
+      [w("Wikipedia, \"Guyana Presbyterian Church\"", "https://en.wikipedia.org/wiki/Guyana_Presbyterian_Church"),
+       w("Stabroek News, \"The Canadian Mission established schools to lift lives\" (2023)", "https://www.stabroeknews.com/2023/03/06/opinion/letters/the-canadian-mission-established-schools-to-lift-lives-stuck-in-the-dark-and-miry-clay/"),
+       w("Guyana Chronicle, review of a history of the Canadian Presbyterian mission", "https://guyanachronicle.com/?p=495300")]),
+  ],
+  "paramaribo": [
+    ev(4, 1863, null, "Emancipation in Suriname",
+      "On 1 July 1863 slavery is abolished in Suriname, though the freed people must still work under state supervision for ten more years. On the eve of emancipation the Grote Stadskerk, the great Moravian church in Paramaribo, is decorated with flowers as the centre of the celebrations. Moravian missionaries had worked among the enslaved since the 1730s, and by emancipation the Moravian Church (Evangelische Broedergemeente) and the Catholic Church had become largely 'Black churches'; the Moravians remain Suriname's largest Protestant church, and Keti Koti is still celebrated every 1 July.",
+      "La emancipación en Surinam",
+      "El 1 de julio de 1863 se abole la esclavitud en Surinam, aunque los liberados deben trabajar aún diez años bajo supervisión estatal. En la víspera de la emancipación la Grote Stadskerk, la gran iglesia morava de Paramaribo, se adorna de flores como centro de las celebraciones. Los misioneros moravos trabajaban entre los esclavizados desde la década de 1730, y para la emancipación la Iglesia Morava (Evangelische Broedergemeente) y la Iglesia católica se habían convertido en gran medida en «iglesias negras»; los moravos siguen siendo la mayor iglesia protestante de Surinam, y el Keti Koti se celebra cada 1 de julio.",
+      [w("Wikipedia, \"Grote Stadskerk\" (Paramaribo)", "https://en.wikipedia.org/wiki/Grote_Stadskerk"),
+       w("Herrnhuter Missionshilfe, country profile: Suriname (PDF)", "https://www.herrnhuter-missionshilfe.de/fileadmin/media-hmh/03_Downloads/Laenderinfos/Faltblatt_Laenderinfo_Surinam.pdf"),
+       w("Wikipedia, \"Ketikoti\"", "https://en.wikipedia.org/wiki/Ketikoti")]),
+  ],
+  "san-jose-cr": [
+    ev(6, 1960, "R. Kenneth Strachan", "Evangelism-in-Depth",
+      "Convinced that mass crusades alone could not evangelize a continent, Kenneth Strachan of the Latin America Mission launches Evangelism-in-Depth in 1959: a year-long national campaign mobilizing every believer of every cooperating church through prayer cells, training, house-to-house visitation and finally public marches and rallies. Its 1960 campaign in Costa Rica, 'Por una patria mejor', was among the first; the method was used in fourteen Latin American countries until 1971 and became a model for 'saturation evangelism' worldwide.",
+      "Evangelismo a Fondo",
+      "Convencido de que las campañas masivas por sí solas no podían evangelizar un continente, Kenneth Strachan, de la Misión Latinoamericana, lanza en 1959 el Evangelismo a Fondo: una campaña nacional de un año que moviliza a cada creyente de cada iglesia participante mediante células de oración, capacitación, visitación casa por casa y, al final, marchas y concentraciones públicas. Su campaña de 1960 en Costa Rica, «Por una patria mejor», fue de las primeras; el método se usó en catorce países latinoamericanos hasta 1971 y se convirtió en modelo de «evangelismo de saturación» en todo el mundo.",
+      [w("Wheaton College Archives, \"'Por Una Patria Mejor': Evangelism-In-Depth in Latin America\" (2025)", "https://fromthevault.wheaton.edu/2025/10/10/por-una-patria-mejor-evangelism-in-depth-in-latin-america/"),
+       w("BiblicalTraining.org, \"Evangelism in Depth\"", "https://www.biblicaltraining.org/library/evangelism-in-depth"),
+       w("Wikipedia, \"R. Kenneth Strachan\"", "https://en.wikipedia.org/wiki/R._Kenneth_Strachan")]),
+  ],
+};
+
+export const NO_LOCATIONS = [
+  { id: "san-andres", name: "San Andrés", modernName: "San Andrés, San Andrés and Providencia, Colombia", region: "Western Caribbean", lat: 12.5847, lng: -81.7006, significance: "minor", zone: "south",
+    es: { name: "San Andrés", modernName: "San Andrés, San Andrés y Providencia, Colombia", region: "Caribe occidental" },
+    events: [
+      ev(4, 1844, "Philip Beekman Livingston", "The Raizal Baptists of San Andrés",
+        "On the Colombian island of San Andrés, whose English-speaking Afro-Caribbean people are known today as Raizals, the islander Philip Beekman Livingston Jr. begins Baptist preaching in 1844 among both enslaved and free people; by about 1847 the congregation meets in a thatched hut on the Hill. The First Baptist Church — its white wooden building dedicated in 1896 — became the 'mother church' of the islands, and historians describe its pastors as the leading authority in island life until the early twentieth century. It remains a symbol of Raizal identity and of the struggle against slavery.",
+        "Los bautistas raizales de San Andrés",
+        "En la isla colombiana de San Andrés, cuyo pueblo afrocaribeño de habla inglesa se conoce hoy como raizal, el isleño Philip Beekman Livingston Jr. comienza en 1844 la predicación bautista entre esclavizados y libres; hacia 1847 la congregación se reúne en una choza de paja en La Loma. La Primera Iglesia Bautista — cuyo edificio blanco de madera se dedicó en 1896 — llegó a ser la «iglesia madre» de las islas, y los historiadores describen a sus pastores como la principal autoridad de la vida isleña hasta comienzos del siglo XX. Sigue siendo un símbolo de la identidad raizal y de la lucha contra la esclavitud.",
+        [w("Associated Press via theGrio, \"On Colombia's San Andres, a historic church's roots run deep\" (2022)", "https://thegrio.com/2022/09/05/first-baptist-church-san-andres-slavery"),
+         w("Daily Herald (AP), \"On Colombia's San Andres, a historic church's roots run deep\" (2022)", "https://www.dailyherald.com/?p=407882"),
+         w("Location Colombia, First Baptist Church of San Andrés", "https://locationcolombia.com/en/?p=55414")]),
+    ] },
+  { id: "lomalinda", name: "Lomalinda", modernName: "Lomalinda, Puerto Lleras, Meta, Colombia", region: "Colombian Llanos", lat: 3.3, lng: -73.37, significance: "minor", zone: "south",
+    es: { name: "Lomalinda", modernName: "Lomalinda, Puerto Lleras, Meta, Colombia", region: "Llanos colombianos" },
+    events: [
+      ev(6, 1962, "Cameron Townsend", "The SIL Base at Lomalinda",
+        "Under a contract with the Colombian government signed on 21 February 1962, the Summer Institute of Linguistics establishes its Colombian base at Lomalinda, in the plains of Meta, with an airstrip, school and translation centre serving work among dozens of Indigenous peoples. From the late 1960s Indigenous organizations, universities and human-rights groups denounce it as an agent of cultural change and foreign influence and demand its expulsion; in 1981 one of its linguists, Chet Bitterman, is murdered. SIL left Lomalinda in 1996, and scholars still debate its legacy.",
+        "La base del ILV en Lomalinda",
+        "Mediante un contrato con el gobierno colombiano firmado el 21 de febrero de 1962, el Instituto Lingüístico de Verano establece su base colombiana en Lomalinda, en los llanos del Meta, con pista de aterrizaje, escuela y centro de traducción al servicio de su trabajo entre decenas de pueblos indígenas. Desde fines de los años sesenta, organizaciones indígenas, universidades y grupos de derechos humanos lo denuncian como agente de cambio cultural e influencia extranjera y exigen su expulsión; en 1981 uno de sus lingüistas, Chet Bitterman, es asesinado. El ILV salió de Lomalinda en 1996, y los investigadores aún debaten su legado.",
+        [w("Maguaré (Universidad Nacional de Colombia), article on the ruins of the Lomalinda hacienda and the SIL (2023)", "https://revistas.unal.edu.co/index.php/maguare/article/view/110651"),
+         w("Radio Nacional de Colombia, \"Instituto Lingüístico de Verano en Colombia\"", "https://radionacional.co/cultura/historia-colombiana/instituto-linguistico-de-verano-en-colombia-informe-orinoquia"),
+         w("Boletín de Antropología (Universidad de Antioquia), dossier on the SIL in Colombia (PDF)", "https://revistas.udea.edu.co/index.php/boletin/article/download/336995/20792265/164413")]),
+    ] },
+  { id: "maracaibo", name: "Maracaibo", modernName: "Maracaibo, Zulia, Venezuela", region: "Western Venezuela", lat: 10.6427, lng: -71.6125, significance: "minor", zone: "south",
+    es: { name: "Maracaibo", modernName: "Maracaibo, Zulia, Venezuela", region: "Occidente de Venezuela" },
+    events: [
+      ev(5, 1906, null, "Scandinavian Missionaries in Western Venezuela",
+        "In 1906 the Scandinavian Alliance Mission — founded in 1890 by the Swedish-American evangelist Fredrik Franson — sends Swedish missionaries to Venezuela, among them Thomas Bach and John Christiansen. Working from Maracaibo across western Venezuela and the Andes, and later into Norte de Santander in Colombia, they plant churches that form one of Venezuela's oldest evangelical denominations. The mission, renamed The Evangelical Alliance Mission (TEAM) in 1949, made the oil city of Maracaibo an early centre of Venezuelan Protestantism.",
+        "Misioneros escandinavos en el occidente de Venezuela",
+        "En 1906 la Misión Alianza Escandinava — fundada en 1890 por el evangelista sueco-estadounidense Fredrik Franson — envía misioneros suecos a Venezuela, entre ellos Thomas Bach y John Christiansen. Trabajando desde Maracaibo por el occidente venezolano y los Andes, y luego en Norte de Santander (Colombia), fundan iglesias que forman una de las denominaciones evangélicas más antiguas de Venezuela. La misión, rebautizada The Evangelical Alliance Mission (TEAM) en 1949, hizo de la ciudad petrolera de Maracaibo un temprano centro del protestantismo venezolano.",
+        [w("PROLADES, chronology of Protestant history in Venezuela (PDF)", "https://www.ranchocolibri.net/prolades/encyclopedia/historical/chron-ven.pdf"),
+         w("Universidad Industrial de Santander, thesis on TEAM in Venezuela and Norte de Santander (PDF)", "https://noesis.uis.edu.co/bitstreams/1df832bf-c8b0-47aa-a405-3aa02f1643cf/download"),
+         w("Wikipedia, \"Evangelical Alliance Mission\"", "https://en.wikipedia.org/wiki/Evangelical_Alliance_Mission")]),
+    ] },
+];
+
+export const NO_FIGURES = [
+  { id: "bitterman", name: "Chet Bitterman", years: "1952–1981", role: "SIL linguist killed in Colombia",
+    bio: "American Bible translator with the Summer Institute of Linguistics, kidnapped in Bogotá in January 1981 and murdered that March.",
+    es: { role: "Lingüista del ILV asesinado en Colombia", bio: "Traductor bíblico estadounidense del Instituto Lingüístico de Verano, secuestrado en Bogotá en enero de 1981 y asesinado en marzo." } },
+];
