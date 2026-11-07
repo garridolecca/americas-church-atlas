@@ -1,5 +1,6 @@
 import { EVENT_SOURCES } from "./sources.js";
 import { EXTRA_EVENTS, EXTRA_LOCATIONS, EXTRA_FIGURES } from "./evangelical.js";
+import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
 // ============================================================
 // The Church in the Americas — data
@@ -853,6 +854,17 @@ figures.push(...EXTRA_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));
+
+// Country, region, traditions and themes (see taxonomy.js).
+locations.forEach((loc) => {
+  loc.country = loc.modernName.split(",").pop().trim();
+  loc.area = COUNTRY_REGION[loc.country] || "other";
+  loc.events.forEach((e) => {
+    const tag = TAGS[loc.id + "|" + e.year] || ["E", ""];
+    e.traditions = tag[0].split("");
+    e.themes = tag[1] ? tag[1].split(" ") : [];
+  });
+});
 
 // Number events within each era by year, and build the timeline from them.
 eras.forEach((era) => {

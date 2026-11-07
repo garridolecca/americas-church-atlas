@@ -10,6 +10,7 @@ const ARCGIS_API_KEY = "";
 
 import { eras, locations, routes, figures, timeline, eraIndex } from "./data.js";
 import { GENERAL_SOURCES } from "./sources.js";
+import { TRADITIONS, TRADITION_INDEX, THEMES, REGIONS, COUNTRY_ES } from "./taxonomy.js";
 import { lang, setLang, t, eraText, locationText, localized } from "./i18n.js";
 
 // ============================================================
@@ -203,13 +204,27 @@ async function initMap() {
   }
 
   // State
-  let activeEra = "all";
-  let activeZone = "all"; // "all" | "north" | "south"
+  // Filters work on individual events: a place is shown if at least one of its events matches.
+  let activeEra = "all";      // "all" | era id
+  let activeTrad = "all";     // "all" | tradition id (C, R, B, M, P, E, O)
+  let activeTheme = "all";    // "all" | theme id
+  let activeArea = "all";     // "all" | "r:<region id>" | "c:<country>"
+  let colorMode = "era";      // "era" | "trad"
   let showHistoricalNames = true;
   const HOME = { center: [-75, 8], zoom: 3 };
-  const isVisible = (loc) =>
-    (activeEra === "all" || loc.eras.includes(activeEra)) &&
-    (activeZone === "all" || loc.zone === activeZone);
+  const areaMatch = (loc) => activeArea === "all" ||
+    (activeArea.startsWith("r:") ? loc.area === activeArea.slice(2) : loc.country === activeArea.slice(2));
+  // `skip` ignores one dimension (used to compute the counts shown on each filter option)
+  function eventMatches(loc, e, skip) {
+    return (skip === "era" || activeEra === "all" || e.era === activeEra) &&
+      (skip === "trad" || activeTrad === "all" || e.traditions.includes(activeTrad)) &&
+      (skip === "theme" || activeTheme === "all" || e.themes.includes(activeTheme)) &&
+      (skip === "area" || areaMatch(loc));
+  }
+  const visibleEvents = (loc) => loc.events.filter((e) => eventMatches(loc, e));
+  const isVisible = (loc) => visibleEvents(loc).length > 0;
+  const filtersActive = () => activeEra !== "all" || activeTrad !== "all" || activeTheme !== "all" || activeArea !== "all";
+  let stopNumbers = {};
   let selectedLocation = null;
   let orderedStops = [];
   let currentStopIndex = -1;
@@ -292,18 +307,25 @@ async function initMap() {
     }
   }
 
-  function getStopNumber(loc) {
-    if (activeEra === "all") {
-      const event = loc.events[0];
-      return event ? event.order : null;
-    }
-    const event = loc.events.find((e) => e.era === activeEra);
-    return event ? event.order : null;
+  // Stops are numbered 1..N in chronological order of each place's first matching event,
+  // so the numbers on the map always match the Previous / Next counter.
+  function computeStops() {
+    const stops = locations.filter(isVisible)
+      .map((loc) => ({ loc, first: visibleEvents(loc)[0] }))
+      .sort((a, b) => a.first.year - b.first.year);
+    orderedStops = stops.map((st) => st.loc);
+    stopNumbers = {};
+    orderedStops.forEach((l, i) => { stopNumbers[l.id] = i + 1; });
   }
 
+  function getStopNumber(loc) { return stopNumbers[loc.id] ?? null; }
+
+  function tradColor(id) { return TRADITION_INDEX[id]?.color || [150, 150, 150]; }
+
   function getStopEraColor(loc) {
-    if (activeEra === "all") return getEraColor(loc.eras[0]);
-    return getEraColor(activeEra);
+    const ev = visibleEvents(loc)[0] || loc.events[0];
+    if (colorMode === "trad") return tradColor(activeTrad !== "all" ? activeTrad : ev.traditions[0]);
+    return getEraColor(ev.era);
   }
 
   // Draw Routes
@@ -313,7 +335,7 @@ async function initMap() {
       const era = eraIndex[route.era];
       if (!era) return;
       if (activeEra !== "all" && activeEra !== route.era) return;
-      if (activeZone !== "all") return;
+      if (activeTrad !== "all" || activeTheme !== "all" || activeArea !== "all") return;
 
       if (route.path && route.path.length > 1) {
         routeLayer.add(new Graphic({
@@ -508,17 +530,17 @@ async function initMap() {
   }
 
   function refresh() {
+    computeStops();
     drawGeoLabels();
     drawRoutes();
     drawLocations();
+    updateFilterUI();
   }
 
   // Era Chip Selector
   const chips = document.querySelectorAll(".journey-chip[data-era]");
   chips.forEach((chip) => {
     chip.addEventListener("click", () => {
-      chips.forEach((c) => c.classList.remove("active"));
-      chip.classList.add("active");
       const val = chip.dataset.era;
       activeEra = val === "all" ? "all" : parseInt(val);
       closeBottomSheet();
@@ -527,22 +549,113 @@ async function initMap() {
     });
   });
 
-  // Region chips (North / South)
-  const zoneChips = document.querySelectorAll(".zone-chip");
-  zoneChips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      zoneChips.forEach((c) => c.classList.remove("active"));
-      chip.classList.add("active");
-      activeZone = chip.dataset.zone;
-      closeBottomSheet();
-      refresh();
-      zoomToVisible();
+  // ---------- Tradition chips, region/country and theme menus, color mode ----------
+  const tradChipsEl = document.getElementById("tradChips");
+  const areaSelect = document.getElementById("areaSelect");
+  const themeSelect = document.getElementById("themeSelect");
+
+  const countEvents = (skip, extra) => {
+    let n = 0;
+    locations.forEach((loc) => loc.events.forEach((e) => { if (eventMatches(loc, e, skip) && extra(loc, e)) n++; }));
+    return n;
+  };
+  const nameOf = (obj) => (lang === "es" ? obj.es : obj.en);
+
+  function buildFilterControls() {
+    tradChipsEl.innerHTML =
+      `<button class="journey-chip trad-chip" data-trad="all"><span class="chip-dot" style="background:conic-gradient(${TRADITIONS.map((tr, i) => `${tr.hex} ${i / TRADITIONS.length * 100}% ${(i + 1) / TRADITIONS.length * 100}%`).join(",")})"></span><span class="chip-label">${t("allTraditions")}</span><span class="chip-count"></span></button>` +
+      TRADITIONS.map((tr) =>
+        `<button class="journey-chip trad-chip" data-trad="${tr.id}" title="${nameOf(tr)}"><span class="chip-dot" style="background:${tr.hex}"></span><span class="chip-label">${nameOf(tr)}</span><span class="chip-count"></span></button>`
+      ).join("");
+    tradChipsEl.querySelectorAll(".trad-chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        activeTrad = chip.dataset.trad;
+        closeBottomSheet(); refresh(); zoomToVisible();
+      });
     });
+
+    const countries = [...new Set(locations.map((l) => l.country))];
+    areaSelect.innerHTML =
+      `<option value="all">${t("allRegions")}</option>` +
+      `<optgroup label="${t("regionsGroup")}">` + REGIONS.map((r) => `<option value="r:${r.id}">${nameOf(r)}</option>`).join("") + `</optgroup>` +
+      `<optgroup label="${t("countriesGroup")}">` +
+      countries.map((c) => ({ c, label: lang === "es" ? (COUNTRY_ES[c] || c) : c }))
+        .sort((a, b) => a.label.localeCompare(b.label, lang))
+        .map(({ c, label }) => `<option value="c:${c}">${label}</option>`).join("") + `</optgroup>`;
+    themeSelect.innerHTML = `<option value="all">${t("allThemes")}</option>` +
+      THEMES.map((th) => `<option value="${th.id}">${nameOf(th)}</option>`).join("");
+    areaSelect.value = activeArea;
+    themeSelect.value = activeTheme;
+    document.getElementById("colorByLabel").textContent = t("colorBy");
+    document.querySelector('.seg-btn[data-color="era"]').textContent = t("colorEra");
+    document.querySelector('.seg-btn[data-color="trad"]').textContent = t("colorTrad");
+    document.getElementById("clearFilters").textContent = t("clearFilters");
+  }
+
+  // Live counts: each option shows how many events it would leave, given the other filters
+  function updateFilterUI() {
+    tradChipsEl.querySelectorAll(".trad-chip").forEach((chip) => {
+      const id = chip.dataset.trad;
+      chip.classList.toggle("active", id === activeTrad);
+      const n = countEvents("trad", (loc, e) => id === "all" || e.traditions.includes(id));
+      chip.querySelector(".chip-count").textContent = n;
+      chip.classList.toggle("is-empty", n === 0);
+    });
+    document.querySelectorAll(".journey-chip[data-era]").forEach((chip) => {
+      const v = chip.dataset.era;
+      chip.classList.toggle("active", v === String(activeEra));
+      let badge = chip.querySelector(".chip-count");
+      if (!badge) { badge = document.createElement("span"); badge.className = "chip-count"; chip.appendChild(badge); }
+      const n = countEvents("era", (loc, e) => v === "all" || e.era === parseInt(v));
+      badge.textContent = n;
+      chip.classList.toggle("is-empty", n === 0);
+    });
+    [...areaSelect.options].forEach((o) => {
+      if (!o.dataset.base) o.dataset.base = o.textContent;
+      const v = o.value;
+      const saved = activeArea; activeArea = v;
+      const n = countEvents(null, () => true);
+      activeArea = saved;
+      o.textContent = `${o.dataset.base} (${n})`;
+    });
+    [...themeSelect.options].forEach((o) => {
+      if (!o.dataset.base) o.dataset.base = o.textContent;
+      const v = o.value;
+      const n = countEvents("theme", (loc, e) => v === "all" || e.themes.includes(v));
+      o.textContent = `${o.dataset.base} (${n})`;
+    });
+    areaSelect.parentElement.classList.toggle("active", activeArea !== "all");
+    themeSelect.parentElement.classList.toggle("active", activeTheme !== "all");
+    document.querySelectorAll(".seg-btn").forEach((b) => b.classList.toggle("active", b.dataset.color === colorMode));
+    const total = countEvents(null, () => true);
+    document.getElementById("resultCount").textContent = `${total} ${t("eventsWord")} · ${orderedStops.length} ${t("placesWord")}`;
+    document.getElementById("clearFilters").classList.toggle("hidden", !filtersActive());
+    document.body.classList.toggle("color-trad", colorMode === "trad");
+    const nActive = [activeTrad, activeTheme, activeArea].filter((v) => v !== "all").length;
+    document.getElementById("filtersActiveCount").textContent = nActive || "";
+    document.getElementById("filtersBtnText").textContent = t("filtersLabel");
+    btnFilters.classList.toggle("active", nActive > 0);
+  }
+
+  areaSelect.addEventListener("change", () => { activeArea = areaSelect.value; closeBottomSheet(); refresh(); zoomToVisible(); });
+  themeSelect.addEventListener("change", () => { activeTheme = themeSelect.value; closeBottomSheet(); refresh(); zoomToVisible(); });
+  document.querySelectorAll(".seg-btn").forEach((b) => b.addEventListener("click", () => { colorMode = b.dataset.color; refresh(); }));
+  document.getElementById("clearFilters").addEventListener("click", () => {
+    activeEra = "all"; activeTrad = "all"; activeTheme = "all"; activeArea = "all";
+    areaSelect.value = "all"; themeSelect.value = "all";
+    closeBottomSheet(); refresh(); zoomToVisible();
   });
+  // Phones: tradition/region/theme rows fold behind a "Filters" button
+  const btnFilters = document.getElementById("btnFilters");
+  btnFilters.addEventListener("click", () => {
+    const open = document.body.classList.toggle("filters-open");
+    btnFilters.setAttribute("aria-expanded", String(open));
+  });
+  buildFilterControls();
 
   function zoomToVisible() {
     const vis = locations.filter(isVisible);
-    if (activeEra === "all" && activeZone === "all") {
+    if (!filtersActive()) {
       view.goTo(HOME, { duration: 800 });
     } else if (vis.length > 0) {
       zoomToLocations(vis);
@@ -564,19 +677,22 @@ async function initMap() {
   // Timeline Panel
   function buildTimelinePanel() {
     const content = document.getElementById("timelineContent");
-    const items = timeline.filter((evt) =>
-      (activeEra === "all" || evt.era === activeEra) && (activeZone === "all" || evt.zone === activeZone));
-    content.innerHTML = items.map((evt) => {
-      const era = eraIndex[evt.era];
+    const items = locations
+      .flatMap((loc) => visibleEvents(loc).map((e) => ({ e, loc })))
+      .sort((a, b) => a.e.year - b.e.year);
+    content.innerHTML = items.map(({ e, loc }) => {
+      const era = eraIndex[e.era];
+      const dotColor = colorMode === "trad" ? TRADITION_INDEX[e.traditions[0]].hex : era.hexColor;
+      const placeName = locationText(loc.id, "name") || loc.name;
       return `
-        <div class="timeline-item" data-location="${evt.locationId}">
-          <div class="timeline-dot" style="background:${era.hexColor}"></div>
-          <div class="timeline-year" style="color:${era.hexColor}">${evt.year}</div>
-          <div class="timeline-title">${localized(evt, "title")}</div>
-          <div class="timeline-location">${lang === "es" ? evt.locationNameEs : evt.locationName}</div>
+        <div class="timeline-item" data-location="${loc.id}">
+          <div class="timeline-dot" style="background:${dotColor}"></div>
+          <div class="timeline-year" style="color:${dotColor}">${e.year}</div>
+          <div class="timeline-title">${localized(e, "title")}</div>
+          <div class="timeline-location">${placeName} · ${e.traditions.map((id) => `<span class="mini-dot" style="background:${TRADITION_INDEX[id].hex}" title="${nameOf(TRADITION_INDEX[id])}"></span>`).join("")}</div>
         </div>
       `;
-    }).join("");
+    }).join("") || `<p class="empty-note">${t("noResults")}</p>`;
 
     content.querySelectorAll(".timeline-item").forEach((item) => {
       item.addEventListener("click", () => {
@@ -649,6 +765,7 @@ async function initMap() {
     const newLang = lang === "en" ? "es" : "en";
     setLang(newLang);
     applyTranslations();
+    buildFilterControls();
     buildTimelinePanel();
     buildFiguresPanel();
     refresh();
@@ -664,32 +781,7 @@ async function initMap() {
   const sheetEvents = document.getElementById("sheetEvents");
   const sheetHandle = document.getElementById("sheetHandle");
 
-  function buildStopList() {
-    const stops = [];
-    if (activeEra !== "all") {
-      locations.filter(isVisible).forEach((loc) => {
-        const event = loc.events.find((e) => e.era === activeEra);
-        if (event) stops.push({ loc, order: event.order, era: activeEra });
-      });
-      stops.sort((a, b) => a.order - b.order);
-    } else {
-      eras.forEach(({ id: eraId }) => {
-        const eraStops = [];
-        locations.filter(isVisible).forEach((loc) => {
-          const event = loc.events.find((e) => e.era === eraId);
-          if (event) eraStops.push({ loc, order: event.order, era: eraId });
-        });
-        eraStops.sort((a, b) => a.order - b.order);
-        stops.push(...eraStops);
-      });
-      const seen = new Set();
-      const unique = [];
-      stops.forEach((s) => { if (!seen.has(s.loc.id)) { seen.add(s.loc.id); unique.push(s); } });
-      stops.length = 0;
-      stops.push(...unique);
-    }
-    orderedStops = stops.map((s) => s.loc);
-  }
+  function buildStopList() { computeStops(); }
 
   function updateNavButtons() {
     const prevBtn = document.getElementById("btnPrevStop");
@@ -725,10 +817,8 @@ async function initMap() {
     sheetLocationName.textContent = locName;
     sheetModernName.textContent = `${t("sheetModernLabel")} ${modName}  |  ${t("sheetRegionLabel")} ${region}`;
 
-    let eventsToShow = loc.events;
-    if (activeEra !== "all") {
-      eventsToShow = loc.events.filter((e) => e.era === activeEra);
-    }
+    let eventsToShow = visibleEvents(loc);
+    if (!eventsToShow.length) eventsToShow = loc.events;
 
     sheetEvents.innerHTML = eventsToShow.map((event) => {
       const era = eraIndex[event.era];
@@ -739,6 +829,7 @@ async function initMap() {
         <div class="event-card" data-era="${event.era}">
           <div class="event-era-tag">${event.year} &bull; ${eraShort} &bull; ${eraDate}</div>
           <div class="event-action">${localized(event, "title")}</div>
+          <div class="event-tags">${event.traditions.map((id) => `<span class="trad-pill" style="--c:${TRADITION_INDEX[id].hex}">${nameOf(TRADITION_INDEX[id])}</span>`).join("")}${event.themes.map((id) => `<span class="theme-pill">${nameOf(THEMES.find((th) => th.id === id))}</span>`).join("")}</div>
           <p class="event-description">${localized(event, "description")}</p>
           ${event.figure ? `<span class="event-figure-tag">${event.figure}</span>` : ""}
           ${renderSources(event.sources)}
@@ -854,10 +945,6 @@ function applyTranslations() {
     const era = chip.dataset.era;
     if (era && era !== "all") labelEl.textContent = eraText(parseInt(era), "shortName");
     else if (labelEl?.dataset?.i18n) labelEl.textContent = t(labelEl.dataset.i18n);
-  });
-  document.querySelectorAll(".zone-chip").forEach((chip) => {
-    const labelEl = chip.querySelector(".chip-label");
-    if (labelEl?.dataset?.i18n) labelEl.textContent = t(labelEl.dataset.i18n);
   });
 
   document.getElementById("timelinePanelTitle").textContent = t("timelineTitle");

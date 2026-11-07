@@ -1,0 +1,89 @@
+// ============================================================
+// Taxonomy: traditions, themes, regions and countries.
+// Every event is tagged with one or more traditions and zero or more themes.
+// ============================================================
+
+// Tradition palette chosen to be distinguishable on the light basemap and in the dark UI.
+export const TRADITIONS = [
+  { id: "C", color: [196, 154, 44], hex: "#C49A2C", en: "Catholic", es: "Católica" },
+  { id: "R", color: [47, 109, 181], hex: "#2F6DB5", en: "Reformed & Presbyterian", es: "Reformada y presbiteriana" },
+  { id: "B", color: [33, 145, 128], hex: "#219180", en: "Baptist", es: "Bautista" },
+  { id: "M", color: [222, 116, 52], hex: "#DE7434", en: "Methodist & Wesleyan", es: "Metodista y wesleyana" },
+  { id: "P", color: [205, 58, 72], hex: "#CD3A48", en: "Pentecostal & Charismatic", es: "Pentecostal y carismática" },
+  { id: "E", color: [137, 99, 190], hex: "#8963BE", en: "Evangelical movements", es: "Movimientos evangélicos" },
+  { id: "O", color: [104, 140, 84], hex: "#688C54", en: "Lutheran, Anglican & other Protestant", es: "Luterana, anglicana y otras protestantes" },
+];
+export const TRADITION_INDEX = Object.fromEntries(TRADITIONS.map((t) => [t.id, t]));
+
+export const THEMES = [
+  { id: "lib", en: "Religious liberty", es: "Libertad religiosa" },
+  { id: "per", en: "Persecution & martyrdom", es: "Persecución y martirio" },
+  { id: "rev", en: "Revival & awakening", es: "Avivamiento" },
+  { id: "mis", en: "Missions & the Bible", es: "Misiones y la Biblia" },
+  { id: "edu", en: "Education & scholarship", es: "Educación" },
+  { id: "ind", en: "Indigenous & Afro-descendant peoples", es: "Pueblos indígenas y afrodescendientes" },
+];
+
+export const REGIONS = [
+  { id: "north", en: "US & Canada", es: "EE. UU. y Canadá", countries: ["USA", "Canada"] },
+  { id: "meso", en: "Mexico & Central America", es: "México y Centroamérica", countries: ["Mexico", "Guatemala", "El Salvador", "Costa Rica", "Panama"] },
+  { id: "carib", en: "Caribbean", es: "Caribe", countries: ["Bahamas", "Dominican Republic", "Cuba", "Jamaica"] },
+  { id: "andes", en: "Andes & Northern South America", es: "Andes y norte de Sudamérica", countries: ["Colombia", "Venezuela", "Guyana", "Suriname", "Ecuador", "Peru", "Bolivia"] },
+  { id: "brazil", en: "Brazil", es: "Brasil", countries: ["Brazil"] },
+  { id: "cone", en: "Southern Cone", es: "Cono Sur", countries: ["Chile", "Argentina", "Uruguay", "Paraguay"] },
+];
+
+export const COUNTRY_ES = {
+  USA: "Estados Unidos", Canada: "Canadá", Mexico: "México", Guatemala: "Guatemala", "El Salvador": "El Salvador",
+  "Costa Rica": "Costa Rica", Panama: "Panamá", Bahamas: "Bahamas", "Dominican Republic": "República Dominicana",
+  Cuba: "Cuba", Jamaica: "Jamaica", Colombia: "Colombia", Venezuela: "Venezuela", Guyana: "Guyana", Suriname: "Surinam",
+  Ecuador: "Ecuador", Peru: "Perú", Bolivia: "Bolivia", Brazil: "Brasil", Chile: "Chile", Argentina: "Argentina",
+  Uruguay: "Uruguay", Paraguay: "Paraguay",
+};
+
+export const COUNTRY_REGION = {};
+REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; }));
+
+// "<locationId>|<year>": [traditions, themes]
+export const TAGS = {
+  "atlanta|1895": ["B", "ind"], "augusta|1845": ["B", ""], "bahia|1549": ["C", "mis"], "bahia|1882": ["B", "mis"],
+  "baltimore|1784": ["M", "mis"], "baltimore|1789": ["C", ""], "belem|1911": ["P", "rev"], "bethlehem|1741": ["O", "mis"],
+  "bogota|1856": ["R", "mis"], "bogota|1948": ["EP", "per"], "bogota|1969": ["E", "mis"], "bogota|1983": ["P", "rev"],
+  "bogota|1991": ["EP", "lib"], "boston|1630": ["R", ""], "brasilia|1987": ["EP", "lib"], "bucaramanga|1937": ["P", "mis per"],
+  "buenos-aires|1818": ["BE", "mis edu"], "buenos-aires|1867": ["M", "lib"], "buenos-aires|1881": ["B", "lib"],
+  "buenos-aires|1954": ["P", "rev"], "buenos-aires|1969": ["RMO", "edu"], "buenos-aires|1977": ["E", "rev"],
+  "buenos-aires|2013": ["C", ""], "cajamarca|1532": ["C", "ind"], "callao|1890": ["ME", "lib per"],
+  "cane-ridge|1801": ["RMB", "rev"], "caracas|1900": ["R", "mis"], "chaco|1927": ["O", "mis ind"],
+  "chamula|1974": ["EP", "per ind"], "chiapas|1545": ["C", "ind"], "chicago|1886": ["E", "edu mis"], "chicago|1910": ["P", "rev"],
+  "chubut|1865": ["RO", "lib"], "cochabamba|1970": ["E", ""], "colonia-valdense|1857": ["R", ""], "colta|1970": ["E", "ind rev per"],
+  "cordoba|1767": ["C", "edu"], "costa-mesa|1968": ["E", "rev"], "curaray|1956": ["E", "per mis ind"], "cusco|1537": ["C", ""],
+  "cusco|1650": ["C", "ind"], "cusco|1780": ["C", "ind"], "dayton|1925": ["E", ""], "demerara|1823": ["R", "per ind"],
+  "dolores|1810": ["C", ""], "el-paso|1923": ["P", ""], "el-paso|2022": ["EP", ""], "fort-caroline|1565": ["R", "per"],
+  "guadalajara|1927": ["C", "per"], "guatemala-city|1882": ["R", "mis lib"], "guatemala|1917": ["E", "mis ind"],
+  "havana|1992": ["EPB", "rev lib"], "hot-springs|1914": ["P", ""], "houston|1979": ["B", ""], "huamanga|1564": ["C", "ind"],
+  "huamanga|1984": ["EP", "per"], "huarochiri|1609": ["C", "ind per"], "huronia|1649": ["C", "per ind mis"], "isabela|1494": ["C", ""],
+  "jamestown|1607": ["O", ""], "juli|1612": ["C", "ind edu mis"], "kingston|1783": ["B", "mis ind"], "la-plata|1984": ["P", "rev"],
+  "lima|1551": ["C", "edu"], "lima|1570": ["C", "per"], "lima|1583": ["C", "ind mis"], "lima|1617": ["C", ""], "lima|1639": ["C", "ind"],
+  "lima|1822": ["BE", "edu mis"], "lima|1915": ["E", "lib"], "lima|1917": ["R", "edu"], "lima|1971": ["C", ""], "lima|2017": ["CE", ""],
+  "los-angeles|1906": ["P", "rev"], "los-angeles|1910": ["E", ""], "los-angeles|1949": ["EB", "rev"], "medellin|1968": ["C", ""],
+  "memphis|1907": ["P", "ind"], "mexico-city|1524": ["C", "mis ind"], "mexico-city|1531": ["C", "ind"], "mexico-city|1539": ["C", "edu"],
+  "mexico-city|1571": ["C", "per"], "mexico-city|1857": ["C", "lib"], "monte-grande|1825": ["R", "lib"], "montego-bay|1831": ["B", "ind lib"],
+  "monterrey|1864": ["B", "mis"], "monterrey|1866": ["R", "mis edu"], "montgomery|1955": ["B", "lib ind"], "neshaminy|1740": ["R", "edu rev"],
+  "new-amsterdam|1628": ["R", "lib"], "new-amsterdam|1816": ["E", "mis"], "new-amsterdam|1857": ["E", "rev"], "northampton|1734": ["R", "rev"],
+  "northfield|1886": ["E", "mis"], "oruro|1898": ["B", "mis edu"], "panama|1916": ["E", "mis"], "paramaribo|1735": ["O", "mis ind"],
+  "pasadena|1947": ["E", "edu"], "philadelphia|1707": ["B", ""], "philadelphia|1814": ["B", "mis"], "philadelphia|1816": ["M", "ind"],
+  "plateria|1911": ["O", "edu ind"], "plymouth|1620": ["R", "lib"], "providence|1638": ["B", "lib"], "quebec|1639": ["C", "edu ind"],
+  "quebec|1674": ["C", ""], "quito|1931": ["E", "mis"], "recife|1636": ["R", "ind"], "rio|1557": ["R", ""], "rio|1558": ["R", "per"],
+  "rio|1858": ["RE", "per mis"], "rio|1862": ["R", "mis"], "rio|1977": ["P", ""], "rochester|1830": ["ER", "rev"],
+  "san-diego|1769": ["C", "ind mis"], "san-ignacio|1609": ["C", "ind mis"], "san-jose-cr|1921": ["E", "mis"], "san-salvador-sv|1980": ["C", "per"],
+  "san-salvador|1492": ["C", ""], "sandy-creek|1755": ["B", "rev"], "santa-fe|1680": ["C", "ind per"], "santiago|1865": ["ER", "lib"],
+  "santiago|1884": ["E", "lib"], "santiago|1925": ["EC", "lib"], "santiago|1932": ["PM", ""], "santiago|1975": ["PM", ""],
+  "santiago|1999": ["EPB", "lib"], "santiago|2024": ["CE", ""], "santo-domingo|1511": ["C", "ind"], "santo-domingo|1541": ["C", ""],
+  "sao-leopoldo|1824": ["O", "lib"], "sao-miguel|1756": ["C", "ind per"], "sao-paulo|1554": ["C", "mis ind edu"], "sao-paulo|1870": ["R", "edu"],
+  "sao-paulo|1903": ["R", ""], "sao-paulo|1910": ["P", ""], "sao-paulo|1953": ["P", "rev"], "sao-paulo|1956": ["P", "rev"],
+  "sao-paulo|1993": ["PE", ""], "sao-paulo|2010": ["EP", ""], "savannah|1740": ["EM", "rev edu"], "savannah|1788": ["B", "ind per"],
+  "silver-bluff|1775": ["B", "ind"], "st-augustine|1565": ["C", "mis"], "st-louis|1942": ["E", ""], "st-marys|1649": ["C", "lib"],
+  "three-hills|1922": ["E", "edu mis"], "tierra-del-fuego|1851": ["O", "mis per ind"], "toronto|1925": ["MR", ""],
+  "valparaiso|1847": ["R", "lib"], "valparaiso|1878": ["M", "edu mis"], "valparaiso|1909": ["PM", "rev"], "washington|1956": ["E", ""],
+  "williamstown|1806": ["RE", "mis rev"],
+};

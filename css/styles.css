@@ -385,3 +385,91 @@ calcite-shell { --calcite-color-brand: var(--gold); --calcite-font-family: var(-
 .src-tag { display: inline-block; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 1px 5px; border-radius: 4px; background: rgba(201, 168, 76, 0.15); color: var(--gold); vertical-align: 1px; }
 .info-sources-note { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
 .info-sources { font-size: 12px; }
+
+
+/* ===== Filters: traditions, region/country, theme, color mode ===== */
+.journey-chips + .journey-chips, .filter-row { margin-top: 6px; }
+.chip-count {
+  font-size: 10px; font-weight: 600; min-width: 18px; padding: 1px 6px; border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08); color: var(--text-secondary); text-align: center; line-height: 16px;
+}
+.journey-chip.active .chip-count { background: rgba(201, 168, 76, 0.25); color: var(--gold); }
+.journey-chip.is-empty:not(.active) { opacity: 0.45; }
+.trad-chip .chip-dot { width: 9px; height: 9px; border-radius: 3px; }
+.filter-row {
+  display: flex; gap: 8px; align-items: center; overflow-x: auto; pointer-events: auto;
+  scrollbar-width: none; padding-bottom: 4px;
+}
+.filter-row::-webkit-scrollbar { display: none; }
+.select-chip {
+  display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
+  padding: 0 4px 0 12px; height: 30px; border-radius: 20px;
+  border: 1px solid var(--card-border); background: rgba(34, 26, 32, 0.92);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: var(--text-secondary);
+}
+.select-chip.active { border-color: var(--gold); color: var(--gold); background: rgba(201, 168, 76, 0.15); }
+.select-chip select {
+  appearance: none; -webkit-appearance: none; border: 0; outline: 0; background: transparent;
+  color: inherit; font: 500 12px var(--font-body); padding: 0 22px 0 0; height: 28px; cursor: pointer; max-width: 230px;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 10px) 50%, calc(100% - 6px) 50%; background-size: 4px 4px; background-repeat: no-repeat;
+}
+.select-chip select option, .select-chip select optgroup { background: #221a20; color: #eee; }
+.select-chip:focus-within { outline: 2px solid var(--gold); outline-offset: 2px; }
+.seg {
+  display: inline-flex; align-items: center; flex-shrink: 0; height: 30px; padding: 2px; border-radius: 20px;
+  border: 1px solid var(--card-border); background: rgba(34, 26, 32, 0.92);
+}
+.seg-label { font-size: 11px; color: var(--text-secondary); padding: 0 6px 0 10px; text-transform: uppercase; letter-spacing: 0.06em; }
+.seg-btn {
+  border: 0; background: transparent; color: var(--text-secondary); font: 500 12px var(--font-body);
+  padding: 0 12px; height: 24px; border-radius: 16px; cursor: pointer;
+}
+.seg-btn.active { background: rgba(201, 168, 76, 0.2); color: var(--gold); }
+.seg-btn:focus-visible { outline: 2px solid var(--gold); }
+.result-count {
+  flex-shrink: 0; font-size: 11px; color: #3a2f36; background: rgba(255, 255, 255, 0.85);
+  padding: 4px 10px; border-radius: 12px; font-weight: 600;
+}
+.clear-btn {
+  flex-shrink: 0; height: 30px; padding: 0 12px; border-radius: 20px; cursor: pointer;
+  border: 1px dashed var(--gold-dim); background: rgba(34, 26, 32, 0.92); color: var(--gold); font: 500 12px var(--font-body);
+}
+.clear-btn.hidden { display: none; }
+/* Era dots fade when the map is colored by tradition, so the active legend is obvious */
+body.color-trad .journey-chip[data-era] .chip-dot { opacity: 0.35; }
+body:not(.color-trad) .trad-chip .chip-dot { opacity: 0.75; }
+
+/* Tradition and theme tags on event cards */
+.event-tags { display: flex; flex-wrap: wrap; gap: 5px; margin: 6px 0 4px; }
+.trad-pill {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.02em; padding: 2px 8px; border-radius: 10px;
+  color: var(--c); background: color-mix(in srgb, var(--c) 16%, transparent); border: 1px solid color-mix(in srgb, var(--c) 45%, transparent);
+}
+.theme-pill {
+  font-size: 10px; padding: 2px 8px; border-radius: 10px; color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+}
+.mini-dot { display: inline-block; width: 7px; height: 7px; border-radius: 2px; margin-right: 3px; vertical-align: 0; }
+.empty-note { padding: 16px; color: var(--text-secondary); font-size: 13px; }
+
+@media (max-width: 767px) {
+  .select-chip select { max-width: 160px; font-size: 11px; }
+  .chip-count { font-size: 9px; padding: 1px 5px; }
+  .seg-label { display: none; }
+}
+
+/* Desktop: filter rows wrap and stay centered inside the viewport */
+.filters-toggle { display: none; }
+@media (min-width: 768px) {
+  .journey-bar { left: 16px; right: 16px; transform: none; display: flex; flex-direction: column; align-items: center; }
+  .journey-chips, .filter-row { flex-wrap: wrap; justify-content: center; overflow: visible; max-width: 1180px; }
+  .chip-count:empty { display: none; }
+}
+/* Phones: one row of eras plus a Filters button; the rest unfolds on demand */
+@media (max-width: 767px) {
+  .filters-toggle { display: flex; }
+  .filters-toggle .chip-count:empty { display: none; }
+  body:not(.filters-open) #tradChips, body:not(.filters-open) .filter-row { display: none; }
+  body.filters-open .filters-toggle { border-color: var(--gold); color: var(--gold); }
+}
