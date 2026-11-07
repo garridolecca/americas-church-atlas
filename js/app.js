@@ -422,9 +422,11 @@ async function initMap() {
 
     const zoom = view.zoom;
 
-    // First pass: draw all markers (always visible)
-    locations.forEach((loc) => {
-      if (!isVisible(loc)) return;
+    // First pass: draw all markers (always visible). Later stops are drawn first, so where markers
+    // overlap the earliest stop sits on top: stop 1 is never hidden under another marker.
+    const drawOrder = locations.filter(isVisible)
+      .sort((a, b) => (stopNumbers[b.id] ?? Infinity) - (stopNumbers[a.id] ?? Infinity));
+    drawOrder.forEach((loc) => {
 
       const markerColor = getStopEraColor(loc);
       const size = getLocationSize(loc.significance);
@@ -545,7 +547,20 @@ async function initMap() {
     drawRoutes();
     drawLocations();
     updateFilterUI();
+    updateStartButton();
   }
+
+  // "Start at the first event": opens stop 1 of the current selection without hunting for its marker.
+  const startBtn = document.getElementById("btnStart");
+  function updateStartButton() {
+    const first = orderedStops[0];
+    startBtn.hidden = !first;
+    if (!first) return;
+    document.getElementById("startLabel").textContent = t("startFirst");
+    document.getElementById("startYear").textContent = String(visibleEvents(first)[0].year);
+    startBtn.title = `${t("startFirst")}: ${visibleEvents(first)[0].year} · ${locationText(first.id, "name") || first.name}`;
+  }
+  startBtn.addEventListener("click", () => { computeStops(); navigateToStop(0); });
 
   // ---------- Compact filter bar: Era · Tradition · Region · Theme, each a dropdown with live counts ----------
   const fbar = document.getElementById("fbar");
@@ -794,6 +809,9 @@ async function initMap() {
     document.getElementById("prevLabel").textContent = lang === "es" ? "Anterior" : "Previous";
     document.getElementById("nextLabel").textContent = lang === "es" ? "Siguiente" : "Next";
     prevBtn.disabled = currentStopIndex <= 0;
+    const firstBtn = document.getElementById("btnFirstStop");
+    firstBtn.disabled = currentStopIndex <= 0;
+    firstBtn.title = t("firstStop"); firstBtn.setAttribute("aria-label", t("firstStop"));
     nextBtn.disabled = currentStopIndex >= orderedStops.length - 1;
     counter.textContent = `${currentStopIndex + 1} / ${orderedStops.length}`;
   }
@@ -807,7 +825,18 @@ async function initMap() {
     view.goTo({ center: [loc.lng, loc.lat], zoom: Math.max(view.zoom, 5) }, { duration: 500 });
   }
 
+  document.getElementById("btnFirstStop").addEventListener("click", () => navigateToStop(0));
   document.getElementById("btnPrevStop").addEventListener("click", () => navigateToStop(currentStopIndex - 1));
+  // Keyboard: ← / → step through the stops and Home jumps to the first, while a place is open.
+  window.addEventListener("keydown", (ev) => {
+    if (!bottomSheet.classList.contains("open") || ev.altKey || ev.ctrlKey || ev.metaKey || ev.shiftKey) return;
+    if (ev.target.closest?.("input, textarea, select, [contenteditable]") || !pop.hidden) return;
+    if (document.querySelector(".modal-overlay:not(.hidden)")) return;
+    const step = { ArrowLeft: currentStopIndex - 1, ArrowRight: currentStopIndex + 1, Home: 0 }[ev.key];
+    if (step === undefined) return;
+    ev.preventDefault(); ev.stopPropagation();
+    navigateToStop(step);
+  }, true);
   document.getElementById("btnNextStop").addEventListener("click", () => navigateToStop(currentStopIndex + 1));
 
   function openBottomSheet(loc) {
