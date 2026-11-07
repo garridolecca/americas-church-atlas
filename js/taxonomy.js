@@ -77,7 +77,7 @@ export const TAGS = {
   "rio|1858": ["RE", "per mis"], "rio|1862": ["R", "mis"], "rio|1977": ["P", ""], "rochester|1830": ["ER", "rev"],
   "san-diego|1769": ["C", "ind mis"], "san-ignacio|1609": ["C", "ind mis"], "san-jose-cr|1921": ["E", "mis"], "san-salvador-sv|1980": ["C", "per"],
   "san-salvador|1492": ["C", ""], "sandy-creek|1755": ["B", "rev"], "santa-fe|1680": ["C", "ind per"], "santiago|1865": ["ER", "lib"],
-  "santiago|1884": ["E", "lib"], "santiago|1925": ["EC", "lib"], "santiago|1932": ["PM", ""], "santiago|1975": ["PM", ""],
+  "santiago|1884": ["E", "lib"], "santiago|1890": ["M", "per mis"], "santiago|1925": ["EC", "lib"], "santiago|1932": ["PM", ""], "santiago|1975": ["PM", ""],
   "santiago|1999": ["EPB", "lib"], "santiago|2024": ["CE", ""], "santo-domingo|1511": ["C", "ind"], "santo-domingo|1541": ["C", ""],
   "sao-leopoldo|1824": ["O", "lib"], "sao-miguel|1756": ["C", "ind per"], "sao-paulo|1554": ["C", "mis ind edu"], "sao-paulo|1870": ["R", "edu"],
   "sao-paulo|1903": ["R", ""], "sao-paulo|1910": ["P", ""], "sao-paulo|1953": ["P", "rev"], "sao-paulo|1956": ["P", "rev"],
