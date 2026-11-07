@@ -1,5 +1,7 @@
 # The Church in the Americas — La Iglesia en las Américas
 
+*[Leer en español ↓](#español)*
+
 An interactive, bilingual (English / Spanish) atlas of five centuries of Christianity in the Western Hemisphere — **north and south** — from the first Catholic missions to the explosive growth of evangelical and Pentecostal churches.
 
 **[View Live Demo](https://garridolecca.github.io/americas-church-atlas/)**
@@ -56,3 +58,32 @@ For more on this history, see Justo L. González & Ondina González, *Christiani
 - [Reformation Atlas](https://garridolecca.github.io/reformation-atlas/)
 - [General Baptist Atlas](https://garridolecca.github.io/general-baptist-atlas/)
 - [Christian Persecution Map](https://garridolecca.github.io/christian-persecution-map/)
+
+---
+
+## Español
+
+# La Iglesia en las Américas
+
+Un atlas interactivo y bilingüe (español / inglés) de cinco siglos de cristianismo en el hemisferio occidental, **del norte y del sur**: desde las primeras misiones católicas hasta el crecimiento explosivo de las iglesias evangélicas y pentecostales.
+
+**[Ver el mapa](https://garridolecca.github.io/americas-church-atlas/)**
+
+### Seis eras
+
+| Era | Fechas | Puntos destacados |
+|-----|--------|-------------------|
+| Conquista y misiones católicas | 1492–1600 | El sermón de Montesinos, Las Casas, los doce franciscanos, los primeros jesuitas en Bahía, el Tercer Concilio Limense, la Confesión de Guanabara |
+| Cristiandad colonial y primeros protestantes | 1600–1730 | Quebec y los mártires canadienses, las reducciones jesuitas, Jamestown, Plymouth, Boston, Roger Williams, el Brasil holandés, Filadelfia |
+| Avivamientos y expulsiones | 1730–1800 | Edwards, Whitefield, los bautistas separados, las primeras iglesias afroamericanas, George Liele en Jamaica, las misiones de California, la expulsión de los jesuitas |
+| Independencia y avivamiento | 1800–1870 | Cane Ridge, Hidalgo, Diego Thomson, Finney, la 'guerra bautista', la Convención Bautista del Sur, Kalley y Simonton en Brasil, Allen Gardiner, la Reforma mexicana |
+| Misiones y Pentecostés | 1870–1950 | Moody, la calle Azusa, Chile 1909, las Asambleas de Dios en Belém, Panamá 1916, Cameron Townsend, la Guerra Cristera |
+| La explosión evangélica | 1950–hoy | Billy Graham, Montgomery, los mártires de Ecuador, Medellín, la Fraternidad Teológica Latinoamericana, monseñor Romero, el papa Francisco |
+
+### Características
+
+- 58 lugares desde Quebec hasta Tierra del Fuego, con 79 eventos y 34 figuras clave
+- Filtros por **era** y por **región** (EE. UU. y Canadá / América Latina y el Caribe)
+- Recorrido cronológico de cada era con Anterior / Siguiente
+- Paneles de cronología y figuras clave
+- Todos los textos en español e inglés
