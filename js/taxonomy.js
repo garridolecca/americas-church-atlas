@@ -26,7 +26,7 @@ export const THEMES = [
 
 export const REGIONS = [
   { id: "north", en: "US & Canada", es: "EE. UU. y Canadá", countries: ["USA", "Canada"] },
-  { id: "meso", en: "Mexico & Central America", es: "México y Centroamérica", countries: ["Mexico", "Guatemala", "El Salvador", "Nicaragua", "Costa Rica", "Panama"] },
+  { id: "meso", en: "Mexico & Central America", es: "México y Centroamérica", countries: ["Mexico", "Guatemala", "Belize", "El Salvador", "Honduras", "Nicaragua", "Costa Rica", "Panama"] },
   { id: "carib", en: "Caribbean", es: "Caribe", countries: ["Bahamas", "Dominican Republic", "Puerto Rico", "Cuba", "Jamaica", "Haiti", "Trinidad and Tobago", "Caribbean Netherlands"] },
   { id: "andes", en: "Andes & Northern South America", es: "Andes y norte de Sudamérica", countries: ["Colombia", "Venezuela", "Guyana", "Suriname", "Ecuador", "Peru", "Bolivia"] },
   { id: "brazil", en: "Brazil", es: "Brasil", countries: ["Brazil"] },
@@ -35,7 +35,7 @@ export const REGIONS = [
 
 export const COUNTRY_ES = {
   USA: "Estados Unidos", Canada: "Canadá", Mexico: "México", Guatemala: "Guatemala", "El Salvador": "El Salvador",
-  "Costa Rica": "Costa Rica", Panama: "Panamá", Nicaragua: "Nicaragua", "Puerto Rico": "Puerto Rico", Bahamas: "Bahamas", "Dominican Republic": "República Dominicana",
+  "Costa Rica": "Costa Rica", Panama: "Panamá", Belize: "Belice", Honduras: "Honduras", Nicaragua: "Nicaragua", "Puerto Rico": "Puerto Rico", Bahamas: "Bahamas", "Dominican Republic": "República Dominicana",
   Cuba: "Cuba", Jamaica: "Jamaica", Haiti: "Haití", "Trinidad and Tobago": "Trinidad y Tobago", "Caribbean Netherlands": "Caribe neerlandés", Colombia: "Colombia", Venezuela: "Venezuela", Guyana: "Guyana", Suriname: "Surinam",
   Ecuador: "Ecuador", Peru: "Perú", Bolivia: "Bolivia", Brazil: "Brasil", Chile: "Chile", Argentina: "Argentina",
   Uruguay: "Uruguay", Paraguay: "Paraguay",
@@ -46,6 +46,13 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // Mexico and Central America, deeper (mx-ca2.js)
+  "mexico-city|1827": ["E", "mis edu"], "mexico-city|1869": ["O", "lib"], "mexico-city|1947": ["R", ""], "mexico-city|2016": ["EC", ""],
+  "guatemala-city|1899": ["E", "mis"], "guatemala-city|1929": ["E", "edu"], "guatemala-city|1962": ["P", ""], "guatemala-city|2007": ["P", ""],
+  "san-salvador-sv|1989": ["O", "per"], "san-jose-cr|1929": ["E", "mis"], "san-jose-cr|1988": ["P", "mis"], "ahualulco|1874": ["R", "per"],
+  "acapulco|1875": ["R", "per lib"], "puebla|1875": ["M", "edu"], "cuauhtemoc-chih|1922": ["O", "lib"], "oxchuc|1956": ["R", "mis ind"],
+  "quetzaltenango|1932": ["R", "mis ind edu"], "ahuas|1930": ["O", "mis ind"], "tegucigalpa|2014": ["EP", ""], "limon|1888": ["BMO", "ind"],
+  "kuna-yala|1913": ["E", "mis ind edu"], "belize-city|1822": ["BM", "mis ind"],
   // Peoples of the United States (na-peoples.js)
   "new-amsterdam|1958": ["P", "mis ind"], "st-louis|1847": ["O", "edu"], "san-diego|1926": ["P", "edu ind"], "costa-mesa|1964": ["P", "mis"],
   "germantown|1688": ["O", "ind"], "new-echota|1832": ["R", "mis ind lib"], "tahlequah|1839": ["B", "per ind"], "san-francisco|1853": ["R", "mis ind"],
