@@ -10,6 +10,7 @@ import { NO_EVENTS, NO_LOCATIONS, NO_FIGURES } from "./sa-north.js";
 import { MX_EVENTS, MX_LOCATIONS, MX_FIGURES } from "./mx-ca.js";
 import { CB_EVENTS, CB_LOCATIONS, CB_FIGURES } from "./caribbean.js";
 import { SM_EVENTS, SM_LOCATIONS, SM_FIGURES } from "./sa-more.js";
+import { NE_EVENTS, NE_LOCATIONS, NE_FIGURES } from "./na-early.js";
 import { EVENT_IMAGES } from "./images.js";
 import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
@@ -902,6 +903,10 @@ figures.push(...CB_FIGURES);
 locations.push(...SM_LOCATIONS);
 locations.forEach((loc) => { if (SM_EVENTS[loc.id]) loc.events.push(...SM_EVENTS[loc.id]); });
 figures.push(...SM_FIGURES);
+// Early America, 1663-1887 (na-early.js).
+locations.push(...NE_LOCATIONS);
+locations.forEach((loc) => { if (NE_EVENTS[loc.id]) loc.events.push(...NE_EVENTS[loc.id]); });
+figures.push(...NE_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));

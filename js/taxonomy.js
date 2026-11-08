@@ -46,6 +46,17 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // Early America, 1663-1887 (na-early.js)
+  "cambridge-ma|1663": ["R", "mis ind"], "new-brunswick|1726": ["R", "rev"], "boston|1740": ["OR", "rev"], "enfield|1741": ["R", "rev"],
+  "philadelphia|1741": ["R", "rev"], "crossweeksung|1745": ["R", "mis ind rev"], "princeton|1746": ["R", "edu"], "montauk|1759": ["R", "mis ind"],
+  "hanover|1769": ["R", "edu ind"], "new-amsterdam|1766": ["M", ""], "philadelphia|1771": ["M", "mis"], "richmond|1786": ["B", "lib per"],
+  "danbury|1802": ["B", "lib"], "new-haven|1802": ["R", "rev edu"], "logan-county|1800": ["RM", "rev"], "salem|1812": ["RB", "mis"],
+  "andover|1808": ["R", "edu mis"], "princeton|1812": ["R", "edu"], "philadelphia|1824": ["E", "edu mis"], "new-amsterdam|1825": ["E", "mis"],
+  "boston|1826": ["E", ""], "oberlin|1833": ["R", "edu rev ind"], "new-amsterdam|1835": ["M", "rev"], "lexington|1832": ["E", ""],
+  "waiilatpu|1836": ["R", "mis ind"], "cincinnati|1834": ["R", "edu ind"], "battle-creek|1863": ["O", ""], "new-amsterdam|1844": ["M", "ind"],
+  "boston|1851": ["E", ""], "philadelphia|1861": ["E", "rev"], "vineland|1867": ["M", "rev"], "chautauqua|1874": ["M", "edu"],
+  "cleveland|1874": ["E", ""], "new-amsterdam|1880": ["M", "mis"], "old-orchard|1887": ["E", "mis"], "pekin|1860": ["M", ""],
+  "utica|1843": ["M", "ind"], "wheaton|1860": ["E", "edu"], "new-amsterdam|1873": ["E", ""],
   // Mexico, Central America, the Caribbean, South America (mx-ca.js, caribbean.js, sa-more.js)
   "mexico-city|1914": ["RM", "mis"], "mexico-city|1930": ["M", ""], "mexico-city|2018": ["E", ""], "guadalajara|1926": ["P", ""],
   "chiapas|2000": ["EP", "ind"], "guatemala-city|1976": ["EP", "rev"], "guatemala-city|1991": ["EP", ""], "guatemala-city|2011": ["P", ""],
