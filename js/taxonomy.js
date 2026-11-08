@@ -46,6 +46,17 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // North America by theme: hymnody, missions, seminaries, immigrant churches (na-themes.js)
+  "chicago|1873": ["RE", "rev"], "chicago|1877": ["E", "mis"], "chicago|1885": ["O", "mis"], "chicago|1934": ["E", "mis"],
+  "cincinnati|1875": ["E", "rev"], "cambridge-ma|1640": ["R", ""], "los-angeles|1969": ["E", "rev"], "los-angeles|1945": ["E", "mis"],
+  "nashville|1982": ["E", ""], "nashville|1991": ["E", ""], "new-amsterdam|1938": ["P", ""], "philadelphia|1895": ["E", "mis"],
+  "boston|1869": ["M", "mis"], "wilmore|1923": ["M", "edu"], "grand-rapids|1876": ["R", "edu"], "san-francisco|1877": ["ME", "mis"],
+  "washington|2017": ["E", ""], "ashtabula-oh|1876": ["E", "rev"], "hamilton-ga|1844": ["BE", "rev"], "winona-lake|1911": ["E", "rev"],
+  "cornwall-ct|1817": ["R", "mis edu ind"], "honolulu|1820": ["R", "mis ind"], "honolulu|1903": ["M", "mis"], "lahaina|1831": ["R", "mis edu ind"],
+  "greenville-sc|1859": ["B", "edu"], "greenville-sc|1983": ["E", "lib edu"], "fort-worth|1908": ["B", "edu"], "caronport|1935": ["E", "edu"],
+  "wolfville|1838": ["B", "edu"], "manzanar|1942": ["E", "per"], "elkhart|1920": ["O", "mis"], "kankakee|1851": ["R", "per"],
+  "portland-me|1881": ["RE", "mis"], "frederick-md|1800": ["M", "rev"], "ocean-grove|1869": ["M", "rev"], "willamette-mission|1834": ["M", "mis ind"],
+  "seattle|2014": ["E", ""], "gaithersburg|1997": ["E", ""],
   // Mexico and Central America, deeper (3) (mx-ca3.js)
   "mexico-city|1903": ["B", "mis"], "mexico-city|1917": ["CE", "lib"], "mexico-city|1925": ["R", "edu"], "mexico-city|2020": ["E", ""],
   "chiapas|1974": ["C", "ind lib"], "chiapas|1994": ["C", "ind"], "puebla|1979": ["C", "mis"], "guatemala-city|1998": ["C", "per"],
