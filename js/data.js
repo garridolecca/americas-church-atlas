@@ -25,6 +25,7 @@ import { M3_EVENTS, M3_LOCATIONS, M3_FIGURES } from "./mx-ca3.js";
 import { NT_EVENTS, NT_LOCATIONS, NT_FIGURES } from "./na-themes.js";
 import { B3_EVENTS, B3_LOCATIONS, B3_FIGURES } from "./brazil3.js";
 import { K3_EVENTS, K3_LOCATIONS, K3_FIGURES } from "./carib3.js";
+import { G5_EVENTS, G5_LOCATIONS, G5_FIGURES } from "./gaps5.js";
 import { EVENT_IMAGES } from "./images.js";
 import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
@@ -977,6 +978,10 @@ figures.push(...B3_FIGURES);
 locations.push(...K3_LOCATIONS);
 locations.forEach((loc) => { if (K3_EVENTS[loc.id]) loc.events.push(...K3_EVENTS[loc.id]); });
 figures.push(...K3_FIGURES);
+// Gaps across the Americas (gaps5.js).
+locations.push(...G5_LOCATIONS);
+locations.forEach((loc) => { if (G5_EVENTS[loc.id]) loc.events.push(...G5_EVENTS[loc.id]); });
+figures.push(...G5_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));

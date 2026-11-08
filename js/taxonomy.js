@@ -46,6 +46,21 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // Gaps across the Americas (gaps5.js)
+  "toronto|1894": ["E", "edu"], "toronto|1904": ["E", "mis"], "toronto|1927": ["B", ""], "toronto|1955": ["E", "mis"],
+  "toronto|1977": ["E", "mis"], "san-jose-cr|1951": ["E", "mis"], "caracas|1951": ["B", "mis"], "el-paso|1916": ["B", "mis"],
+  "washington|2012": ["E", ""], "montevideo|1878": ["M", "mis"], "quito|1896": ["E", "mis"], "dallas|1972": ["E", "rev"],
+  "tulsa|1965": ["P", "edu"], "new-amsterdam|1882": ["E", "edu mis"], "new-amsterdam|1989": ["R", ""], "new-amsterdam|1994": ["E", ""],
+  "philadelphia|1936": ["R", ""], "philadelphia|1986": ["B", ""], "san-salvador-sv|1981": ["E", "edu"], "cleveland-tn|1910": ["P", ""],
+  "rosario|1909": ["B", ""], "asuncion|1956": ["B", ""], "chicago|1926": ["E", "mis"], "chicago|1988": ["O", ""],
+  "oberlin|1893": ["EM", ""], "kingsville-tx|1918": ["P", "mis"], "rehoboth-nm|1903": ["R", "edu ind"], "tucson|1982": ["R", "lib"],
+  "la-habra|1986": ["E", "mis"], "albuquerque|1881": ["R", "edu ind"], "winnipeg|1820": ["O", "mis edu ind"], "winnipeg|1903": ["B", "mis"],
+  "winnipeg|1944": ["O", "edu"], "bethel-ak|1885": ["O", "mis ind"], "farmington-nm|1956": ["E", "mis ind"], "san-antonio|1908": ["R", "mis"],
+  "san-antonio|1910": ["B", ""], "san-antonio|1947": ["B", "edu"], "buxton-on|1849": ["R", "lib edu ind"], "sudbury|1986": ["RM", "ind"],
+  "ottawa|1919": ["P", ""], "morley-ab|1873": ["M", "mis ind"], "london-on|1882": ["M", "mis"], "lakeland-fl|2008": ["P", "rev"],
+  "brooklyn|1971": ["P", ""], "phoenix|1957": ["P", "edu ind"], "port-simpson|1874": ["M", "mis ind"], "minneapolis|1950": ["E", "mis"],
+  "montreal|1875": ["R", ""], "decorah|1861": ["O", "edu"], "bon-homme|1874": ["O", ""], "lincoln-pa|1854": ["R", "edu ind"],
+  "santee-ne|1870": ["R", "edu ind"],
   // The Caribbean, deeper (3) (carib3.js)
   "falmouth-jm|1814": ["B", "mis ind"], "montego-bay|1824": ["B", "mis edu lib"], "kingston|1789": ["M", "mis"], "kingston|1966": ["REMBO", "edu"],
   "havana|1883": ["M", "mis"], "havana|1890": ["R", "mis"], "havana|1961": ["REMB", "per edu"], "santiago-de-cuba|1905": ["B", "mis"],
