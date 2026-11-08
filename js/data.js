@@ -11,6 +11,7 @@ import { MX_EVENTS, MX_LOCATIONS, MX_FIGURES } from "./mx-ca.js";
 import { CB_EVENTS, CB_LOCATIONS, CB_FIGURES } from "./caribbean.js";
 import { SM_EVENTS, SM_LOCATIONS, SM_FIGURES } from "./sa-more.js";
 import { NE_EVENTS, NE_LOCATIONS, NE_FIGURES } from "./na-early.js";
+import { NB_EVENTS, NB_LOCATIONS, NB_FIGURES } from "./na-black.js";
 import { EVENT_IMAGES } from "./images.js";
 import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
@@ -907,6 +908,10 @@ figures.push(...SM_FIGURES);
 locations.push(...NE_LOCATIONS);
 locations.forEach((loc) => { if (NE_EVENTS[loc.id]) loc.events.push(...NE_EVENTS[loc.id]); });
 figures.push(...NE_FIGURES);
+// The African American church (na-black.js).
+locations.push(...NB_LOCATIONS);
+locations.forEach((loc) => { if (NB_EVENTS[loc.id]) loc.events.push(...NB_EVENTS[loc.id]); });
+figures.push(...NB_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));

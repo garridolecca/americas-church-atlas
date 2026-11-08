@@ -46,6 +46,16 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // The African American church (na-black.js)
+  "philadelphia|1787": ["M", "ind"], "philadelphia|1794": ["MO", "ind"], "philadelphia|1819": ["M", "ind"], "philadelphia|1924": ["P", "ind"],
+  "new-amsterdam|1809": ["B", "ind"], "new-amsterdam|1821": ["M", "ind"], "new-amsterdam|1843": ["M", "ind"], "new-amsterdam|1868": ["M", "rev ind mis"],
+  "new-amsterdam|1945": ["B", "ind"], "boston|1806": ["B", "ind edu"], "richmond|1821": ["B", "mis ind"], "augusta|1867": ["B", "edu ind"],
+  "atlanta|1881": ["B", "edu ind"], "atlanta|1957": ["B", "lib ind"], "washington|1909": ["B", "edu ind"], "washington|1996": ["B", "per ind"],
+  "chicago|1920": ["B", "ind"], "chicago|1932": ["B", "ind"], "cincinnati|1961": ["B", "lib ind"], "memphis|1968": ["BP", "lib ind"],
+  "rutland|1788": ["R", "ind"], "charleston|1822": ["M", "per ind"], "charleston|1865": ["M", "ind"], "charleston|2015": ["M", "per ind"],
+  "southampton|1831": ["B", "per ind"], "buffalo|1843": ["R", "ind"], "albany|1846": ["R", "edu ind mis"], "wilberforce|1863": ["M", "edu ind"],
+  "raleigh|1865": ["B", "edu ind"], "jackson-tn|1870": ["M", "ind"], "nashville|1871": ["R", "edu ind"], "mendenhall|1960": ["E", "ind"],
+  "birmingham|1963": ["B", "per lib ind"], "selma|1965": ["M", "lib ind"], "urbana|1970": ["E", "mis ind"], "dallas|1996": ["P", ""],
   // Early America, 1663-1887 (na-early.js)
   "cambridge-ma|1663": ["R", "mis ind"], "new-brunswick|1726": ["R", "rev"], "boston|1740": ["OR", "rev"], "enfield|1741": ["R", "rev"],
   "philadelphia|1741": ["R", "rev"], "crossweeksung|1745": ["R", "mis ind rev"], "princeton|1746": ["R", "edu"], "montauk|1759": ["R", "mis ind"],
