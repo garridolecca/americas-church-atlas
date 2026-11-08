@@ -46,6 +46,16 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // North America, 1888-1957 (na-modern.js)
+  "los-angeles|1908": ["E", "edu mis"], "los-angeles|1913": ["P", ""], "los-angeles|1923": ["P", "rev"], "los-angeles|1951": ["P", "rev"],
+  "new-amsterdam|1909": ["E", ""], "new-amsterdam|1917": ["E", "rev"], "new-amsterdam|1922": ["BR", ""], "new-amsterdam|1957": ["EB", "rev"],
+  "philadelphia|1919": ["EB", ""], "philadelphia|1929": ["R", "edu"], "dallas|1912": ["P", "rev"], "dallas|1924": ["E", "edu"],
+  "dallas|1941": ["E", "mis"], "memphis|1925": ["B", "mis"], "chicago|1941": ["E", "edu mis"], "chicago|1944": ["E", "rev"],
+  "st-louis|1916": ["P", ""], "st-louis|1930": ["O", "mis"], "boston|1889": ["B", "edu mis"], "richmond|1888": ["B", "mis"],
+  "nashville|1891": ["B", "edu"], "topeka|1901": ["P", "rev"], "zion|1901": ["P", ""], "cleveland-tn|1906": ["P", ""],
+  "dunn|1907": ["P", "rev"], "pilot-point|1908": ["M", ""], "san-pedro|1933": ["E", "mis"], "sulphur-springs|1934": ["E", "mis ind edu"],
+  "long-beach|1937": ["B", "mis rev"], "collingswood|1941": ["R", ""], "tulsa|1947": ["P", "rev"], "pittsburgh|1948": ["P", "rev"],
+  "portland|1950": ["E", "mis"], "ucla|1951": ["E", "mis"], "janesville|1899": ["E", "mis"],
   // The African American church (na-black.js)
   "philadelphia|1787": ["M", "ind"], "philadelphia|1794": ["MO", "ind"], "philadelphia|1819": ["M", "ind"], "philadelphia|1924": ["P", "ind"],
   "new-amsterdam|1809": ["B", "ind"], "new-amsterdam|1821": ["M", "ind"], "new-amsterdam|1843": ["M", "ind"], "new-amsterdam|1868": ["M", "rev ind mis"],
