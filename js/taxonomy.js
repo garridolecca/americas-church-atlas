@@ -46,6 +46,14 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // Brazil, deeper: hymnals, schools, Bible translation, Pentecostal and neo-Pentecostal churches (brazil2.js)
+  "petropolis|1855": ["R", "edu mis"], "rio|1861": ["R", "edu"], "rio|1864": ["R", "mis"], "recife|1873": ["R", "mis"],
+  "juiz-de-fora|1889": ["M", "edu"], "recife|1891": ["B", "edu"], "lavras|1893": ["R", "edu"], "gaspar|1895": ["O", "mis"],
+  "manaus|1900": ["B", "mis"], "sao-pedro-do-sul|1904": ["O", "mis"], "rio|1917": ["RMB", "edu"], "recife|1922": ["P", "edu"],
+  "rio|1929": ["P", "mis"], "sao-paulo|1930": ["M", "ind"], "rio|1943": ["O", "mis"], "rio|1948": ["RMB", "edu"],
+  "anapolis|1956": ["E", "mis"], "belo-horizonte|1957": ["BP", "rev"], "recife|1962": ["RMBO", "lib"], "vila-velha|1968": ["P", "rev"],
+  "cachoeira-paulista|1978": ["C", "rev"], "sao-paulo|1986": ["P", "rev"], "brasilia|1992": ["P", "ind"], "sorocaba|1998": ["P", "rev"],
+  "sao-paulo|1999": ["P", "rev"], "brasilia|2022": ["PB", "ind"],
   // The Caribbean, deeper (carib2.js)
   "st-elizabeth|1754": ["O", "mis ind"], "port-au-prince|1817": ["M", "mis per"], "port-au-prince|1874": ["O", "mis ind"], "havana|1886": ["B", "mis"],
   "ponce|1873": ["O", "lib"], "st-thomas|1732": ["O", "mis ind"], "st-thomas|1738": ["O", "rev ind per"], "antigua|1760": ["M", "ind"],
