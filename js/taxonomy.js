@@ -46,6 +46,17 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // North America, 1942-2023 (na-recent.js)
+  "pittsburgh|1967": ["CP", "rev"], "chicago|1973": ["E", ""], "chicago|1978": ["E", ""], "los-angeles|1967": ["P", "mis"],
+  "costa-mesa|1971": ["E", ""], "wheaton|1995": ["E", ""], "atlanta|1995": ["B", "ind"], "houston|2005": ["P", ""],
+  "washington|1976": ["E", "mis"], "washington|2014": ["EPC", ""], "washington|2016": ["E", ""], "washington|2018": ["EB", "rev"],
+  "birmingham|1973": ["R", ""], "portsmouth|1960": ["EP", "mis"], "van-nuys|1960": ["OP", "rev"], "wilmore|1970": ["M", "rev edu"],
+  "wilmore|2023": ["M", "rev edu"], "lynchburg|1971": ["B", "edu"], "lynchburg|1979": ["B", ""], "tustin|1973": ["P", "mis"],
+  "south-barrington|1975": ["E", ""], "lake-forest|1980": ["B", ""], "anaheim|1982": ["P", "rev"], "arcadia|1977": ["E", ""],
+  "plains|1976": ["B", ""], "pensacola|1995": ["P", "rev"], "boulder|1990": ["E", "rev ind"], "kansas-city|1999": ["P", "rev"],
+  "sacramento|2001": ["P", ""], "grand-rapids|1970": ["E", ""], "grand-rapids|1978": ["E", "mis"], "boone|1970": ["EB", "mis"],
+  "americus|1942": ["B", "ind"], "americus|1976": ["E", ""], "deerfield|1971": ["E", ""], "bedford-tx|2009": ["O", ""],
+  "fort-mill|1987": ["P", ""],
   // North America, 1888-1957 (na-modern.js)
   "los-angeles|1908": ["E", "edu mis"], "los-angeles|1913": ["P", ""], "los-angeles|1923": ["P", "rev"], "los-angeles|1951": ["P", "rev"],
   "new-amsterdam|1909": ["E", ""], "new-amsterdam|1917": ["E", "rev"], "new-amsterdam|1922": ["BR", ""], "new-amsterdam|1957": ["EB", "rev"],
