@@ -14,6 +14,7 @@ import { NE_EVENTS, NE_LOCATIONS, NE_FIGURES } from "./na-early.js";
 import { NB_EVENTS, NB_LOCATIONS, NB_FIGURES } from "./na-black.js";
 import { NM_EVENTS, NM_LOCATIONS, NM_FIGURES } from "./na-modern.js";
 import { NR_EVENTS, NR_LOCATIONS, NR_FIGURES } from "./na-recent.js";
+import { CA_EVENTS, CA_LOCATIONS, CA_FIGURES } from "./canada.js";
 import { EVENT_IMAGES } from "./images.js";
 import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
@@ -922,6 +923,10 @@ figures.push(...NM_FIGURES);
 locations.push(...NR_LOCATIONS);
 locations.forEach((loc) => { if (NR_EVENTS[loc.id]) loc.events.push(...NR_EVENTS[loc.id]); });
 figures.push(...NR_FIGURES);
+// Canada (canada.js).
+locations.push(...CA_LOCATIONS);
+locations.forEach((loc) => { if (CA_EVENTS[loc.id]) loc.events.push(...CA_EVENTS[loc.id]); });
+figures.push(...CA_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));

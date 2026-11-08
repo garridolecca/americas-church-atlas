@@ -46,6 +46,14 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // Canada (canada.js)
+  "nain|1771": ["O", "mis ind"], "falmouth-ns|1776": ["B", "rev"], "shelburne|1784": ["B", "ind mis"], "brantford|1785": ["O", "ind"],
+  "mississauga|1826": ["M", "mis ind"], "halifax|1832": ["B", "ind"], "grande-ligne|1835": ["B", "mis edu"], "norway-house|1840": ["M", "mis ind"],
+  "the-pas|1850": ["O", "mis ind"], "metlakatla|1862": ["O", "mis ind"], "steinbach|1874": ["O", "lib"], "niagara|1883": ["E", ""],
+  "st-anthony|1892": ["E", "mis"], "st-johns|1911": ["P", "rev"], "calgary|1935": ["B", ""], "regina|1944": ["B", ""],
+  "north-battleford|1948": ["P", "rev"], "vancouver|1970": ["E", "edu"], "langley|2018": ["E", "edu lib"], "toronto|1844": ["M", "edu lib"],
+  "toronto|1877": ["O", "edu"], "toronto|1906": ["P", "rev"], "toronto|1928": ["E", "mis"], "toronto|1946": ["E", "mis edu"],
+  "toronto|1964": ["E", ""], "toronto|1994": ["P", "rev"],
   // North America, 1942-2023 (na-recent.js)
   "pittsburgh|1967": ["CP", "rev"], "chicago|1973": ["E", ""], "chicago|1978": ["E", ""], "los-angeles|1967": ["P", "mis"],
   "costa-mesa|1971": ["E", ""], "wheaton|1995": ["E", ""], "atlanta|1995": ["B", "ind"], "houston|2005": ["P", ""],
