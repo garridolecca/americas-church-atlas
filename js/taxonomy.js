@@ -46,6 +46,16 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // Mexico and Central America, deeper (3) (mx-ca3.js)
+  "mexico-city|1903": ["B", "mis"], "mexico-city|1917": ["CE", "lib"], "mexico-city|1925": ["R", "edu"], "mexico-city|2020": ["E", ""],
+  "chiapas|1974": ["C", "ind lib"], "chiapas|1994": ["C", "ind"], "puebla|1979": ["C", "mis"], "guatemala-city|1998": ["C", "per"],
+  "guatemala-city|2013": ["P", "per ind"], "belize-city|1826": ["O", "mis"], "san-salvador-sv|2018": ["C", "per"], "managua|1917": ["B", "mis edu"],
+  "managua|1983": ["C", ""], "managua|2018": ["C", "per"], "san-jose-cr|1884": ["C", "lib"], "panama|1910": ["MBO", "ind"],
+  "panama|2019": ["C", ""], "veracruz|1860": ["E", "lib"], "acteal|1997": ["C", "per ind"], "villahermosa|1931": ["C", "per"],
+  "montemorelos|1942": ["O", "edu"], "puerto-barrios|1904": ["M", "mis"], "coban|1537": ["C", "mis ind"], "antigua-guatemala|1667": ["C", "edu"],
+  "santiago-atitlan|1981": ["C", "per ind"], "spanish-lookout|1958": ["O", ""], "santa-ana-sv|1896": ["E", "mis"], "aguilares|1977": ["C", "per"],
+  "santiago-nonualco|1980": ["C", "per"], "uca-san-salvador|1989": ["C", "per edu"], "olancho|1983": ["C", "per"], "solentiname|1965": ["C", ""],
+  "caledonia-bay|1699": ["R", "mis"], "colon-pa|1865": ["O", "mis"],
   // Southern Cone, deeper (cone2.js)
   "buenos-aires|1829": ["R", "mis"], "buenos-aires|1836": ["M", "mis edu"], "buenos-aires|1884": ["C", "lib edu"], "buenos-aires|1888": ["C", "lib"],
   "buenos-aires|1934": ["C", ""], "buenos-aires|1955": ["C", "per lib"], "buenos-aires|1976": ["CRO", "per lib"], "buenos-aires|1994": ["CE", "lib"],
