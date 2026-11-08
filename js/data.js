@@ -17,6 +17,7 @@ import { NR_EVENTS, NR_LOCATIONS, NR_FIGURES } from "./na-recent.js";
 import { CA_EVENTS, CA_LOCATIONS, CA_FIGURES } from "./canada.js";
 import { NP_EVENTS, NP_LOCATIONS, NP_FIGURES } from "./na-peoples.js";
 import { M2_EVENTS, M2_LOCATIONS, M2_FIGURES } from "./mx-ca2.js";
+import { K2_EVENTS, K2_LOCATIONS, K2_FIGURES } from "./carib2.js";
 import { EVENT_IMAGES } from "./images.js";
 import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
@@ -937,6 +938,10 @@ figures.push(...NP_FIGURES);
 locations.push(...M2_LOCATIONS);
 locations.forEach((loc) => { if (M2_EVENTS[loc.id]) loc.events.push(...M2_EVENTS[loc.id]); });
 figures.push(...M2_FIGURES);
+// The Caribbean, deeper (carib2.js).
+locations.push(...K2_LOCATIONS);
+locations.forEach((loc) => { if (K2_EVENTS[loc.id]) loc.events.push(...K2_EVENTS[loc.id]); });
+figures.push(...K2_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));
