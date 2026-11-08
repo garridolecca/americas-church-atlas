@@ -46,6 +46,12 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // Brazil, deeper (3) (brazil3.js)
+  "rio|1922": ["M", "mis"], "rio|1934": ["RMO", "lib"], "rio|1940": ["P", "mis"], "rio|2015": ["PE", "mis"],
+  "brasilia|2003": ["PBE", "lib"], "sao-paulo|1925": ["M", "mis"], "sao-paulo|1915": ["O", "edu"], "sao-paulo|1963": ["R", "mis"],
+  "campinas|1869": ["R", "edu"], "sao-leopoldo|1946": ["O", "edu"], "belem|1931": ["O", "mis edu"], "vicosa|1968": ["E", "mis"],
+  "sao-joao-da-boa-vista|1951": ["P", "mis"], "krauel|1930": ["O", "mis"], "palmeira|1951": ["O", "mis"], "santa-leopoldina|1859": ["O", "mis"],
+  "carambei|1911": ["R", "mis"], "pindamonhangaba|1958": ["P", "edu"], "maringa|1975": ["RP", "rev"], "barueri|2000": ["E", "mis"],
   // North America by theme: hymnody, missions, seminaries, immigrant churches (na-themes.js)
   "chicago|1873": ["RE", "rev"], "chicago|1877": ["E", "mis"], "chicago|1885": ["O", "mis"], "chicago|1934": ["E", "mis"],
   "cincinnati|1875": ["E", "rev"], "cambridge-ma|1640": ["R", ""], "los-angeles|1969": ["E", "rev"], "los-angeles|1945": ["E", "mis"],
