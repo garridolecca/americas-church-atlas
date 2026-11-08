@@ -27,7 +27,7 @@ export const THEMES = [
 export const REGIONS = [
   { id: "north", en: "US & Canada", es: "EE. UU. y Canadá", countries: ["USA", "Canada"] },
   { id: "meso", en: "Mexico & Central America", es: "México y Centroamérica", countries: ["Mexico", "Guatemala", "Belize", "El Salvador", "Honduras", "Nicaragua", "Costa Rica", "Panama"] },
-  { id: "carib", en: "Caribbean", es: "Caribe", countries: ["Bahamas", "Dominican Republic", "Puerto Rico", "Cuba", "Jamaica", "Haiti", "Trinidad and Tobago", "Caribbean Netherlands", "U.S. Virgin Islands", "Antigua and Barbuda", "Barbados"] },
+  { id: "carib", en: "Caribbean", es: "Caribe", countries: ["Bahamas", "Dominican Republic", "Puerto Rico", "Cuba", "Jamaica", "Haiti", "Trinidad and Tobago", "Caribbean Netherlands", "U.S. Virgin Islands", "Antigua and Barbuda", "Barbados", "Cayman Islands", "Curaçao"] },
   { id: "andes", en: "Andes & Northern South America", es: "Andes y norte de Sudamérica", countries: ["Colombia", "Venezuela", "Guyana", "Suriname", "Ecuador", "Peru", "Bolivia"] },
   { id: "brazil", en: "Brazil", es: "Brasil", countries: ["Brazil"] },
   { id: "cone", en: "Southern Cone", es: "Cono Sur", countries: ["Chile", "Argentina", "Uruguay", "Paraguay"] },
@@ -36,7 +36,7 @@ export const REGIONS = [
 export const COUNTRY_ES = {
   USA: "Estados Unidos", Canada: "Canadá", Mexico: "México", Guatemala: "Guatemala", "El Salvador": "El Salvador",
   "Costa Rica": "Costa Rica", Panama: "Panamá", Belize: "Belice", Honduras: "Honduras", Nicaragua: "Nicaragua", "Puerto Rico": "Puerto Rico", Bahamas: "Bahamas", "Dominican Republic": "República Dominicana",
-  Cuba: "Cuba", Jamaica: "Jamaica", Haiti: "Haití", "Trinidad and Tobago": "Trinidad y Tobago", "Caribbean Netherlands": "Caribe neerlandés", "U.S. Virgin Islands": "Islas Vírgenes de EE. UU.", "Antigua and Barbuda": "Antigua y Barbuda", Barbados: "Barbados", Colombia: "Colombia", Venezuela: "Venezuela", Guyana: "Guyana", Suriname: "Surinam",
+  Cuba: "Cuba", Jamaica: "Jamaica", Haiti: "Haití", "Trinidad and Tobago": "Trinidad y Tobago", "Caribbean Netherlands": "Caribe neerlandés", "U.S. Virgin Islands": "Islas Vírgenes de EE. UU.", "Antigua and Barbuda": "Antigua y Barbuda", Barbados: "Barbados", "Cayman Islands": "Islas Caimán", "Curaçao": "Curazao", Colombia: "Colombia", Venezuela: "Venezuela", Guyana: "Guyana", Suriname: "Surinam",
   Ecuador: "Ecuador", Peru: "Perú", Bolivia: "Bolivia", Brazil: "Brasil", Chile: "Chile", Argentina: "Argentina",
   Uruguay: "Uruguay", Paraguay: "Paraguay",
 };
@@ -46,6 +46,16 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // The Caribbean, deeper (3) (carib3.js)
+  "falmouth-jm|1814": ["B", "mis ind"], "montego-bay|1824": ["B", "mis edu lib"], "kingston|1789": ["M", "mis"], "kingston|1966": ["REMBO", "edu"],
+  "havana|1883": ["M", "mis"], "havana|1890": ["R", "mis"], "havana|1961": ["REMB", "per edu"], "santiago-de-cuba|1905": ["B", "mis"],
+  "cap-haitien|1823": ["B", "mis ind"], "port-au-prince|1985": ["E", "mis ind"], "saint-john-bb|1745": ["O", "edu"], "bridgetown|1765": ["O", "mis ind"],
+  "antigua|1756": ["O", "mis ind edu"], "antigua|1831": ["O", "lib ind"], "antigua|1834": ["MBO", "lib ind"], "rio-piedras|1899": ["B", "mis"],
+  "san-juan-pr|1954": ["E", "mis"], "sligoville|1835": ["B", "lib ind"], "rio-bueno|1843": ["B", "edu ind"], "hampden-jm|1824": ["R", "mis"],
+  "george-town-ky|1846": ["R", "mis"], "willemstad|1769": ["RO", "ind"], "gibara|1900": ["E", "mis edu"], "cienfuegos|1902": ["E", "mis"],
+  "puerto-plata|1834": ["MB", "mis ind"], "nassau|1790": ["B", "ind"], "nassau|1800": ["M", "mis ind"], "princes-town|1816": ["B", "ind"],
+  "scarborough-tt|1790": ["O", "mis ind"], "scarborough-tt|1818": ["M", "mis ind"], "christiansted|1753": ["O", ""], "oranjestad-se|1780": ["M", "ind per"],
+  "san-german|1912": ["R", "edu"],
   // Brazil, deeper (3) (brazil3.js)
   "rio|1922": ["M", "mis"], "rio|1934": ["RMO", "lib"], "rio|1940": ["P", "mis"], "rio|2015": ["PE", "mis"],
   "brasilia|2003": ["PBE", "lib"], "sao-paulo|1925": ["M", "mis"], "sao-paulo|1915": ["O", "edu"], "sao-paulo|1963": ["R", "mis"],
