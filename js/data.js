@@ -19,6 +19,7 @@ import { NP_EVENTS, NP_LOCATIONS, NP_FIGURES } from "./na-peoples.js";
 import { M2_EVENTS, M2_LOCATIONS, M2_FIGURES } from "./mx-ca2.js";
 import { K2_EVENTS, K2_LOCATIONS, K2_FIGURES } from "./carib2.js";
 import { B2_EVENTS, B2_LOCATIONS, B2_FIGURES } from "./brazil2.js";
+import { A2_EVENTS, A2_LOCATIONS, A2_FIGURES } from "./andes2.js";
 import { EVENT_IMAGES } from "./images.js";
 import { TAGS, COUNTRY_REGION } from "./taxonomy.js";
 
@@ -947,6 +948,10 @@ figures.push(...K2_FIGURES);
 locations.push(...B2_LOCATIONS);
 locations.forEach((loc) => { if (B2_EVENTS[loc.id]) loc.events.push(...B2_EVENTS[loc.id]); });
 figures.push(...B2_FIGURES);
+// Andes and northern South America, deeper (andes2.js).
+locations.push(...A2_LOCATIONS);
+locations.forEach((loc) => { if (A2_EVENTS[loc.id]) loc.events.push(...A2_EVENTS[loc.id]); });
+figures.push(...A2_FIGURES);
 
 // Attach sources to every event (see sources.js; expansion events carry their own).
 locations.forEach((loc) => loc.events.forEach((e) => { e.sources = e.sources || EVENT_SOURCES[loc.id + "|" + e.year] || []; }));

@@ -46,6 +46,16 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // Andes and northern South America, deeper (andes2.js)
+  "callao|1877": ["M", "mis edu"], "lima|2003": ["RE", "per"], "huanuco|1926": ["E", "mis"], "nana|1946": ["O", "edu mis"],
+  "chiquitos|1691": ["C", "mis ind"], "moxos|1682": ["C", "mis ind"], "la-paz|1966": ["E", "lib"], "puerto-guayaquil|1896": ["E", "mis"],
+  "quito|1955": ["E", "mis"], "quito|1874": ["C", ""], "quito|1906": ["C", "lib"], "shell-mera|1948": ["E", "mis ind"],
+  "riobamba|1962": ["C", "edu ind"], "tiwaeno|1992": ["E", "mis ind"], "cartagena|1610": ["C", "per"], "cartagena|1622": ["C", "ind"],
+  "bogota|1887": ["C", "lib per"], "bogota|1936": ["C", "lib"], "bogota|1943": ["E", "mis"], "bogota|1990": ["O", "per"],
+  "catatumbo|1961": ["E", "mis ind"], "barranquilla|1941": ["B", "mis"], "coro|1531": ["C", ""], "caracas|1812": ["C", ""],
+  "caracas|1873": ["C", "lib"], "caracas|1896": ["R", "edu mis"], "demerara|1842": ["O", ""], "demerara|1892": ["O", ""],
+  "berbice-river|1738": ["O", "mis ind"], "new-amsterdam-gy|1743": ["O", ""], "jonestown|1978": ["O", ""], "paramaribo|1741": ["O", ""],
+  "paramaribo|1856": ["C", "ind"], "ganzee|1765": ["O", "mis ind"],
   // Brazil, deeper: hymnals, schools, Bible translation, Pentecostal and neo-Pentecostal churches (brazil2.js)
   "petropolis|1855": ["R", "edu mis"], "rio|1861": ["R", "edu"], "rio|1864": ["R", "mis"], "recife|1873": ["R", "mis"],
   "juiz-de-fora|1889": ["M", "edu"], "recife|1891": ["B", "edu"], "lavras|1893": ["R", "edu"], "gaspar|1895": ["O", "mis"],
