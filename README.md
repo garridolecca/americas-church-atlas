@@ -19,9 +19,9 @@ An interactive, bilingual (English / Spanish) atlas of five centuries of Christi
 
 ## Features
 
-- 239 locations from Quebec to Tierra del Fuego, with 491 events and 95 key figures
-- **A photo for every event** — 491 freely licensed images from Wikimedia Commons (public domain or Creative Commons), each credited with its author and license and linked to its Commons file page
-- **Every event cites its sources** — 1,410 citations, and every event links to at least one reputable web source; including 65 page-referenced citations of books in the Logos Bible Software library and reputable references (Britannica, Dictionary of Canadian Biography, UNESCO, National Park Service, university journals, archives, official church records)
+- 248 locations from Quebec to Tierra del Fuego, with 504 events and 95 key figures
+- **A photo for every event** — 504 freely licensed images from Wikimedia Commons (public domain or Creative Commons), each credited with its author and license and linked to its Commons file page
+- **Every event cites its sources** — 1,445 citations, and every event links to at least one reputable web source; including 65 page-referenced citations of books in the Logos Bible Software library and reputable references (Britannica, Dictionary of Canadian Biography, UNESCO, National Park Service, university journals, archives, official church records)
 - **Evangelical history in depth:** 41 additional evangelical milestones — the Triennial Convention, American Bible Society, Fulton Street Prayer Revival, Student Volunteer Movement, National Baptist Convention, Church of God in Christ, Assemblies of God, NAE, Fuller Seminary, Christianity Today, the Jesus Movement, Latino Pentecostalism; and across Latin America the Moravians in Suriname, the Demerara Martyr, Trumbull in Chile, the Waldensians of Uruguay, the Welsh chapels of Patagonia, Mexico's first evangelical church, Bagby in Bahia, Pablo Besson, Barrios and the Guatemala mission, Canadian Baptists in Bolivia, Venezuela's El Redentor, the Christian Congregation and Brazil for Christ, Mennonites in the Chaco, HCJB radio, the Latin America Mission, Colombia's La Violencia, CLADE I, the Quichua churches, the Chamula expulsions, Chile's Evangelical Cathedral, Luis Palau, Cuba's house churches and the 2024 Pew data
 - **Chile, Argentina, Brazil & Colombia in depth:** Chile's 1865 law on dissenters, the secular laws (1884), separation of church and state (1925), the Pentecostal schism of 1932, the Ley de Culto (1999); Argentina's Scots of Monte Grande (1825), the first Protestant sermon in Spanish (1867), the Tommy Hicks crusade (1954), ISEDET; Brazil's Lutheran immigrants (1824), Mackenzie (1870), the Independent Presbyterian Church (1903), the Foursquare tents (1953), the evangelical caucus (1987), the March for Jesus (1993); Colombia's United Pentecostal Church (1937), the Misión Carismática Internacional (1983) and the Constitution of 1991
 - **Expanded Peru:** 20 events from Cajamarca (1532) and the first bishop of Cusco to Taki Onqoy, the Third Council of Lima, Santa Rosa and San Martín de Porres, the Juli Aymara press, the extirpation of idolatries, Túpac Amaru II, Penzotti's imprisonment, freedom of worship (1915), the Adventist schools of Lake Titicaca, the evangelical churches of Ayacucho during the internal conflict, and the 2017 census
@@ -106,9 +106,9 @@ Un atlas interactivo y bilingüe (español / inglés) de cinco siglos de cristia
 
 ### Características
 
-- 239 lugares desde Quebec hasta Tierra del Fuego, con 491 eventos y 95 figuras clave
-- **Una foto para cada evento**: 491 imágenes de licencia libre de Wikimedia Commons (dominio público o Creative Commons), cada una con su autor, su licencia y un enlace a su página en Commons
-- **Cada evento cita sus fuentes**: 1.410 citas, y cada evento enlaza al menos una fuente web de prestigio; entre ellas 65 de libros de la biblioteca de Logos Bible Software con número de página, y referencias de prestigio (Britannica, UNESCO, revistas universitarias, archivos y documentos oficiales)
+- 248 lugares desde Quebec hasta Tierra del Fuego, con 504 eventos y 95 figuras clave
+- **Una foto para cada evento**: 504 imágenes de licencia libre de Wikimedia Commons (dominio público o Creative Commons), cada una con su autor, su licencia y un enlace a su página en Commons
+- **Cada evento cita sus fuentes**: 1.445 citas, y cada evento enlaza al menos una fuente web de prestigio; entre ellas 65 de libros de la biblioteca de Logos Bible Software con número de página, y referencias de prestigio (Britannica, UNESCO, revistas universitarias, archivos y documentos oficiales)
 - **Historia evangélica en profundidad:** 41 hitos evangélicos más en Norteamérica, Centroamérica, el Caribe y Sudamérica (Surinam, Guyana, Uruguay, Patagonia, Bolivia, Venezuela, Colombia, Ecuador, Paraguay, Chile, Argentina, Brasil)
 - **Perú ampliado:** 20 eventos, de Cajamarca (1532) al censo de 2017
 - Filtros combinables por **era, tradición, tema y región o país**, con conteos en vivo, y mapa coloreado por era o por tradición

@@ -46,6 +46,11 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // Peoples of the United States (na-peoples.js)
+  "new-amsterdam|1958": ["P", "mis ind"], "st-louis|1847": ["O", "edu"], "san-diego|1926": ["P", "edu ind"], "costa-mesa|1964": ["P", "mis"],
+  "germantown|1688": ["O", "ind"], "new-echota|1832": ["R", "mis ind lib"], "tahlequah|1839": ["B", "per ind"], "san-francisco|1853": ["R", "mis ind"],
+  "holland-mi|1857": ["R", "edu"], "mankato|1862": ["R", "per ind mis"], "st-helena|1862": ["O", "edu ind"], "sitka|1878": ["R", "mis ind edu"],
+  "muskogee|1880": ["B", "edu ind"],
   // Canada (canada.js)
   "nain|1771": ["O", "mis ind"], "falmouth-ns|1776": ["B", "rev"], "shelburne|1784": ["B", "ind mis"], "brantford|1785": ["O", "ind"],
   "mississauga|1826": ["M", "mis ind"], "halifax|1832": ["B", "ind"], "grande-ligne|1835": ["B", "mis edu"], "norway-house|1840": ["M", "mis ind"],
