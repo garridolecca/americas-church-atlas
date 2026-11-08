@@ -46,6 +46,17 @@ REGIONS.forEach((r) => r.countries.forEach((c) => { COUNTRY_REGION[c] = r.id; })
 
 // "<locationId>|<year>": [traditions, themes]
 export const TAGS = {
+  // Southern Cone, deeper (cone2.js)
+  "buenos-aires|1829": ["R", "mis"], "buenos-aires|1836": ["M", "mis edu"], "buenos-aires|1884": ["C", "lib edu"], "buenos-aires|1888": ["C", "lib"],
+  "buenos-aires|1934": ["C", ""], "buenos-aires|1955": ["C", "per lib"], "buenos-aires|1976": ["CRO", "per lib"], "buenos-aires|1994": ["CE", "lib"],
+  "almagro|1982": ["P", "rev"], "santa-fe-ar|1853": ["CRE", "lib"], "parana|1870": ["E", "edu"], "libertador-san-martin|1898": ["O", "edu mis"],
+  "tandil|1877": ["O", "mis"], "ushuaia|1871": ["O", "mis ind edu"], "la-rioja|1976": ["C", "per"], "cordoba|1613": ["C", "edu"],
+  "crespo|1878": ["O", "mis"], "santiago|1821": ["E", "mis edu"], "santiago|1868": ["R", "mis"], "santiago|1880": ["M", "edu mis"],
+  "santiago|1944": ["C", ""], "santiago|1987": ["C", ""], "santiago|2001": ["ME", "lib"], "santiago|2018": ["C", ""],
+  "valparaiso|1858": ["O", "mis"], "valparaiso|1894": ["O", "mis"], "rapa-nui|1864": ["C", "mis ind"], "chiloe|2000": ["C", "ind"],
+  "montevideo|1861": ["C", "lib"], "montevideo|1919": ["C", "lib"], "montevideo|1987": ["C", "lib"], "nueva-helvecia|1863": ["RO", "mis"],
+  "el-ombu|1948": ["O", "mis"], "chaco|1930": ["O", "per mis"], "chaco|1947": ["O", "per mis"], "friesland|1937": ["O", "mis"],
+  "yalve-sanga|1946": ["O", "mis ind"], "asuncion|1969": ["C", "per"], "asuncion|1976": ["ROC", "per"], "asuncion|2008": ["C", ""],
   // Andes and northern South America, deeper (andes2.js)
   "callao|1877": ["M", "mis edu"], "lima|2003": ["RE", "per"], "huanuco|1926": ["E", "mis"], "nana|1946": ["O", "edu mis"],
   "chiquitos|1691": ["C", "mis ind"], "moxos|1682": ["C", "mis ind"], "la-paz|1966": ["E", "lib"], "puerto-guayaquil|1896": ["E", "mis"],
